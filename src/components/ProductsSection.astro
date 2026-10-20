@@ -6,25 +6,19 @@ import { cheatTierIcons, productCategoryIcons } from '../data/sectionIcons';
 import SectionHeader from './SectionHeader.astro';
 import CatalogCard from './CatalogCard.astro';
 import { productPath } from '../utils/path';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/starwind/carousel';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/starwind/carousel';
 
 const s = t.products;
 
 function cardIcon(product: (typeof productPages)[number]) {
-  if (product.kind === 'tier') {
-    return cheatTierIcons[product.name] ?? 'crosshair';
+  if (product.kind === 'main') {
+    return cheatTierIcons['Elite'] ?? 'crosshair';
   }
   return productCategoryIcons[product.category ?? ''] ?? 'package';
 }
 
 function cardLabel(product: (typeof productPages)[number]) {
-  if (product.kind === 'tier') {
+  if (product.kind === 'main') {
     return product.tier ?? product.name;
   }
   return product.category ?? 'Utility';
@@ -42,8 +36,6 @@ function cardLabel(product: (typeof productPages)[number]) {
         class="products-carousel__root"
       >
         <div class="products-carousel__stage">
-          <CarouselPrevious class="products-carousel__arrow products-carousel__arrow--prev" hidden />
-          <CarouselNext class="products-carousel__arrow products-carousel__arrow--next is-visible" />
           <div class="products-carousel__viewport">
             <CarouselContent class="products-carousel__track">
               {

@@ -1,0 +1,45 @@
+---
+import ForumCommentBlock from './ForumCommentBlock.astro';
+import type { ForumComment } from '../data/forum';
+
+interface Props {
+  comment: ForumComment;
+  postAuthor: string;
+  depth?: number;
+}
+
+const { comment, postAuthor, depth = 0 } = Astro.props;
+
+const isMod = comment.role === 'mod';
+const isOp = comment.role === 'op' || (!isMod && comment.author === postAuthor);
+const displayName = isMod ? comment.author : `u/${comment.author}`;
+const avatarLabel = isMod ? 'M' : comment.author.slice(0, 1).toUpperCase();
+---
+
+<article class:list={['forum-comment', depth > 0 && 'forum-comment--reply']}>
+  <div class="forum-comment__rail">
+    <span class:list={['forum-comment__avatar', isMod && 'forum-comment__avatar--mod']}>{avatarLabel}</span>
+    {depth === 0 && comment.replies && comment.replies.length > 0 && <span class="forum-comment__line" />}
+  </div>
+  <div class="forum-comment__body">
+    <div class="forum-comment__meta">
+      {isMod && <span class="forum-badge forum-badge--mod">Moderator</span>}
+      {isOp && <span class="forum-badge forum-badge--op">OP</span>}
+      <b>{displayName}</b>
+      <span>·</span>
+      <span>{comment.age}</span>
+      {comment.score > 0 && (
+        <>
+          <span>·</span>
+          <span>{comment.score} pts</span>
+        </>
+      )}
+    </div>
+    <p>{comment.body}</p>
+    {
+      comment.replies?.map((reply) => (
+        <ForumCommentBlock comment={reply} postAuthor={postAuthor} depth={depth + 1} />
+      ))
+    }
+  </div>
+</article>

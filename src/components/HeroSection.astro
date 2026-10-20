@@ -2,8 +2,10 @@
 import { t } from '../i18n';
 import { ROUTES } from '../utils/path';
 import { heroSlides } from '../data/products';
-import { compatibilityIcons, heroStatIcons, heroStatusPills } from '../data/sectionIcons';
+import { compatibilityIcons, heroStatusPills } from '../data/sectionIcons';
 import ImageSlider from './ImageSlider.astro';
+import BuyNowButtonLabel from './BuyNowButtonLabel.astro';
+import QuickStatGrid from './QuickStatGrid.astro';
 import Icon from './icons/Icon.astro';
 import { Button } from '@/components/starwind/button';
 import { Badge } from '@/components/starwind/badge';
@@ -51,10 +53,9 @@ const heroMarqueePills = [
             data-scroll-target="products"
             variant="primary"
             size="lg"
-            class="rounded-xl"
+            class="buy-now-btn min-w-[11rem] rounded-xl sm:min-w-[12.5rem]"
           >
-            {h.ctaPrimary}
-            <Icon name="arrowRight" size={18} />
+            <BuyNowButtonLabel label={h.ctaPrimary} iconSize={18} />
           </Button>
           <Button
             as="a"
@@ -71,22 +72,7 @@ const heroMarqueePills = [
 
       <div class="mx-auto flex w-full max-w-xl flex-col items-center gap-5 lg:mx-0 lg:max-w-none lg:items-end">
         <ImageSlider images={heroSlides} id="hero-slider" variant="hero" />
-        <div class="grid w-full grid-cols-2 gap-2.5 sm:gap-3 md:grid-cols-4 lg:grid-cols-2">
-          {h.metrics.map((m, i) => (
-            <div class="flex min-w-0 items-center gap-3 rounded-xl border border-primary/20 bg-card px-3 py-3 shadow-sm shadow-black/10 backdrop-blur-sm transition-colors hover:border-primary/50">
-              <span
-                class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#2d6ee2]/20 ring-1 ring-inset ring-[#2d6ee2]/40 text-primary"
-                aria-hidden="true"
-              >
-                <Icon name={heroStatIcons[i] ?? 'check'} size={18} class="text-primary" />
-              </span>
-              <div class="min-w-0">
-                <p class="font-[family-name:var(--font-heading)] text-base font-bold leading-none tracking-tight text-foreground">{m.strong}</p>
-                <p class="mt-1 text-xs leading-tight text-muted-foreground">{m.label}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <QuickStatGrid stats={t.productQuickStats} variant="blue" />
       </div>
     </div>
 

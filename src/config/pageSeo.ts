@@ -1,6 +1,5 @@
 /**
  * Central titles/descriptions for high-traffic routes.
- * After Search Console shows impressions, edit the matching path here and redeploy.
  */
 
 export interface PageSeoEntry {
@@ -10,74 +9,74 @@ export interface PageSeoEntry {
 
 export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/': {
-    title: 'Buy Undetected Fortnite Cheats | Aimbot, ESP & Wallhack',
+    title: 'Aion 2 Cheats | Private ESP, Radar & Soft Aim for PC',
     description:
-      'Buy undetected Fortnite cheats for PC — aimbot, ESP, wallhack, radar, loot ESP and skin changer. Updated after every Easy Anti-Cheat patch.',
+      'Aion 2 cheats for Windows PC — player ESP, flight markers, gathering nodes, 2D radar, and optional soft aim. Weekly, monthly, and lifetime plans plus HWID, UGC, and skin tools.',
   },
-  '/products/fortnite-cheats/': {
-    title: 'Buy Fortnite Cheats | Elite, HWID Spoofer & Skin Changer',
+  '/products/': {
+    title: 'Aion 2 Products | Cheats, HWID Spoofer, UGC & Skins',
     description:
-      'Shop Fortnite cheats for PC: Elite aimbot & ESP wallhack, HWID spoofer, UGC recovery and Skin Changer. Instant delivery after checkout.',
+      'Shop Aion 2 private cheats, HWID Spoofer, UGC tool, and Skin Changer for the global Steam or PURPLE PC client. Compare plans from $15 weekly on getaion2cheats.net.',
   },
-  '/products/fortnite-cheats/elite/': {
-    title: 'Buy Fortnite Elite Cheats | Aimbot, ESP & Loot Assist',
+  '/products/aion-2-cheats/': {
+    title: 'Buy Aion 2 Private Cheats | ESP, Flight Markers & Radar',
     description:
-      'Buy Fortnite Elite cheats with aimbot, ESP wallhack, loot assist, Auto Finish, Skin Changer and priority EAC patch updates.',
+      'Buy Aion 2 private cheats with faction ESP, aerial markers, world boss overlays, gathering node ESP, 2D radar, and optional soft aim. $15 weekly, $35 monthly, or $150 lifetime USD.',
   },
-  '/products/fortnite-cheats/hwid-spoofer/': {
-    title: 'Buy Fortnite HWID Spoofer | Hardware Ban Bypass',
+  '/products/aion-2-cheats/hwid-spoofer/': {
+    title: 'Buy Aion 2 HWID Spoofer | Hardware Flag Recovery',
     description:
-      'Buy a Fortnite HWID spoofer for PC hardware bans — disk/MAC tools, compatibility scan and post-spoof checks before you launch cheats again.',
+      'HWID Spoofer for PC hardware flags — disk serial tools, MAC rotation, compatibility scan, and post-spoof verification. $15 weekly or $35 monthly USD before you relaunch Aion 2.',
   },
-  '/products/fortnite-cheats/ugc/': {
-    title: 'Buy Fortnite UGC | EAC & Epic Ban Appeal Tools',
+  '/products/aion-2-cheats/game-accounts/': {
+    title: 'Buy Aion 2 UGC Tool | Ban Detection & Recovery',
     description:
-      'Buy Fortnite UGC (Unban & Governance Control) to organize Epic and EAC ban appeals, dispute workflows and case tracking.',
+      'Aion 2 UGC tool for restriction detection, live status checks, and supported recovery workflows. Weekly, monthly, and lifetime access from $15 USD on getaion2cheats.net.',
   },
-  '/products/fortnite-cheats/unlock-all/': {
-    title: 'Buy Fortnite Skin Changer | Unlock All Cosmetics',
+  '/products/aion-2-cheats/skin-changer/': {
+    title: 'Buy Aion 2 Skin Changer | Cosmetic Preview & Loadouts',
     description:
-      'Buy Fortnite Skin Changer / Unlock All — local outfit, wrap and pickaxe previews with your Fortnite cheats loadout.',
+      'Skin Changer with live preview, loadout manager, restore tools, and patch compatibility checks for supported Aion 2 cosmetics. Plans from $15 weekly USD.',
   },
-  '/products/fortnite-cheats/utilities/': {
-    title: 'Buy Fortnite Cheat Utilities | HWID, UGC & Skin Changer',
+  '/products/aion-2-cheats/utilities/': {
+    title: 'Compare Aion 2 Utilities | HWID, UGC Tool & Skin Changer',
     description:
-      'Buy Fortnite cheat utilities: HWID spoofer after hardware bans, UGC for Epic/EAC appeals, and local Skin Changer / Unlock All.',
+      'Compare HWID Spoofer, UGC tool, and Skin Changer utilities — pick the tool that matches hardware flags, account restrictions, or cosmetics before checkout.',
   },
   '/blog/': {
-    title: 'Fortnite Cheat Guides | Aimbot, ESP Wallhack & EAC',
+    title: 'Aion 2 Guides & Updates | ESP, Radar & Compatibility',
     description:
-      'Read Fortnite cheat guides on aimbot setup, ESP wallhack, Lite vs Pro, Creative practice and Easy Anti-Cheat patch-day checks.',
+      'Aion 2 guides on ESP, radar, flight combat, anti-cheat context, setup, and product updates for the global Steam and PURPLE PC client.',
   },
   '/forum/': {
-    title: 'Fortnite Cheats Forum | Aimbot, ESP & Setup Help',
+    title: 'Aion 2 Cheats Forum | Setup, ESP & Patch Discussion',
     description:
-      'Fortnite cheats forum for aimbot configs, ESP wallhack setup, EAC status and product questions before you buy.',
+      'Community forum for Aion 2 cheat setup, ESP tuning, flight combat, patch notes, and product questions before checkout on getaion2cheats.net.',
   },
   '/faq/': {
-    title: 'Fortnite Cheats FAQ | Aimbot, ESP, Bans & Setup',
+    title: 'Aion 2 Cheats FAQ | Plans, Compatibility & Risk',
     description:
-      'Fortnite cheats FAQ — tiers, aimbot, ESP wallhack, radar, HWID spoofer, Skin Changer, bans and loader setup before checkout.',
+      'Aion 2 cheats FAQ — weekly, monthly, and lifetime plans, Steam and PURPLE compatibility, HWID vs account bans, and loader setup before purchase.',
   },
   '/terms/': {
-    title: 'Terms for Fortnite Cheats | License & Refunds',
+    title: 'Terms for Aion 2 Cheats | License & Refunds',
     description:
-      'Terms for buying Fortnite cheats on fortnite-cheats.com — license use, delivery, refunds and account risk.',
+      'Terms for buying Aion 2 cheats on getaion2cheats.net — license use, delivery, refunds, and account risk.',
   },
   '/privacy/': {
-    title: 'Privacy Policy | Fortnite Cheats Shop',
+    title: 'Privacy Policy | Aion 2 Cheats',
     description:
-      'How the Fortnite cheats shop at fortnite-cheats.com uses analytics, cookies and contact data.',
+      'How getaion2cheats.net uses analytics, cookies, and contact data when you browse guides or purchase Aion 2 products.',
   },
   '/about/': {
-    title: 'About Fortnite Cheats | Buy PC Aimbot & ESP',
+    title: 'About Aion 2 Cheats | PC ESP & Utilities',
     description:
-      'About Fortnite Cheats — we sell PC Fortnite cheats (aimbot, ESP, wallhack), guides and utilities at fortnite-cheats.com.',
+      'About Aion 2 Cheats — private suite, utilities, and guides for the global Aion 2 PC client at getaion2cheats.net.',
   },
   '/support/': {
-    title: 'Fortnite Cheats Support | Loader, HWID & Checkout',
+    title: 'Aion 2 Cheats Support | Setup & Checkout Help',
     description:
-      'Fortnite cheats support for loader setup, aimbot/ESP configs, HWID spoofing and checkout help — 24/7 Discord.',
+      'Support for Aion 2 loader setup, HWID spoofing, UGC and skin tools, and checkout questions at getaion2cheats.net.',
   },
 };
 

@@ -3,7 +3,7 @@ import '../../styles/blog-pages.css';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { t } from '../../i18n';
 import { getAllBlogSlugs, getBlogPost, getRelatedBlogPosts } from '../../data/blog';
-import { cheatMetaDescription, pageTitle } from '../../config/seo';
+import { cheatMetaDescription, pageTitle, socialImageFromAsset } from '../../config/seo';
 import {
   articleSchema,
   breadcrumbSchema,
@@ -50,10 +50,10 @@ function linkify(text: string): string {
       const normalized = normalizeInternalPath(href);
       return `<a href="${normalized}">${label}</a>`;
     })
-    .replace(/(https:\/\/fortnitecheats\.com[^\s.,;)]*)/g, (_match, url: string) => {
-      const path = url.replace(/^https:\/\/fortnitecheats\.com/, '');
+    .replace(/(https:\/\/getaion2cheats\.net[^\s.,;)]*)/g, (_match, url: string) => {
+      const path = url.replace(/^https:\/\/getaion2cheats\.net/, '');
       const normalized = normalizeInternalPath(path);
-      const href = normalized.startsWith('http') ? normalized : `https://fortnite-cheats.com${normalized}`;
+      const href = normalized.startsWith('http') ? normalized : `https://getaion2cheats.net${normalized}`;
       return `<a href="${href}">${url}</a>`;
     });
 }
@@ -71,7 +71,7 @@ const published = parseBlogDate(post.date);
   title={pageTitle(post.title)}
   description={cheatMetaDescription(post.desc)}
   ogType="article"
-  ogImage={post.image}
+  ogImage={socialImageFromAsset(post.image)}
   ogImageAlt={post.title}
   articlePublishedTime={published}
   articleModifiedTime={published}
@@ -99,7 +99,7 @@ const published = parseBlogDate(post.date);
           <figure class="blog-article__hero">
             <ResponsiveImage
               src={post.image}
-              alt={`${post.title} — Fortnite cheat gameplay screenshot`}
+              alt={`${post.title} — Aion 2 cheat guide illustration`}
               width={960}
               height={540}
               loading="eager"
@@ -179,8 +179,8 @@ const published = parseBlogDate(post.date);
           </Prose>
 
           <nav class="blog-article__actions" aria-label="Continue reading">
-            <Button as="a" href={checkoutPath('fortnite')} variant="primary" aria-label={t.ui.checkoutAria}>
-              Buy Fortnite Cheats
+            <Button as="a" href={checkoutPath('aion2Cheats')} variant="primary" aria-label={t.ui.checkoutAria}>
+              Buy Aion 2 Cheats
               <Icon name="arrowRight" size={17} />
             </Button>
             <Button as="a" href={ROUTES.products} variant="outline">

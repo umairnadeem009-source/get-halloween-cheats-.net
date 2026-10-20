@@ -1,4 +1,4 @@
-import { PRODUCT_BASE } from '../config/site';
+import { PRODUCT_BASE, PRODUCTS_HUB } from '../config/site';
 
 /** Normalize internal paths to match trailingSlash: 'always' and canonical URLs. */
 export function withTrailingSlash(path: string): string {
@@ -18,10 +18,10 @@ export const LEGACY_PATH_MAP: Record<string, string> = {
   '/cheats/lite/': PRODUCT_BASE,
   '/cheats/pro': PRODUCT_BASE,
   '/cheats/pro/': PRODUCT_BASE,
-  '/cheats/elite': `${PRODUCT_BASE}elite/`,
-  '/cheats/elite/': `${PRODUCT_BASE}elite/`,
-  '/cheats/compare': '/blog/fortnite-lite-vs-pro/',
-  '/cheats/compare/': '/blog/fortnite-lite-vs-pro/',
+  '/cheats/elite': PRODUCT_BASE,
+  '/cheats/elite/': PRODUCT_BASE,
+  '/cheats/compare': '/blog/aion-2-cheat-feature-comparison/',
+  '/cheats/compare/': '/blog/aion-2-cheat-feature-comparison/',
   '/contact': '/support/',
   '/contact/': '/support/',
 };
@@ -45,8 +45,8 @@ export const ROUTES = {
   home: '/',
   blog: '/blog/',
   forum: '/forum/',
-  products: PRODUCT_BASE,
-  productsElite: `${PRODUCT_BASE}elite/`,
+  products: PRODUCTS_HUB,
+  productsMain: PRODUCT_BASE,
   productsUtilities: `${PRODUCT_BASE}utilities/`,
   faq: '/faq/',
   terms: '/terms/',
@@ -59,11 +59,11 @@ export function blogPostPath(slug: string): string {
   return `/blog/${slug}/`;
 }
 
-/** @deprecated Use productPath — cheat tier pages live under products. */
 export function cheatPath(slug: string): string {
   return productPath(slug);
 }
 
 export function productPath(slug: string): string {
+  if (!slug || slug === 'main') return PRODUCT_BASE;
   return `${PRODUCT_BASE}${slug}/`;
 }

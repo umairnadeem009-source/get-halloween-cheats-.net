@@ -109,6 +109,7 @@ export interface Translations {
     modes: string[];
     metrics: { label: string; strong: string }[];
   };
+  productQuickStats: { label: string; strong: string }[];
   features: {
     eyebrow: string;
     title: string;

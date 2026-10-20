@@ -1,6 +1,7 @@
 ---
 import type { ProductPage } from '../../data/products';
 import SectionHeader from '../SectionHeader.astro';
+import BuyNowButtonLabel from '../BuyNowButtonLabel.astro';
 import Icon from '../icons/Icon.astro';
 import { Button } from '@/components/starwind/button';
 import { Badge } from '@/components/starwind/badge';
@@ -47,9 +48,8 @@ const { product } = Astro.props;
         All modules
         <Icon name="chevronDown" size={16} />
       </Button>
-      <Button as="a" href={product.buyUrl} variant="primary" size="sm" class="rounded-full">
-        Buy now
-        <Icon name="arrowRight" size={16} />
+      <Button as="a" href={product.buyUrl} variant="primary" size="sm" class="buy-now-btn rounded-full">
+        <BuyNowButtonLabel iconSize={16} />
       </Button>
     </div>
   </div>

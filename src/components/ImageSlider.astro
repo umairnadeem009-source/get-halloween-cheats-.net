@@ -1,13 +1,7 @@
 ---
 import ResponsiveImage from './ResponsiveImage.astro';
 import { HERO_IMAGE_SIZES, HERO_IMAGE_WIDTHS } from '../utils/responsiveImage';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/starwind/carousel';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/starwind/carousel';
 
 interface Slide {
   src: string;
@@ -74,12 +68,6 @@ const imageWidths = isHero ? HERO_IMAGE_WIDTHS : undefined;
         </CarouselItem>
       ))}
     </CarouselContent>
-    {!isHero && images.length > 1 && (
-      <>
-        <CarouselPrevious class="left-2" />
-        <CarouselNext class="right-2" />
-      </>
-    )}
   </Carousel>
   {isHero && images.length > 1 && (
     <div

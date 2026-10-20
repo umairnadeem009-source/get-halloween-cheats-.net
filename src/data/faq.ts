@@ -1,4 +1,5 @@
 import type { IconName } from '../components/icons/types';
+import { PRODUCT_BASE } from '../config/site';
 import { normalizeInternalPath, productPath, ROUTES } from '../utils/path';
 
 export type FaqTopic =
@@ -29,13 +30,12 @@ function link(text: string, href: string): string {
   return `<a href="${normalizeInternalPath(href)}">${text}</a>`;
 }
 
-const elite = link('Fortnite Elite', productPath('elite'));
-const lite = link('Lite tier (ESP wallhack & ESP)', ROUTES.products);
-const pro = link('Pro tier (scripts included)', ROUTES.products);
-const productsHub = link('Fortnite products', ROUTES.products);
+const mainSuite = link('Aion 2 Private Cheats', PRODUCT_BASE);
+const utilitiesHub = link('utilities compare page', `${PRODUCT_BASE}utilities/`);
+const productsHub = link('Aion 2 products', ROUTES.products);
 const hwid = link('HWID Spoofer', productPath('hwid-spoofer'));
-const ugc = link('UGC', productPath('ugc'));
-const skin = link('Skin Changer', productPath('unlock-all'));
+const ugc = link('UGC tool', productPath('game-accounts'));
+const skin = link('Skin Changer', productPath('skin-changer'));
 const faqPage = link('full FAQ', ROUTES.faq);
 const blog = link('blog guides', ROUTES.blog);
 
@@ -44,29 +44,29 @@ export const siteFaqs: SiteFaqItem[] = [
     id: 'status',
     topic: 'setup',
     icon: 'faqStatus',
-    q: 'Where do I check if Fortnite cheats are online?',
-    a: a('The live status banner is on fortnite-cheats.com and in the Discord #status channel. Always check after a Fortnite or EAC update.'),
+    q: 'Where do I check if Aion 2 cheats are online?',
+    a: a('The live status banner is on getaion2cheats.net and in the Discord #status channel. Always check after a Aion 2 or anti-cheat update.'),
   },
   {
     id: 'after-buy',
     topic: 'setup',
     icon: 'faqAfterBuy',
     q: 'What happens after I buy?',
-    a: a('Your portal unlocks the loader, setup guide and config library via our secure checkout. Follow the guide before launching Fortnite.'),
+    a: a('Your portal unlocks the loader, setup guide and config library via our secure checkout. Follow the guide before launching Aion 2.'),
   },
   {
     id: 'ban-risk',
     topic: 'safety',
     icon: 'faqBanRisk',
-    q: 'Can I get banned using third-party fortnite cheats?',
-    a: a('Yes—any modification carries risk. EAC and report systems evolve. Read current status and accept the risk before use.'),
+    q: 'Can I get banned using third-party Aion 2 cheats?',
+    a: a('Yes—any modification carries risk. anti-cheat and report systems evolve. Read current status and accept the risk before use.'),
   },
   {
     id: 'platforms',
     topic: 'setup',
     icon: 'faqPlatforms',
     q: 'Which platforms are supported?',
-    a: a('Fortnite via Epic Games Launcher on Windows 10/11 64-bit only. macOS and Linux are not supported.'),
+    a: a('Aion 2 via Steam or PURPLE Launcher on Windows 10/11 64-bit only. macOS and Linux are not supported.'),
   },
   {
     id: 'license-move',
@@ -86,60 +86,60 @@ export const siteFaqs: SiteFaqItem[] = [
     id: 'what-is-esp',
     topic: 'esp',
     icon: 'faqWhatIsEsp',
-    q: 'What is Fortnite ESP wallhack / ESP?',
-    a: `ESP wallhack and player ESP show enemy positions, chests, loot and POI camps through storm circle. ${lite} covers awareness overlays. ${pro} and ${elite} add script modules on top.`,
-    scopes: ['lite', 'pro', 'elite'],
+    q: 'What is Aion 2 ESP wallhack / ESP?',
+    a: `Player and world ESP show nearby Daevas, bosses, gathering nodes, portals, and flight targets on the ${mainSuite} overlay. Enable only what you can read during combat.`,
+    scopes: ['main'],
   },
   {
     id: 'esp-vs-scripts',
     topic: 'esp',
     icon: 'faqEspVsScripts',
-    q: 'What is the difference between ESP wallhack and aimbot?',
-    a: `ESP wallhack and ESP are information overlays—they do not cast abilities. Aimbot, Smooth Aim and Sticky Aim are aimbot on ${pro} and ${elite}. You can run awareness-only on ${lite}.`,
+    q: 'What is the difference between ESP and soft aim?',
+    a: `ESP is read-only overlay information. Optional soft aim on ${mainSuite} assists targeting—you can leave aim modules off and run ESP plus radar only.`,
   },
   {
     id: 'which-tier-esp',
     topic: 'plans',
     icon: 'faqWhichTierEsp',
-    q: 'Which tier do I need for ESP wallhack only?',
-    a: `${lite} is awareness only: player ESP, chest locator, loot timers and radar hack. ${pro} adds aimbot. ${elite} adds bots, kill steal and Skin Changer.`,
-    scopes: ['lite'],
+    q: 'Can I use the suite for ESP only?',
+    a: `Yes. ${mainSuite} lets you enable player ESP, 2D radar, node markers, and flight readouts without turning on soft aim. Save a profile after tuning distance caps.`,
+    scopes: ['main'],
   },
   {
     id: 'which-tier-scripts',
     topic: 'scripts',
     icon: 'faqWhichTierScripts',
-    q: 'Which tier includes Aimbot?',
-    a: `${pro} ships Aimbot, Smooth Aim, Sticky Aim and Hotkey macros. ${elite} includes everything in Pro plus Loot Assist and Auto Finish. ${lite} has no aimbot automation.`,
-    scopes: ['pro'],
+    q: 'Does the private suite include soft aim?',
+    a: `Yes—${mainSuite} lists optional soft aim with FOV, smoothness, visible check, and bone selection. Start conservative before open-world or PvP.`,
+    scopes: ['main'],
   },
   {
     id: 'rank-lite-vs-pro',
     topic: 'plans',
     icon: 'faqRankTiers',
-    q: 'How do you rank Lite vs Pro vs Elite?',
-    a: `Map awareness only → ${lite}. Ranked gunfights with aimbot → ${pro}. Full bot suite and priority patches → ${elite}. Compare on each cheat page or the ${faqPage}.`,
+    q: 'How do weekly, monthly, and lifetime plans differ?',
+    a: `All three unlock the same ${mainSuite} modules—only access length changes ($15 weekly, $35 monthly, $150 lifetime USD). Pick duration at checkout on ${mainSuite}.`,
   },
   {
     id: 'elite-slots',
     topic: 'plans',
     icon: 'faqEliteSlots',
-    q: 'Why is Elite limited slots?',
-    a: `Elite is a private build with direct dev support and priority patch delivery. Slot caps keep patch cycles fast. Check the status banner before checkout.`,
-    scopes: ['elite'],
+    q: 'Are utilities included with the private suite?',
+    a: `${hwid}, ${ugc}, and ${skin} are separate utilities with their own checkout. Use the ${utilitiesHub} to choose the right tool.`,
+    scopes: ['main'],
   },
   {
     id: 'stream-proof',
     topic: 'esp',
     icon: 'faqStreamProof',
     q: 'Can OBS capture my overlay?',
-    a: `Stream-proof mode on ${lite}, ${pro} and ${elite} hides overlays from OBS and Discord share. Test a local recording before going live.`,
+    a: `Stream-proof mode on ${mainSuite} hides overlays from OBS and Discord capture in supported setups. Record a local test before going live.`,
   },
   {
     id: 'undetected',
     topic: 'safety',
     icon: 'faqUndetected',
-    q: 'Are undetected Fortnite cheats guaranteed?',
+    q: 'Are undetected Aion 2 cheats guaranteed?',
     a: a('No. Undetected is current status on the product page—not a permanent guarantee. Stop if the build shows updating, testing, or detected.'),
   },
   {
@@ -147,45 +147,45 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'safety',
     icon: 'faqEspSafer',
     q: 'Is ESP wallhack safer than aimbot?',
-    a: a('ESP is quieter in replay than obvious bot patterns, but it is still a cheat. EAC does not ignore overlays because you left aimbot off.'),
+    a: a('ESP is quieter in replay than obvious bot patterns, but it is still a cheat. anti-cheat does not ignore overlays because you left aimbot off.'),
   },
   {
     id: 'hwid-when',
     topic: 'products',
     icon: 'faqHwidWhen',
     q: 'When do I need the HWID Spoofer?',
-    a: `Use ${hwid} when fresh Epic accounts fail instantly on one PC but work elsewhere—hardware enforcement. Not for account-only EAC cases; see ${ugc} instead.`,
+    a: `Use ${hwid} when fresh Aion 2 accounts fail instantly on one PC but work elsewhere—hardware enforcement. Not for account-only cases; see ${ugc} instead.`,
     scopes: ['hwid-spoofer'],
   },
   {
     id: 'ugc-what',
     topic: 'products',
     icon: 'faqUgcWhat',
-    q: 'What is UGC?',
-    a: `${ugc} (Unban & Governance Control) is an appeal workspace for Epic account restrictions and EAC bans—custom workflows and case tracking, not a guaranteed unban service.`,
+    q: 'What is the Aion 2 UGC tool?',
+    a: `${ugc} detects restriction types, verifies live status, and runs supported remediation workflows where authorized access exists—not a guaranteed unban service.`,
     scopes: ['ugc'],
   },
   {
     id: 'skin-changer',
     topic: 'products',
     icon: 'faqSkinChanger',
-    q: 'Does Skin Changer modify my Epic locker?',
-    a: `${skin} previews cosmetics locally on your client. Other players see your real inventory. Included with ${elite}; available standalone for cosmetic preview only.`,
-    scopes: ['unlock-all'],
+    q: 'Does Skin Changer modify my Aion 2 wardrobe for other players?',
+    a: `${skin} previews supported cosmetics locally on your client. Other players still see your real inventory. Buy it standalone on the Skin Changer product page.`,
+    scopes: ['skin-changer'],
   },
   {
     id: 'external-loader',
     topic: 'products',
     icon: 'faqExternalLoader',
-    q: 'Is the loader injected into the Epic Games folder?',
-    a: `Fortnite Cheats runs external with cloud config sync—no files injected into the Fortnite directory. EAC risk still applies. See ${productsHub}.`,
+    q: 'Is the loader injected into the Steam or PURPLE folder?',
+    a: `Aion 2 Cheats runs external with cloud config sync—no files injected into the Aion 2 directory. anti-cheat risk still applies. See ${productsHub}.`,
   },
   {
     id: 'blog-vs-cheats',
     topic: 'blog',
     icon: 'faqBlogVsCheats',
-    q: 'Are blog cheat codes the same as ranked cheats?',
-    a: `No. Blog articles about Epic console commands apply only in custom lobbies with cheats enabled. Ranked fortnite cheats are separate products—see ${lite}, ${pro} and ${elite}.`,
+    q: 'Are blog dev-console tips the same as the private suite?',
+    a: `No. Developer-console articles cover practice instances only. Live PvP overlays come from ${mainSuite} and utilities on ${productsHub}.`,
   },
   {
     id: 'blog-setup',
@@ -205,69 +205,69 @@ export const siteFaqs: SiteFaqItem[] = [
     id: 'who-lite',
     topic: 'plans',
     icon: 'faqWhoLite',
-    q: 'Who should stay on Lite?',
-    a: `Players who only want map awareness—ESP, chests, loot—and will not touch aimbot automation. If you keep enabling combo aimbot, buy ${pro} instead.`,
-    scopes: ['lite'],
+    q: 'Who should pick the weekly plan?',
+    a: `Try the $15 weekly pass if you are testing compatibility or returning after a patch. Same ${mainSuite} modules as monthly and lifetime.`,
+    scopes: ['main'],
   },
   {
     id: 'who-pro',
     topic: 'plans',
     icon: 'faqWhoPro',
-    q: 'Who should buy Pro?',
-    a: `Ranked players who want Aimbot, Smooth Aim and Hotkey macros with ESP wallhack included. Pro is the most popular tier at fortnite-cheats.com.`,
-    scopes: ['pro'],
+    q: 'Who should pick the monthly plan?',
+    a: `Most players choose the $35 monthly plan for ongoing access to ${mainSuite} ESP, radar, and optional soft aim on getaion2cheats.net.`,
+    scopes: ['main'],
   },
   {
     id: 'who-elite',
     topic: 'plans',
     icon: 'faqWhoElite',
-    q: 'Who should buy Elite?',
-    a: `Operators who want Loot Assist, Auto Finish, Skin Changer and priority patch delivery when slots are open.`,
-    scopes: ['elite'],
+    q: 'Who should pick lifetime?',
+    a: `Lifetime ($150 USD) fits long-term main characters when you accept patch risk and want one-time checkout for ${mainSuite}.`,
+    scopes: ['main'],
   },
   {
     id: 'eac-update',
     topic: 'safety',
     icon: 'faqEacUpdate',
-    q: 'What should I do after a EAC update?',
-    a: a('Check fortnite-cheats.com status and Discord #status. Do not launch until the banner shows online. Load conservative presets after any patch.'),
+    q: 'What should I do after a anti-cheat update?',
+    a: a('Check getaion2cheats.net status and Discord #status. Do not launch until the banner shows online. Load conservative presets after any patch.'),
   },
   {
     id: 'discord-help',
     topic: 'setup',
     icon: 'faqDiscordHelp',
     q: 'How do I get install help?',
-    a: a('Open Discord after purchase with your order email, Windows version and Fortnite client build. Staff walk through loader setup live.'),
+    a: a('Open Discord after purchase with your order email, Windows version and Aion 2 client build. Staff walk through loader setup live.'),
   },
   {
     id: 'zero-build-ranked',
     topic: 'plans',
     icon: 'faqZoomRanked',
-    q: 'Do tiers work in Zero Build and ranked?',
-    a: `Yes—${lite}, ${pro} and ${elite} include Zero Build and ranked presets in the portal. Tune distance caps and script delay before your first queue.`,
+    q: 'Do modules work in open world and instances?',
+    a: `Yes—${mainSuite} profiles apply in open world, PvP, and instances where modules are supported. Tune ESP distance and soft aim before faction fights.`,
   },
   {
     id: 'zoom-hack',
     topic: 'esp',
     icon: 'faqZoomHack',
-    q: 'Which tier includes radar hack?',
-    a: `Radar ships on ${lite} and carries through ${pro} and ${elite}. Mini-radar helps zone awareness without guessing rotates.`,
-    scopes: ['lite'],
+    q: 'Does the suite include 2D radar?',
+    a: `2D radar ships on ${mainSuite} beside ESP so you can track nearby players, bosses, and nodes without covering the whole screen.`,
+    scopes: ['main'],
   },
   {
     id: 'auto-farm',
     topic: 'scripts',
     icon: 'faqAutoFarm',
-    q: 'Which tier includes Loot Assist?',
-    a: `Loot Assist, Rotation Assist AI and Auto loadout manager are ${elite} only. ${pro} covers combat aimbot without bot farming.`,
-    scopes: ['elite'],
+    q: 'Does the suite include gathering node ESP?',
+    a: `Node and material ESP is part of ${mainSuite}—filter ore, herbs, and chests with distance caps. No separate farming bot is listed.`,
+    scopes: ['main'],
   },
   {
     id: 'private-cheats',
     topic: 'safety',
     icon: 'faqPrivateCheats',
-    q: 'What are private Fortnite cheats?',
-    a: a('Private means per-user keys and maintained builds—not public zip packs. Fortnite Cheats ships portal delivery for ESP, aimbot and ESP wallhack tiers.'),
+    q: 'What are private Aion 2 cheats?',
+    a: a('Private means per-user keys and maintained builds—not public zip packs. getaion2cheats.net delivers the loader and configs through your portal after checkout.'),
   },
   {
     id: 'faq-more',
@@ -291,7 +291,7 @@ export function getAllFaqs(): SiteFaqItem[] {
 /** Shared FAQ block copy + filters (home, /faq/, products, blog). */
 export const SITE_FAQ_SECTION_COPY = {
   eyebrow: 'All topics',
-  title: 'Fortnite cheats FAQ',
+  title: 'Aion 2 cheats FAQ',
   subtitle: 'Filter by cheat plans, ESP wallhack, aimbot, products, setup and guides.',
 } as const;
 
@@ -309,7 +309,7 @@ export const SITE_FAQ_FILTER_TOPICS: FaqTopic[] = [
 /** Section copy when FAQ list is scoped to the current page (not /faq/). */
 export const CONTEXTUAL_FAQ_SECTION_COPY = {
   eyebrow: 'Cheat FAQ',
-  title: 'Fortnite cheats questions',
+  title: 'Aion 2 cheats questions',
   subtitle: 'Straight answers on aimbot, ESP, bans and setup — see the full FAQ for every topic.',
 } as const;
 
@@ -322,7 +322,7 @@ export function faqFilterTopicsForItems(items: SiteFaqItem[]): FaqTopic[] {
   return topics;
 }
 
-export function getProductFaqs(slug: string, kind: 'tier' | 'utility'): SiteFaqItem[] {
+export function getProductFaqs(slug: string, kind: 'main' | 'utility'): SiteFaqItem[] {
   const general = siteFaqs.filter(
     (f) =>
       !f.scopes &&
@@ -334,7 +334,7 @@ export function getProductFaqs(slug: string, kind: 'tier' | 'utility'): SiteFaqI
   );
 
   const combined =
-    kind === 'tier'
+    kind === 'main'
       ? [...scoped, ...tierCompare, ...general.slice(0, 8)]
       : [...scoped, ...general.slice(0, 6)];
 
@@ -352,15 +352,15 @@ const blogTopicFaqs: Record<string, SiteFaqItem[]> = {
       id: 'blog-guide-start',
       topic: 'blog',
       icon: 'faqBlogGuideStart',
-      q: 'Should I use console cheat codes in ranked?',
-      a: a('No. Creative lobby cheat codes only work in custom games with cheats enabled. Ranked requires separate fortnite cheats from fortnite-cheats.com tiers.'),
+      q: 'Should I use dev-console codes in live PvP?',
+      a: a('No. Developer-console commands only work in practice instances with cheats enabled. Live overlays require the private suite from getaion2cheats.net.'),
     },
     {
       id: 'blog-guide-tier',
       topic: 'blog',
       icon: 'faqBlogGuideTier',
-      q: 'Which tier matches this guide?',
-      a: `Awareness guides → ${lite}. Script and combo guides → ${pro}. Bot and kill-steal topics → ${elite}.`,
+      q: 'Which product matches this guide?',
+      a: `ESP and radar guides → ${mainSuite}. Recovery topics → ${hwid} or ${ugc}. Cosmetic previews → ${skin}.`,
     },
     {
       id: 'blog-guide-status',
@@ -382,8 +382,8 @@ const blogTopicFaqs: Record<string, SiteFaqItem[]> = {
       id: 'blog-setup-lobby',
       topic: 'blog',
       icon: 'faqBlogSetupLobby',
-      q: 'Should I test in a lobby first?',
-      a: a('Yes. Load conservative presets in a lobby or Zero Build before ranked. Tune script delay and ESP distance caps over several sessions.'),
+      q: 'Should I test in a quiet zone first?',
+      a: a('Yes. Load conservative presets in a practice instance or quiet open-world area before PvP. Tune soft aim and ESP distance caps over several sessions.'),
     },
   ],
   Security: [
@@ -403,7 +403,7 @@ const defaultBlogFaqs: SiteFaqItem[] = [
     topic: 'blog',
     icon: 'faqBlogDefault1',
     q: 'Are blog guides official product documentation?',
-    a: `Articles explain workflows and link to ${lite}, ${pro}, ${elite} and ${productsHub}. Feature lists on product pages are authoritative for checkout.`,
+    a: `Articles explain workflows and link to ${mainSuite}, utilities, and ${productsHub}. Feature lists on product pages are authoritative for checkout.`,
   },
   {
     id: 'blog-default-2',
@@ -417,7 +417,7 @@ const defaultBlogFaqs: SiteFaqItem[] = [
     topic: 'blog',
     icon: 'faqBlogDefault3',
     q: 'Will settings in this article work next patch?',
-    a: a('Re-check status after every Fortnite update. Portal presets update with patch notes—reload configs instead of copying old sliders.'),
+    a: a('Re-check status after every Aion 2 update. Portal presets update with patch notes—reload configs instead of copying old sliders.'),
   },
 ];
 
@@ -430,8 +430,8 @@ export function getBlogFaqs(tag: string, slug: string): SiteFaqItem[] {
       id: 'blog-slug-esp',
       topic: 'esp',
       icon: 'faqBlogSlugEsp',
-      q: 'Which tier covers ESP wallhack from this article?',
-      a: `${lite} includes player ESP, chest locator and loot timers. ${pro} adds combat aimbot on the same overlay stack.`,
+      q: 'Which product covers ESP from this article?',
+      a: `${mainSuite} includes player ESP, gathering nodes, world markers, and 2D radar on one overlay stack.`,
     });
   }
   if (slug.includes('script') || slug.includes('combo') || slug.includes('auto-combo')) {
@@ -439,8 +439,8 @@ export function getBlogFaqs(tag: string, slug: string): SiteFaqItem[] {
       id: 'blog-slug-scripts',
       topic: 'scripts',
       icon: 'faqBlogSlugScripts',
-      q: 'Which tier includes the aimbot in this article?',
-      a: `${pro} and ${elite} ship Aimbot and related modules. ${lite} is ESP wallhack only.`,
+      q: 'Which product includes soft aim from this article?',
+      a: `Optional soft aim modules are listed on ${mainSuite}. You can disable aim features and run ESP-only profiles.`,
     });
   }
   if (slug.includes('hwid') || slug.includes('ban') || slug.includes('eac')) {
@@ -448,7 +448,7 @@ export function getBlogFaqs(tag: string, slug: string): SiteFaqItem[] {
       id: 'blog-slug-hwid',
       topic: 'products',
       icon: 'faqBlogSlugHwid',
-      q: 'Does this article replace HWID or UGC products?',
+      q: 'Does this article replace HWID or UGC tool products?',
       a: `Recovery guides complement ${hwid} and ${ugc}—read product pages for workflow scope and realistic outcomes.`,
     });
   }
@@ -456,25 +456,3 @@ export function getBlogFaqs(tag: string, slug: string): SiteFaqItem[] {
   return [...slugHints, ...topicFaqs, ...defaultBlogFaqs].slice(0, 8);
 }
 
-export const compareRows = [
-  { feature: 'Player ESP & player boxes', icon: 'comparePlayerEsp' as const, lite: true, pro: true, elite: true },
-  { feature: 'Chest & loot locator', icon: 'compareWardLocator' as const, lite: true, pro: true, elite: true },
-  { feature: 'Loot spawn timers', icon: 'compareRuneTimer' as const, lite: true, pro: true, elite: true },
-  { feature: 'Radar', icon: 'compareZoomHack' as const, lite: true, pro: true, elite: true },
-  { feature: 'Streamproof overlay', icon: 'compareStreamproof' as const, lite: true, pro: true, elite: true },
-  { feature: 'MiniESP wallhack overlay', icon: 'compareRadarHack' as const, lite: true, pro: true, elite: true },
-  { feature: 'Aimbot', icon: 'compareAutoCombo' as const, lite: false, pro: true, elite: true },
-  { feature: 'Smooth Aim & Sticky Aim', icon: 'compareSmoothAim' as const, lite: false, pro: true, elite: true },
-  { feature: 'Bone Priority', icon: 'compareTargetSelector' as const, lite: false, pro: true, elite: true },
-  { feature: 'Hotkey macros (heals/shields)', icon: 'compareHotkeyMacros' as const, lite: false, pro: true, elite: true },
-  { feature: 'FOV radius drawing', icon: 'compareAbilityRadius' as const, lite: false, pro: true, elite: true },
-  { feature: 'Smoke alert integration', icon: 'compareSmokeAlert' as const, lite: false, pro: true, elite: true },
-  { feature: 'Loot Assist', icon: 'compareAutoFarm' as const, lite: false, pro: false, elite: true },
-  { feature: 'Auto Finish', icon: 'compareAutoKillSteal' as const, lite: false, pro: false, elite: true },
-  { feature: 'Auto Shield Break', icon: 'compareAutoShieldBreak' as const, lite: false, pro: false, elite: true },
-  { feature: 'Full ESP wallhack suite', icon: 'compareFullMapHack' as const, lite: false, pro: false, elite: true },
-  { feature: 'Skin Changer (Unlock All)', icon: 'compareSkinChanger' as const, lite: false, pro: false, elite: true },
-  { feature: 'Priority patch queue', icon: 'comparePriorityPatch' as const, lite: false, pro: false, elite: true },
-  { feature: 'Direct dev Discord support', icon: 'compareDevSupport' as const, lite: false, pro: false, elite: true },
-  { feature: 'Cloud config backup', icon: 'compareCloudBackup' as const, lite: true, pro: true, elite: true },
-];

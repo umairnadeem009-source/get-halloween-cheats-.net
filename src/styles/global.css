@@ -237,7 +237,7 @@ html.dark #why-us .why-compare-other-card :hover .icon-app {
 
 html.dark .text-primary.icon-app,
 html.dark .text-primary .icon-app,
-html.dark [class*='text-primary'] > .icon-app,
+html.dark [class~='text-primary'] > .icon-app,
 html.dark .icon-app.text-primary {
   color: #2d6ee2 !important;
 }
@@ -318,10 +318,6 @@ html.dark a.nav-link[data-nav-link]:hover .icon-app {
 
 .hero-status-marquee-track {
   animation: hero-status-marquee 55s linear infinite;
-}
-
-.hero-status-marquee:hover .hero-status-marquee-track {
-  animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -827,6 +823,24 @@ html.dark .features-bento > article {
   background-image: none !important;
 }
 
+
+/* Buy now — label left, cart icon right on full-width CTAs */
+.buy-now-btn {
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.buy-now-btn__text {
+  min-width: 0;
+  text-align: left;
+}
+
+.buy-now-btn__icon,
+.buy-now-btn svg {
+  flex-shrink: 0;
+  color: currentColor !important;
+  opacity: 1;
+}
 
 @keyframes hero-embla-progress {
   from {

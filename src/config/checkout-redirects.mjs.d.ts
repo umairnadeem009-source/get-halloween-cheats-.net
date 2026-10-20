@@ -1,8 +1,8 @@
 export declare const CHECKOUT_URLS: {
-  readonly fortnite: string;
+  readonly aion2Cheats: string;
   readonly skinChanger: string;
   readonly hwidSpoofer: string;
-  readonly ugc: string;
+  readonly gameAccounts: string;
 };
 
 export declare const CHECKOUT_PATH_REDIRECTS: ReadonlyMap<string, string>;

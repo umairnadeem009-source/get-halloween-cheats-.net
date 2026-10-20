@@ -3,11 +3,13 @@ import type { ProductPage } from '../../data/products';
 import {
   checkoutUrlWithPlan,
   formatPlanPrice,
+  getDefaultPlan,
   getProductPlans,
 } from '../../data/productPricing';
-import Icon from '../icons/Icon.astro';
+import BuyNowButtonLabel from '../BuyNowButtonLabel.astro';
 import ProductIconWell from './ProductIconWell.astro';
 import { Button } from '@/components/starwind/button';
+import { Badge } from '@/components/starwind/badge';
 import { RadioGroup, RadioGroupItem } from '@/components/starwind/radio-group';
 
 interface Props {
@@ -16,8 +18,9 @@ interface Props {
 
 const { product } = Astro.props;
 const plans = getProductPlans(product.slug);
-const defaultPlan = plans[0]!;
+const defaultPlan = getDefaultPlan(plans);
 const isSinglePlan = plans.length === 1;
+const showSelectPlanHeader = !isSinglePlan;
 ---
 
 <aside
@@ -28,31 +31,54 @@ const isSinglePlan = plans.length === 1;
   data-plans={JSON.stringify(plans)}
 >
   <div class="overflow-hidden rounded-2xl border border-primary/35 bg-card shadow-md ring-1 ring-primary/15">
-    <div class="card-title-band flex items-center justify-start gap-3 px-5 py-4 text-left">
-      <ProductIconWell name="acqPackage" iconSize={20} class="bg-primary/15" />
-      <div class="min-w-0 text-left">
-        <p class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Checkout</p>
-        <h2 id={`checkout-${product.slug}`} class="text-base font-semibold leading-snug">
-          {isSinglePlan ? 'Purchase option' : 'Select subscription'}
-        </h2>
-      </div>
-    </div>
+    {
+      showSelectPlanHeader ? (
+        <div class="border-b border-border px-5 py-4">
+          <p
+            id={`checkout-${product.slug}`}
+            class="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground"
+          >
+            Select plan
+          </p>
+        </div>
+      ) : (
+        <div class="card-title-band flex items-center justify-start gap-3 px-5 py-4 text-left">
+          <ProductIconWell name="acqPackage" iconSize={20} class="bg-primary/15" />
+          <div class="min-w-0 text-left">
+            <p class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Checkout</p>
+            <h2 id={`checkout-${product.slug}`} class="text-base font-semibold leading-snug">
+              {isSinglePlan ? 'Purchase option' : 'Select subscription'}
+            </h2>
+          </div>
+        </div>
+      )
+    }
 
     <div class="space-y-5 px-5 pb-5 pt-5">
       <RadioGroup
         defaultValue={defaultPlan.id}
         name={`plan-${product.slug}`}
-        legend={isSinglePlan ? 'Purchase option' : 'Select subscription'}
-        class="flex flex-col gap-2"
+        legend={isSinglePlan ? 'Purchase option' : 'Select plan'}
+        class="flex flex-col gap-2.5"
       >
         {
           plans.map((plan) => (
             <label class="flex cursor-pointer items-center justify-between gap-3 rounded-xl border border-border bg-background p-3.5 transition-colors has-data-checked:border-primary has-data-checked:bg-primary/10">
               <span class="flex min-w-0 items-center gap-3">
                 <RadioGroupItem value={plan.id} variant="primary" />
-                <span class="text-sm font-medium">{plan.label}</span>
+                <span class="min-w-0">
+                  <span class="flex flex-wrap items-center gap-2">
+                    <span class="text-sm font-semibold text-foreground">{plan.label}</span>
+                    {plan.popular && (
+                      <Badge variant="primary" class="px-2 py-0 text-[10px] font-bold uppercase tracking-wide">
+                        Popular
+                      </Badge>
+                    )}
+                  </span>
+                  <span class="mt-0.5 block text-xs text-muted-foreground">{plan.duration}</span>
+                </span>
               </span>
-              <span class="shrink-0 text-sm font-semibold tabular-nums text-foreground">
+              <span class="shrink-0 text-sm font-semibold tabular-nums text-foreground has-data-checked:text-primary">
                 {formatPlanPrice(plan.priceUsd)}
               </span>
             </label>
@@ -75,11 +101,10 @@ const isSinglePlan = plans.length === 1;
         href={checkoutUrlWithPlan(product.buyUrl, defaultPlan.id)}
         variant="primary"
         size="lg"
-        class="w-full rounded-xl"
+        class="buy-now-btn w-full rounded-xl"
         data-checkout-buy
       >
-        Buy now
-        <Icon name="arrowRight" size={17} />
+        <BuyNowButtonLabel iconSize={17} />
       </Button>
     </div>
   </div>
@@ -95,7 +120,7 @@ const isSinglePlan = plans.length === 1;
       const plansRaw = root.getAttribute('data-plans');
       if (!buyUrl || !plansRaw) return;
 
-      type Plan = { id: string; priceUsd: number; priceNote: string };
+      type Plan = { id: string; priceUsd: number; priceNote: string; popular?: boolean };
       let plans: Plan[] = [];
       try {
         plans = JSON.parse(plansRaw) as Plan[];
@@ -109,12 +134,14 @@ const isSinglePlan = plans.length === 1;
       const buyBtn = root.querySelector<HTMLAnchorElement>('[data-checkout-buy]');
       if (!group || !totalEl || !noteEl || !buyBtn) return;
 
+      const formatUsd = (usd: number) => `$${usd.toFixed(2)}`;
+
       const sync = () => {
-        const planId = group.getAttribute('data-value') ?? plans[0]?.id;
+        const planId = group.getAttribute('data-value') ?? plans.find((p) => p.popular)?.id ?? plans[0]?.id;
         const plan = plans.find((p) => p.id === planId) ?? plans[0];
         if (!plan) return;
 
-        totalEl.textContent = `$${plan.priceUsd}`;
+        totalEl.textContent = formatUsd(plan.priceUsd);
         noteEl.textContent = plan.priceNote;
         const separator = buyUrl.includes('?') ? '&' : '?';
         buyBtn.href = `${buyUrl}${separator}plan=${plan.id}`;

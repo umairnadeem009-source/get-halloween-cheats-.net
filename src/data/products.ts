@@ -1,5 +1,6 @@
 import { t } from '../i18n';
 import { checkoutForSlug, checkoutPath } from '../config/checkout';
+import { PRODUCT_BASE, PRODUCTS_HUB } from '../config/site';
 import type { IconName } from '../components/icons/types';
 
 export interface ProductSlide {
@@ -32,7 +33,7 @@ export interface SystemRequirement {
 
 export interface ProductPage {
   slug: string;
-  kind: 'tier' | 'utility';
+  kind: 'main' | 'utility';
   badge: string;
   category?: string;
   tier?: string;
@@ -56,62 +57,53 @@ export interface ProductPage {
   relatedBlogSlugs: string[];
 }
 
-/** Guides paired with each product detail page */
+export const MAIN_PRODUCT_SLUG = 'main';
+
 export const productRelatedBlogSlugs: Record<string, string[]> = {
-  lite: ['fortnite-esp-wallhack-setup', 'fortnite-lite-vs-pro', 'fortnite-radar-hack-guide', 'eac-patch-day-checklist'],
-  pro: [
-    'fortnite-aimbot-ranked-guide',
-    'fortnite-aimbot-combat-guide',
-    'fortnite-lite-vs-pro',
-    'fortnite-stream-proof-setup',
-  ],
-  elite: [
-    'fortnite-elite-tier-guide',
-    'fortnite-cheats-features-guide',
-    'fortnite-esp-wallhack-setup',
-    'eac-patch-day-checklist',
-    'how-to-buy-fortnite-cheats-2026',
+  main: [
+    'aion-2-cheats-explained',
+    'aion-2-player-esp-guide',
+    'aion-2-soft-aim-guide',
+    'aion-2-cheat-setup-guide',
   ],
   'hwid-spoofer': [
-    'fortnite-hwid-spoofer-after-ban',
-    'eac-bypass-fortnite-guide',
-    'eac-patch-day-checklist',
-    'fortnite-external-cheat-guide',
+    'aion-2-hwid-spoofer-guide',
+    'fix-anti-cheat-hardware-bans-aion-2',
+    'aion-2-anti-cheat-bypass-explained',
+    'aion-2-cheat-troubleshooting',
   ],
-  ugc: [
-    'eac-bypass-fortnite-guide',
-    'fortnite-hwid-spoofer-after-ban',
-    'how-to-buy-fortnite-cheats-2026',
+  'game-accounts': [
+    'aion-2-game-accounts-recovery',
+    'aion-2-cheats-faq',
+    'aion-2-cheat-setup-guide',
   ],
-  'unlock-all': [
-    'fortnite-skin-changer-guide',
-    'fortnite-cheats-features-guide',
-    'fortnite-stream-proof-setup',
+  'skin-changer': [
+    'aion-2-skin-changer-guide',
+    'aion-2-stream-proof-overlay',
+    'aion-2-safe-configuration-guide',
   ],
 };
-
-const productBase = '/products/fortnite-cheats/';
 
 const defaultAcquisitionSteps: AcquisitionStep[] = [
   {
     num: '01',
-    title: 'Review current status',
-    desc: 'Check the live banner on fortnite-cheats.com and Discord #status before purchase—especially after a Fortnite or EAC update.',
+    title: 'Check compatibility',
+    desc: 'Review current status notes on getaion2cheats.net and Support before purchase—especially after an Aion 2 client patch.',
   },
   {
     num: '02',
-    title: 'Choose your access tier',
-    desc: 'Select Elite fortnite cheats or the utility that matches your goal. Review the feature list before checkout via our secure checkout.',
+    title: 'Choose a plan or utility',
+    desc: 'Pick Monthly or Lifetime for the private suite, or open HWID Spoofer, UGC tool, or Skin Changer if that matches your goal.',
   },
   {
     num: '03',
-    title: 'Contact the team',
-    desc: 'Open Discord and confirm availability, Epic Games platform, and payment details with your order email ready.',
+    title: 'Complete checkout',
+    desc: 'Finish checkout through our secure redirect. Keep your order email for portal access and setup notes.',
   },
   {
     num: '04',
-    title: 'Follow guided setup',
-    desc: 'Use only the operator portal, patch loader, and setup guide. Test in a lobby, load presets, then queue ranked or Zero Build.',
+    title: 'Configure and save a profile',
+    desc: 'Enable only the ESP, radar, and aim options you can read clearly. Save configs before flying into contested zones or PvP.',
   },
 ];
 
@@ -123,360 +115,236 @@ function acquisitionFor(productName: string): ProductAcquisition {
 }
 
 const sharedGoodToKnow =
-  'Fortnite and EAC receive frequent updates. Confirm module availability on the live status panel at fortnite-cheats.com before you purchase or launch. Overlay behavior may differ in lobbies, replays and spectator mode after patches.';
+  'Aion 2 and anti-cheat systems receive frequent updates. Confirm module availability before you purchase or launch. Overlay behavior may differ in cinematics, instances, and spectator views after patches.';
 
 const sharedLimitations =
-  'Third-party software in Fortnite can violate Epic Terms of Service and lead to EAC bans or account action. You use this software at your own risk. Compatibility and availability can change after game, EAC, or Windows updates without notice.';
+  'Third-party software can conflict with published anti-bot measures and may lead to account action. You use this software at your own risk. Compatibility can change after game, anti-cheat, or Windows updates without notice.';
 
-const fortniteSystemRequirements: SystemRequirement[] = [
-  { icon: 'reqWindows', text: 'Supported 64-bit edition of Windows 10 or Windows 11.' },
-  { icon: 'reqEpic', text: 'Current Fortnite client via Epic Games with latest patches applied.' },
-  { icon: 'reqSettings', text: 'Administrator access for loader installation and patch updates.' },
-  { icon: 'reqWifi', text: 'Stable internet connection for portal access and patch delivery.' },
-  { icon: 'reqCpu', text: 'A system that meets Fortnite published hardware requirements.' },
+const aionSystemRequirements: SystemRequirement[] = [
+  { icon: 'reqWindows', text: 'Windows 10 or 11 64-bit with administrator access for loader setup.' },
+  { icon: 'reqEpic', text: 'Global Aion 2 on PC through Steam or PURPLE with current patches applied.' },
+  { icon: 'reqSettings', text: 'Intel or AMD CPU and GPU that meet the game’s published requirements.' },
+  { icon: 'reqWifi', text: 'Stable internet for portal access, updates, and config sync.' },
+  { icon: 'reqCpu', text: 'Optional Cloud DMA or AWS paths may be listed for full functionality—confirm in checkout notes.' },
 ];
-
-type GalleryKey = keyof typeof galleryRaw;
 
 const gameplay = '/images/gameplay';
 
 const galleryRaw = {
-  gpMapHack: {
-    src: `${gameplay}/fortnite-esp-wallhack.png`,
-    alt: 'Fortnite PC ESP wallhack overlay with player boxes, distance tags, and aimbot FOV circle',
-    caption: 'ESP wallhack',
-    captionDesc: 'Player boxes, distance tags and FOV overlay in Fortnite.',
+  gpHeroEsp: {
+    src: `${gameplay}/aion-2-player-esp.png`,
+    alt: 'Aion 2 player ESP overlay with faction-colored nameplates, class tags, and distance readouts',
+    caption: 'Player ESP',
+    captionDesc: 'Faction, class, level, and distance on nearby Daevas.',
   },
   gpScripts: {
-    src: `${gameplay}/fortnite-aimbot-combat.png`,
-    alt: 'Fortnite PC aimbot in combat with FOV circle and green skeleton ESP on an enemy',
-    caption: 'Aimbot',
-    captionDesc: 'Aimbot FOV and skeleton ESP on an enemy player.',
+    src: `${gameplay}/aion-2-aimbot-combat.png`,
+    alt: 'Aion 2 soft aim overlay with FOV circle and skeleton ESP during aerial combat',
+    caption: 'Soft aim',
+    captionDesc: 'Optional aim assist with visible check and bone selection.',
   },
   gpZoomHack: {
-    src: `${gameplay}/fortnite-radar-hack.png`,
-    alt: 'Fortnite radar hack and ESP overlay showing enemy names, health bars, and range markers',
-    caption: 'Radar / ESP',
-    captionDesc: 'Enemy name tags, health and range on radar ESP.',
+    src: `${gameplay}/aion-2-radar-hack.png`,
+    alt: 'Aion 2 2D radar beside ESP showing bosses, nodes, and faction markers',
+    caption: '2D radar',
+    captionDesc: 'Local awareness next to ESP without covering the whole screen.',
   },
   gpSkinChanger: {
-    src: `${gameplay}/fortnite-skin-changer.png`,
-    alt: 'Fortnite chams and skeleton ESP with aim lock during a pier fight on PC',
-    caption: 'Chams / ESP',
-    captionDesc: 'Skeleton ESP and aim lock on a pier fight.',
+    src: `${gameplay}/aion-2-skin-changer.png`,
+    alt: 'Aion 2 cosmetic preview interface with outfit and weapon skin slots',
+    caption: 'Cosmetics',
+    captionDesc: 'Preview supported skins before applying loadouts.',
   },
   gpAutoKill: {
-    src: `${gameplay}/fortnite-auto-aim.png`,
-    alt: 'Fortnite sniper aimbot with green ESP box, weapon label, and scoped FOV circle',
-    caption: 'Sniper aimbot',
-    captionDesc: 'Scoped aimbot with ESP box and weapon label.',
+    src: `${gameplay}/aion-2-auto-aim.png`,
+    alt: 'Aion 2 aim assist reticle with target line and head bone highlight',
+    caption: 'Aim assist',
+    captionDesc: 'Draw FOV, target line, and max aim distance controls.',
   },
   gpFarmBot: {
-    src: `${gameplay}/fortnite-loot-radar.png`,
-    alt: 'Fortnite loot and chest ESP with enemy boxes and distance trackers on the map',
-    caption: 'Loot ESP',
-    captionDesc: 'Loot and enemy ESP with distance trackers.',
-  },
-  gpHeroEsp: {
-    src: `${gameplay}/fortnite-player-esp.png`,
-    alt: 'Fortnite player ESP wallhack showing skeletons, boxes, and distance meters',
-    caption: 'Player ESP',
-    captionDesc: 'Skeletons, boxes and distance meters on players.',
+    src: `${gameplay}/aion-2-loot-radar.png`,
+    alt: 'Aion 2 gathering node ESP highlighting ore, herbs, and chest markers',
+    caption: 'Node ESP',
+    captionDesc: 'Ore, herb, and material filters with distance caps.',
   },
   gpThermal: {
-    src: `${gameplay}/fortnite-thermal-esp.png`,
-    alt: 'Fortnite thermal ESP wallhack with skeleton outlines, HP, and distance readouts',
-    caption: 'Thermal ESP',
-    captionDesc: 'Thermal view with skeleton wallhack, HP and distance.',
+    src: `${gameplay}/aion-2-thermal-esp.png`,
+    alt: 'Aion 2 world boss ESP with elite mob markers and health bars',
+    caption: 'World ESP',
+    captionDesc: 'World and dungeon boss markers with quest objective cues.',
   },
   gpBuildFight: {
-    src: `${gameplay}/fortnite-build-fight-esp.png`,
-    alt: 'Fortnite build-fight ESP wallhack through builds with names, HP bars, and FOV',
-    caption: 'Build fight ESP',
-    captionDesc: 'ESP through builds with names, HP and FOV.',
+    src: `${gameplay}/aion-2-build-fight-esp.png`,
+    alt: 'Aion 2 flight ESP showing aerial targets, altitude, and wing state',
+    caption: 'Flight ESP',
+    captionDesc: 'Aerial targets, glide state, and sky zone highlights.',
   },
   gpArena: {
-    src: `${gameplay}/fortnite-arena-wallhack.png`,
-    alt: 'Fortnite arena wallhack ESP with wireframe players and weapon tags',
-    caption: 'Arena wallhack',
-    captionDesc: 'Wireframe ESP and weapon tags in an arena.',
+    src: `${gameplay}/aion-2-arena-wallhack.png`,
+    alt: 'Aion 2 PvP ESP with Elyos and Asmodian faction filters in open world',
+    caption: 'Faction ESP',
+    captionDesc: 'Elyos, Asmodian, and Balaur filters with party ignore rules.',
   },
   gpSpawn: {
-    src: `${gameplay}/fortnite-spawn-island-esp.png`,
-    alt: 'Fortnite spawn island ESP with skeleton boxes and aimbot reticle overlay',
-    caption: 'Spawn island ESP',
-    captionDesc: 'Skeleton boxes and aimbot reticle on spawn island.',
+    src: `${gameplay}/aion-2-spawn-island-esp.png`,
+    alt: 'Aion 2 portal and instance entrance markers with distance readouts',
+    caption: 'Portal ESP',
+    captionDesc: 'Instance entrances and portal markers for PvE routing.',
   },
   gpLongRange: {
-    src: `${gameplay}/fortnite-long-range-esp.png`,
-    alt: 'Fortnite long-range ESP wallhack with enemy names, health, and weapons through cover',
+    src: `${gameplay}/aion-2-long-range-esp.png`,
+    alt: 'Aion 2 long-range ESP with view direction arrows and out-of-screen indicators',
     caption: 'Long range ESP',
-    captionDesc: 'Long-range enemy names, health and weapons through cover.',
-  },
-  gpAimLock: {
-    src: `${gameplay}/fortnite-aimbot-lock.png`,
-    alt: 'Fortnite aimbot lock with green skeleton ESP, FOV circle, and head-bone priority',
-    caption: 'Aimbot lock',
-    captionDesc: 'Aimbot lock with skeleton ESP and head priority.',
+    captionDesc: 'Max ESP distance, view direction, and off-screen arrows.',
   },
   gpChams: {
-    src: `${gameplay}/fortnite-chams-esp.png`,
-    alt: 'Fortnite chams and skeleton ESP cheat overlay on a wooden pier',
-    caption: 'Chams ESP',
-    captionDesc: 'Chams and skeleton ESP on a wooden pier.',
-  },
-  gpSquad: {
-    src: `${gameplay}/fortnite-squad-esp.png`,
-    alt: 'Fortnite multi-player squad ESP wallhack with boxes, skeletons, and distances',
-    caption: 'Squad ESP',
-    captionDesc: 'Multi-player ESP boxes, skeletons and distances.',
+    src: `${gameplay}/aion-2-chams-esp.png`,
+    alt: 'Aion 2 overlay combat mode hiding world ESP while keeping player readouts',
+    caption: 'Combat mode',
+    captionDesc: 'Hide world ESP during fights while keeping combat readouts.',
   },
   gpCombat: {
-    src: `${gameplay}/fortnite-combat-esp.png`,
-    alt: 'Fortnite combat ESP and aimbot overlay during an open-field fight on PC',
-    caption: 'Combat ESP',
-    captionDesc: 'ESP and aimbot overlay in an open-field fight.',
+    src: `${gameplay}/aion-2-combat-esp.png`,
+    alt: 'Aion 2 combat overlay with stream-proof HUD and custom crosshair',
+    caption: 'Overlay options',
+    captionDesc: 'Stream-proof overlay, custom crosshair, and color sets.',
   },
 };
+
+type GalleryKey = keyof typeof galleryRaw;
 
 function slide(...keys: GalleryKey[]): ProductSlide[] {
   return keys.map((k) => {
     const item = galleryRaw[k];
-    return {
-      src: item.src,
-      alt: item.alt,
-      caption: item.caption,
-      captionDesc: item.captionDesc,
-    };
+    return { src: item.src, alt: item.alt, caption: item.caption, captionDesc: item.captionDesc };
   });
 }
 
-function slugFromHref(href: string): string {
-  const segment = href.replace(productBase, '').replace(/^\//, '').replace(/\/$/, '');
-  return segment || 'fortnite-cheats';
-}
+const skinChangerProductImages: ProductSlide[] = [
+  {
+    src: '/images/products/skin-changer/skin-changer-emblem.png',
+    alt: 'Skin Changer emblem with shield, stars, and crossed weapons',
+    caption: 'Skin Changer',
+    captionDesc: 'Skin library, live preview, loadout manager, and restore tools for supported cosmetics.',
+  },
+];
 
-const tierAbout: Record<string, ProductPage['about']> = {
-  lite: [
+const ugcToolProductImages: ProductSlide[] = [
+  {
+    src: '/images/products/game-accounts/ugc-tool-icon.png',
+    alt: 'Red gear and clock icon representing the Aion 2 UGC tool utility',
+    caption: 'UGC tool',
+    captionDesc: 'Restriction detection, live status checks, and supported recovery workflows.',
+  },
+];
+
+const hwidSpooferProductImages: ProductSlide[] = [
+  {
+    src: '/images/products/hwid-spoofer/phoenix-satano-chip.png',
+    alt: 'Phoenix Satano HWID spoofer branding on a stylized CPU and motherboard',
+    caption: 'Phoenix Satano',
+    captionDesc: 'Hardware-level profile tools for disk and MAC identifiers on Windows PC.',
+  },
+  {
+    src: '/images/products/hwid-spoofer/phoenix-wh-satano-brand.png',
+    alt: 'Phoenix WH-Satano logo on a dark background',
+    caption: 'WH-Satano suite',
+    captionDesc: 'Portal workflow, compatibility scan, and post-spoof verification steps.',
+  },
+  {
+    src: '/images/products/hwid-spoofer/hwid-spoofer-icon.png',
+    alt: 'Red CPU and gear icon representing HWID spoofer system utilities',
+    caption: 'System utility',
+    captionDesc: 'Disk serial tools, MAC rotation, and identifier diff reports after reboot.',
+  },
+];
+
+const mainFullFeatures = [
+  'Soft aim: aim key, FOV, smoothness, bone selection (head / chest / closest)',
+  'Visible check, ignore friendly faction, ignore same party / alliance',
+  'Draw FOV, draw target line, max aim distance',
+  'Player ESP: full / corner boxes, skeleton, head circle, health bar',
+  'Nameplate, class / job, level, faction (Elyos / Asmodian / Balaur)',
+  'Distance, view direction, flying / grounded state, off-screen arrows',
+  'Aerial target ESP, flight path markers, altitude readout',
+  'Glide / wing state, sky contested zone highlights',
+  'NPC / mob ESP, elite markers, world boss ESP, dungeon boss markers',
+  'Quest objective markers, gathering node ESP, ore / herb / material filters',
+  'Chest / loot object ESP, portal / instance entrance markers',
+  '2D radar with faction color coding, boss and node markers, range and zoom',
+  'Stream-proof overlay, combat mode (hide world ESP), custom crosshair',
+  'Custom ESP colors, menu key, panic key, save / load configs',
+];
+
+const mainProduct: ProductPage = {
+  slug: MAIN_PRODUCT_SLUG,
+  kind: 'main',
+  badge: 'Available',
+  tier: 'Private suite',
+  name: 'Aion 2 Private Cheats',
+  title: 'Aion 2 Private Cheats',
+  subtitle: 'Player ESP, flight markers, gathering nodes, radar, and optional soft aim for Windows PC.',
+  desc: 'Private Aion 2 cheats with faction filters, aerial ESP, world boss markers, 2D radar, and configurable soft aim.',
+  features: ['Player ESP', 'Soft aim', 'Flight markers', 'Gathering nodes', '2D radar', 'Saveable configs'],
+  more: mainFullFeatures.length - 6,
+  variant: 'popular',
+  buyUrl: checkoutForSlug('main'),
+  images: slide('gpHeroEsp', 'gpBuildFight', 'gpZoomHack', 'gpScripts'),
+  overview: {
+    title: 'Aion 2 private cheat suite',
+    paragraphs: [
+      'The main suite documents listed overlay tools for NC’s sky-battlefield MMORPG: player ESP, faction filters, flight markers, gathering nodes, 2D radar, and optional soft aim. Compare weekly, monthly, and lifetime plans before checkout.',
+      'Start with conservative ESP and radar ranges, then enable soft aim only after you confirm current compatibility notes. Save profiles so you are not toggling every module each session.',
+    ],
+  },
+  acquisition: acquisitionFor('Aion 2 Private Cheats'),
+  goodToKnow: sharedGoodToKnow,
+  limitations: sharedLimitations,
+  fullFeatures: mainFullFeatures,
+  systemRequirements: aionSystemRequirements,
+  about: [
+    { type: 'h2', text: 'Built for Aion 2 PC' },
     {
       type: 'p',
-      text: 'Fortnite Lite is built for players who want map awareness first. In ranked, knowing enemy positions, chest locations and loot timings wins more fights than raw mechanics—Lite gives you that edge without aimbot automation.',
-    },
-    { type: 'h2', text: 'Ranked-safe by design' },
-    {
-      type: 'p',
-      text: 'Lite skips Aimbot and bot modules entirely. Your gameplay looks natural while ESP, radar hack and loot timers keep you informed. Stream-proof mode hides overlays from OBS capture for content creators.',
+      text: 'Modules are described from the live product listing—ESP, flight markers, nodes, radar, and soft aim—without unverified automation extras. Re-check compatibility after every major client patch.',
     },
   ],
-  pro: [
+  body: [
+    { type: 'h2', text: 'Modules you can inspect before checkout' },
     {
       type: 'p',
-      text: 'Fortnite Pro is the sweet spot for ranked grinders. Aimbot, Smooth Aim and Sticky Aim help you win squad fights without obvious bot patterns—when you tune Smoothness sliders using our portal presets.',
-    },
-    { type: 'h2', text: 'Aimbot + awareness combined' },
-    {
-      type: 'p',
-      text: 'Pro inherits every Lite module and adds Aimbot, Bone Priority, Hotkey macros and FOV and smoothness drawing. You see the fight before it starts and win it with aimbot that stay human at default settings.',
+      text: 'Player ESP covers Elyos, Asmodian, and Balaur targets with class, level, and flying state. World overlays mark bosses, quests, and portals. Radar sits beside ESP so the HUD stays readable.',
     },
   ],
-  elite: [
-    {
-      type: 'p',
-      text: 'Fortnite Elite is the private build for players who want everything—Loot Assist, Auto Finish, Auto Shield Break, Skin Changer, full ESP wallhack and direct developer support. Limited slots keep the build maintainable and patch cycles fast.',
-    },
-    { type: 'h2', text: 'Use Elite responsibly' },
-    {
-      type: 'p',
-      text: 'Elite power demands disciplined profiles. Test in lobbies, start with portal conservative presets, and scale up over days—not minutes. Staff in Discord help Elite users tune before their first ranked queue.',
-    },
-  ],
+  relatedBlogSlugs: productRelatedBlogSlugs.main,
 };
 
-const tierBodies: Record<string, ProductPage['body']> = {
-  lite: [
-    { type: 'h2', text: 'Included modules' },
-    {
-      type: 'p',
-      text: 'Player ESP with distance and name tags, chest and reboot-van locator, loot spawn timers, radar hack, and stream-safe overlay hiding. Config presets for Battle Royale and Zero Build ship in the portal—load before your first queue.',
-    },
-    { type: 'h2', text: 'Upgrade path' },
-    {
-      type: 'p',
-      text: 'Lite license holders can upgrade to Pro or Elite through the portal without losing config backups. Compare tiers on the main product page before checkout via our secure checkout.',
-    },
-  ],
-  pro: [
-    { type: 'h2', text: 'Aimbot and automation' },
-    {
-      type: 'p',
-      text: 'Aimbot, Smooth Aim, Sticky Aim with Prediction, Bone Priority and hotkey macros for heals and mobility. Smoothness sliders tunes cast timing so aimbot stay natural in ranked. Start with portal presets, not max sliders.',
-    },
-    { type: 'h2', text: 'Recommended pairing' },
-    {
-      type: 'p',
-      text: 'Pro is the most popular tier at fortnite-cheats.com—enough firepower for high-rank lobbies without Elite slot limits. Pair with our aimbot guide in the blog before your first ranked session.',
-    },
-  ],
-  elite: [
-    { type: 'h2', text: 'Full bot and finish suite' },
-    {
-      type: 'p',
-      text: 'Loot Assist, Rotation Assist AI, Auto Finish, Auto Shield Break, Skin Changer and full ESP wallhack with smoke alerts. Use lobby testing before ranked—Elite power requires disciplined profiles, not rage settings.',
-    },
-    { type: 'h2', text: 'Availability' },
-    {
-      type: 'p',
-      text: 'Elite shows as limited slots on the status banner. Open a Discord ticket if checkout is gated—staff confirm slot availability before purchase.',
-    },
-  ],
-};
-
-const utilityBodies: Record<string, ProductPage['body']> = {
-  'hwid-spoofer': [
-    { type: 'h2', text: 'When you need it' },
-    {
-      type: 'p',
-      text: 'Use when fresh Epic accounts fail instantly on one PC but work elsewhere—classic HWID enforcement. Do not use for account-only EAC cases; see [UGC](/products/fortnite-cheats/ugc/) instead.',
-    },
-    { type: 'h2', text: 'Full workflow' },
-    {
-      type: 'p',
-      text: 'Restore point, driver cleanup, spoof application, cold reboot, identifier verification, then conservative cheat profile before ranked. Full checklist ships in the portal and in our HWID blog guide.',
-    },
-  ],
-  'ugc': [
-    { type: 'h2', text: 'What UGC covers' },
-    {
-      type: 'p',
-      text: 'UGC (Unban & Governance Control) is an appeal workspace for Epic account restrictions, EAC bans, trade holds and security flags. Build custom workflows, automate dispute steps and track case status from one dashboard—not a guaranteed unban service.',
-    },
-    { type: 'h2', text: 'Realistic expectations' },
-    {
-      type: 'p',
-      text: 'Some EAC bans cannot be reversed. UGC organizes evidence and follow-ups for Epic review. Pair with [HWID Spoofer](/products/fortnite-cheats/hwid-spoofer/) when hardware is flagged, or a new account when reputation is burned.',
-    },
-  ],
-  'unlock-all': [
-    { type: 'h2', text: 'Local preview only' },
-    {
-      type: 'p',
-      text: 'Cosmetics display on your client for testing and content creation. Other players in your lobby see your actual inventory, not preview skins.',
-    },
-    { type: 'h2', text: 'Included with Elite' },
-    {
-      type: 'p',
-      text: 'Skin Changer ships inside the Elite tier. Buy standalone here if you want cosmetic preview without full combat modules.',
-    },
-  ],
-};
-
-const productContent: Record<
-  string,
-  Pick<ProductPage, 'overview' | 'images' | 'fullFeatures' | 'goodToKnow' | 'limitations' | 'systemRequirements'>
-> = {
-  lite: {
-    images: slide('gpHeroEsp', 'gpLongRange', 'gpSquad'),
-    goodToKnow: sharedGoodToKnow,
-    limitations: sharedLimitations,
-    systemRequirements: fortniteSystemRequirements,
-    fullFeatures: [
-      'Player ESP & player boxes',
-      'Chest & loot locator',
-      'POI awareness',
-      'Health & shield tracking',
-      'Mini-radar overlay',
-      'Streamproof overlay mode',
-      'Distance readouts',
-      'Team color filter',
-      'Loot spawn timers',
-      'Radar hack',
-      'Zero Build preset config',
-      'Ranked preset config',
-      'Cloud config backup',
-      'Patch auto-updater',
-    ],
+const utilityProducts: ProductPage[] = [
+  {
+    slug: 'hwid-spoofer',
+    kind: 'utility',
+    badge: 'Available',
+    category: 'System utility',
+    name: 'HWID Spoofer',
+    title: 'Aion 2 HWID Spoofer',
+    subtitle: 'Disk and MAC profile tools when hardware is flagged',
+    desc: 'HWID Spoofer for PC hardware flags—disk serial tools, MAC rotation, compatibility scan, and post-spoof verification.',
+    features: ['Disk serial tools', 'MAC rotation', 'Compatibility scan', 'Post-spoof verification'],
+    more: 6,
+    buyUrl: checkoutForSlug('hwid-spoofer'),
+    images: hwidSpooferProductImages,
     overview: {
-      title: 'Fortnite Lite: ESP and radar',
+      title: 'HWID Spoofer for PC hardware flags',
       paragraphs: [
-        'Lite is for player ESP, chest markers, loot timers and radar. No aimbot. Set distance, colors and stream-proof in the portal before you queue.',
-        'Best if you want awareness in Battle Royale and Zero Build without combat automation. Overlays are updated after Fortnite patches.',
+        'Use when anti-cheat flags PC hardware but the game account is still fine—new accounts fail on one PC but work on another. It does not fix account-only bans.',
+        'Follow restore point, spoof, cold reboot, and verification steps before returning with a safer cheat profile.',
       ],
     },
-  },
-  pro: {
-    images: slide('gpScripts', 'gpAimLock', 'gpCombat'),
-    goodToKnow: sharedGoodToKnow,
-    limitations: sharedLimitations,
-    systemRequirements: fortniteSystemRequirements,
-    fullFeatures: [
-      'All Lite ESP & ESP wallhack modules',
-      'Aimbot',
-      'Smooth Aim',
-      'Sticky Aim & Prediction',
-      'Bone Priority',
-      'Hotkey macros (heals/shields)',
-      'Auto Heal',
-      'FOV & smoothness tuning',
-      'Per-weapon aimbot profiles',
-      'Third-party alert integration',
-      'Ranked-safe default presets',
-      'Lobby test profile',
-      'Cloud config backup',
-      'Patch auto-updater',
-      'Discord operator support',
-    ],
-    overview: {
-      title: 'Fortnite Pro: aimbot plus ESP',
-      paragraphs: [
-        'Pro includes everything in Lite, plus Aimbot, Smooth Aim, Sticky Aim and hotkey macros. Aim settings live in one tab. Start with a portal preset, not max sliders.',
-        'Most people pick Pro for Battle Royale and Zero Build. Bone priority and macros help in fights while defaults stay smooth.',
-      ],
-    },
-  },
-  elite: {
-    images: slide('gpAutoKill', 'gpThermal', 'gpBuildFight'),
-    goodToKnow: sharedGoodToKnow,
-    limitations: sharedLimitations,
-    systemRequirements: fortniteSystemRequirements,
-    fullFeatures: [
-      'All Lite + Pro modules',
-      'Loot Assist',
-      'Rotation Assist AI',
-      'Chest respawn timer',
-      'Auto loadout manager',
-      'Auto Finish',
-      'Auto Shield Break',
-      'Full ESP wallhack suite',
-      'Third-party alert system',
-      'Visibility detector',
-      'Skin Changer (Unlock All)',
-      'Priority patch queue',
-      'Direct dev Discord support',
-      'Elite conservative presets',
-      'Cloud config backup',
-      'Patch auto-updater',
-      'Private slot access',
-    ],
-    overview: {
-      title: 'Fortnite Elite: full cheat + extras',
-      paragraphs: [
-        'Elite includes Lite and Pro modules, plus loot assist, Auto Finish, Auto Shield Break, Skin Changer, full ESP wallhack and faster patch priority.',
-        'Slots are limited. Discord support helps you set safer profiles before Ranked. Check the status banner on fortnite-cheats.com before you buy.',
-      ],
-    },
-  },
-  'hwid-spoofer': {
-    images: slide('gpSpawn', 'gpArena', 'gpChams'),
+    acquisition: acquisitionFor('HWID Spoofer'),
     goodToKnow:
-      'Run the compatibility scan in the portal before spoofing. Create a Windows restore point first. Verify identifiers changed after a cold reboot before launching Fortnite.',
+      'Run the compatibility scan before spoofing. Create a Windows restore point first. Verify identifiers changed after a cold reboot before launching Aion 2 again.',
     limitations:
-      'Spoofing does not help account-only EAC cases. Never stack two spoof tools. Shared or work PCs may not be suitable. You accept all risk from driver-level changes.',
-    systemRequirements: [
-      { icon: 'reqWindows', text: 'Windows 10 or 11 64-bit with administrator access.' },
-      { icon: 'reqRestorePoint', text: 'Ability to create a system restore point before running.' },
-      { icon: 'reqShieldGuide', text: 'Follow the portal setup guide before launching Fortnite after spoofing.' },
-      { icon: 'reqWifi', text: 'Stable connection for portal verification tools.' },
-    ],
+      'Spoofing does not help account-only cases. Never stack two spoof tools. You accept all risk from driver-level changes.',
     fullFeatures: [
       'Disk serial profile tools',
       'MAC address rotation',
@@ -489,179 +357,167 @@ const productContent: Record<
       'Portal step-by-step workflow',
       'Discord recovery support',
     ],
-    overview: {
-      title: 'HWID Spoofer for Fortnite PC bans',
-      paragraphs: [
-        'Use the HWID Spoofer when Easy Anti-Cheat flags your PC hardware but the Epic account is still fine. Includes disk and MAC tools, a restore-point checklist, a compatibility scan and post-spoof checks.',
-        'Use it when new accounts die on one PC but work on another. It does not fix account-only EAC bans. After spoofing, use a safer cheat profile before Ranked.',
-      ],
-    },
-  },
-  ugc: {
-    images: slide('gpZoomHack', 'gpFarmBot', 'gpLongRange'),
-    goodToKnow:
-      'Gather order email, platform account details and restriction screenshots before opening a ticket. UGC structures appeals—it does not bypass platform review.',
-    limitations:
-      'UGC does not guarantee account restoration. Results vary by case type. Permanent EAC bans may require a new account path instead of appeal.',
     systemRequirements: [
-      { icon: 'reqMailOrder', text: 'Order email used at checkout on fortnite-cheats.com or at checkout on fortnite-cheats.com.' },
-      { icon: 'reqShieldAccount', text: 'Account details and ban or restriction notification if available.' },
-      { icon: 'reqWifiPortal', text: 'Internet access for Discord support and case dashboard.' },
+      { icon: 'reqWindows', text: 'Windows 10 or 11 64-bit with administrator access.' },
+      { icon: 'reqRestorePoint', text: 'Ability to create a system restore point before running.' },
+      { icon: 'reqShieldGuide', text: 'Follow the portal guide before launching the game after spoofing.' },
+      { icon: 'reqWifi', text: 'Stable connection for portal verification tools.' },
     ],
-    fullFeatures: [
-      'Custom appeal workflows',
-      'Restriction dispute automation',
-      'Case documentation templates',
-      'Status tracking dashboard',
-      'Identity verification guide',
-      'Evidence upload structure',
-      'Timeline tracker',
-      'Follow-up response templates',
-      'Multi-platform support',
+    body: [
+      { type: 'h2', text: 'When you need it' },
+      {
+        type: 'p',
+        text: 'Use after hardware-level anti-cheat flags. Pair with [UGC tool](/products/aion-2-cheats/game-accounts/) when the restriction is account-side instead.',
+      },
     ],
+    relatedBlogSlugs: productRelatedBlogSlugs['hwid-spoofer'],
+  },
+  {
+    slug: 'game-accounts',
+    kind: 'utility',
+    badge: 'Available',
+    category: 'Account tools',
+    name: 'UGC tool',
+    title: 'Aion 2 UGC tool',
+    subtitle: 'Restriction detection and supported recovery workflows',
+    desc: 'The Aion 2 UGC tool detects ban types, verifies live status, and runs supported remediation steps where authorized access exists.',
+    features: ['Ban detection', 'Live status checks', 'One-click workflows', 'Detailed error reporting'],
+    more: 6,
+    buyUrl: checkoutForSlug('game-accounts'),
+    images: ugcToolProductImages,
     overview: {
-      title: 'UGC account appeal tools',
+      title: 'UGC workspace utilities',
       paragraphs: [
-        'UGC (Unban & Governance Control) helps you organize appeals for Epic restrictions and EAC bans. It does not guarantee an unban.',
-        'Track cases, keep evidence in one place and follow up from the dashboard. Discord support can walk you through steps when needed.',
+        'Multi-game support with automatic restriction detection, temporary vs permanent ban handling, and live status verification after remediation attempts.',
+        'Credentials stay protected—supported flows avoid collecting passwords or session tokens unnecessarily.',
       ],
     },
-  },
-  'unlock-all': {
-    images: slide('gpSkinChanger', 'gpChams', 'gpCombat'),
+    acquisition: acquisitionFor('UGC tool'),
     goodToKnow:
-      'Unlock All previews cosmetics locally on your client. Other players in your lobby see your real inventory—not preview skins. Included with Elite tier.',
+      'Gather order email, platform details, and restriction screenshots before opening Support. Tools explain unsupported cases clearly.',
     limitations:
-      'Local preview only—does not modify Epic locker or store state. Other players cannot see previewed skins or sets.',
-    systemRequirements: fortniteSystemRequirements,
+      'No tool guarantees restoration. Permanent bans may require a new account path. Results vary by restriction type.',
     fullFeatures: [
-      'Outfit skin swap',
-      'Skin & wrap preview',
-      'Pickaxe & wrap customizer',
-      'Loading screen editor',
-      'Cursor & HUD theme',
-      'Chest & loot replacer',
-      'Favorites list',
-      'Loadout export',
+      'Multi-game support across listed platforms',
+      'Automatic ban detection and restriction typing',
+      'Account ban removal where authorized access exists',
+      'Permanent and temporary ban handling with expiry readouts',
+      'One-click operation for supported remediation actions',
+      'Live status verification after actions complete',
+      'Detailed error reporting for unsupported restrictions',
+      'Automatic game detection for installed supported titles',
+      'Secure operation without unnecessary credential collection',
     ],
+    systemRequirements: [
+      { icon: 'reqMailOrder', text: 'Order email used at checkout on getaion2cheats.net.' },
+      { icon: 'reqShieldAccount', text: 'Account details and restriction notification if available.' },
+      { icon: 'reqWifiPortal', text: 'Internet access for Support and status checks.' },
+    ],
+    body: [
+      { type: 'h2', text: 'Realistic expectations' },
+      {
+        type: 'p',
+        text: 'Organize evidence and follow portal workflows. Pair with [HWID Spoofer](/products/aion-2-cheats/hwid-spoofer/) when hardware is flagged.',
+      },
+    ],
+    relatedBlogSlugs: productRelatedBlogSlugs['game-accounts'],
+  },
+  {
+    slug: 'skin-changer',
+    kind: 'utility',
+    badge: 'Available',
+    category: 'Cosmetic',
+    name: 'Skin Changer',
+    title: 'Aion 2 Skin Changer & Cosmetics',
+    subtitle: 'Preview and apply supported cosmetic profiles',
+    desc: 'Skin library, live preview, loadout manager, and restore tools for supported cosmetic changes from one interface.',
+    features: ['Skin library', 'Live preview', 'Loadout manager', 'Restore & reset'],
+    more: 6,
+    buyUrl: checkoutForSlug('skin-changer'),
+    images: skinChangerProductImages,
     overview: {
-      title: 'Skin Changer / Unlock All',
+      title: 'Skin Changer and cosmetic utilities',
       paragraphs: [
-        'Unlock All lets you preview outfits, wraps and pickaxes on your Fortnite client. It does not change your Epic locker or store purchases.',
-        'Only you see the preview skins. Other players see your real inventory. Included with Elite, or buy it alone without combat modules.',
+        'Centralized skin library with game-specific compatibility profiles, custom import support, and preset sharing for supported titles including Aion 2.',
+        'Restore original assets before patches—update compatibility checks flag outdated skin configurations after game updates.',
       ],
     },
+    acquisition: acquisitionFor('Skin Changer'),
+    goodToKnow:
+      'Preview supported skins before applying. Export loadouts you actually use and reset to defaults before major patches.',
+    limitations:
+      'Other players may still see default assets depending on game mode and server validation. Cosmetic tools do not replace official store purchases.',
+    fullFeatures: [
+      'Multi-game support with compatibility profiles',
+      'Centralized skin and outfit library',
+      'Live skin preview before applying',
+      'One-click apply for supported cosmetics',
+      'Custom skin import for compatible assets',
+      'Loadout manager with multiple saved configs',
+      'Skin restore and reset to defaults',
+      'Automatic game detection and version matching',
+      'Update compatibility checks after patches',
+      'Profile and preset import / export',
+    ],
+    systemRequirements: aionSystemRequirements,
+    body: [
+      { type: 'h2', text: 'Cosmetic workflow' },
+      {
+        type: 'p',
+        text: 'Detect installation, pick a compatibility profile, preview combinations, then save presets. See the [Skin Changer guide](/blog/aion-2-skin-changer-guide/) for conservative first steps.',
+      },
+    ],
+    relatedBlogSlugs: productRelatedBlogSlugs['skin-changer'],
   },
-};
+];
 
-function buildTierPages(): ProductPage[] {
-  return t.cheats.items.map((cheat) => {
-    const slug = slugFromHref(cheat.href);
-    const content = productContent[slug];
-    const displayName = cheat.name === 'Lite' ? 'Fortnite Lite' : cheat.name === 'Pro' ? 'Fortnite Pro' : 'Fortnite Elite';
-    return {
-      slug,
-      kind: 'tier',
-      badge: cheat.badge,
-      tier: cheat.tier,
-      name: cheat.name,
-      title: cheat.title,
-      subtitle: cheat.desc,
-      desc: cheat.desc,
-      features: cheat.features,
-      more: cheat.more,
-      variant: cheat.variant,
-      buyUrl: checkoutForSlug(slug),
-      images: content.images,
-      overview: content.overview,
-      acquisition: acquisitionFor(displayName),
-      goodToKnow: content.goodToKnow,
-      limitations: content.limitations,
-      fullFeatures: content.fullFeatures,
-      systemRequirements: content.systemRequirements,
-      about: tierAbout[slug],
-      body: tierBodies[slug] ?? [],
-      relatedBlogSlugs: productRelatedBlogSlugs[slug] ?? [],
-    };
-  });
+/** All catalog cards (main suite + utilities). */
+export const productPages: ProductPage[] = [mainProduct, ...utilityProducts];
+
+export const utilityPages = utilityProducts;
+
+export function getMainProduct(): ProductPage {
+  return mainProduct;
 }
-
-function buildUtilityPages(): ProductPage[] {
-  return t.products.items
-    .filter((p) => p.href !== productBase)
-    .map((product) => {
-      const slug = slugFromHref(product.href);
-      const content = productContent[slug];
-      return {
-        slug,
-        kind: 'utility',
-        badge: product.badge,
-        category: product.category,
-        name: product.title,
-        title: product.title,
-        subtitle: product.subtitle,
-        desc: product.desc,
-        features: product.features,
-        more: product.more,
-        buyUrl: checkoutForSlug(slug),
-        images: content.images,
-        overview: content.overview,
-        acquisition: acquisitionFor(product.title),
-        goodToKnow: content.goodToKnow,
-        limitations: content.limitations,
-        fullFeatures: content.fullFeatures,
-        systemRequirements: content.systemRequirements,
-        body: utilityBodies[slug] ?? [],
-        relatedBlogSlugs: productRelatedBlogSlugs[slug] ?? [],
-      };
-    });
-}
-
-export const productPages: ProductPage[] = [...buildTierPages(), ...buildUtilityPages()];
-
-export const cheatPages = productPages.filter((p) => p.kind === 'tier');
 
 export function getProductPage(slug: string) {
-  return productPages.find((p) => p.slug === slug);
+  if (slug === MAIN_PRODUCT_SLUG) return mainProduct;
+  return utilityProducts.find((p) => p.slug === slug);
 }
+
+export function getAllUtilitySlugs() {
+  return utilityProducts.map((p) => p.slug);
+}
+
+/** @deprecated Single main suite — kept for legacy components. */
+export const cheatPages = [mainProduct];
 
 export function getCheatPage(slug: string) {
-  return cheatPages.find((p) => p.slug === slug);
+  if (slug === MAIN_PRODUCT_SLUG || slug === 'main') return mainProduct;
+  return undefined;
 }
-
-export function getAllProductSlugs() {
-  return productPages.map((p) => p.slug);
-}
-
-export function getAllCheatSlugs() {
-  return cheatPages.map((p) => p.slug);
-}
-
-const cheatsHubSlides = slide('gpAimLock', 'gpThermal', 'gpArena');
 
 export const heroSlides = slide(
-  'gpMapHack',
-  'gpScripts',
   'gpHeroEsp',
+  'gpScripts',
   'gpZoomHack',
-  'gpAutoKill',
-  'gpFarmBot',
   'gpBuildFight',
-  'gpSpawn',
-  'gpSquad',
-  'gpCombat',
-  'gpAimLock',
+  'gpFarmBot',
   'gpThermal',
   'gpArena',
+  'gpCombat',
   'gpLongRange',
   'gpChams',
   'gpSkinChanger',
+  'gpAutoKill',
+  'gpSpawn',
 );
 
 export const productHub = {
-  path: productBase,
+  path: PRODUCTS_HUB,
   title: t.products.title,
   subtitle: t.products.subtitle,
-  description: 'Fortnite Elite cheats with aimbot and ESP, plus HWID spoofer, UGC recovery and Skin Changer for PC.',
-  buyUrl: checkoutPath('fortnite'),
+  description:
+    'Aion 2 private cheats plus HWID Spoofer, UGC tool, and Skin Changer utilities for Windows PC.',
+  buyUrl: checkoutPath('aion2Cheats'),
 };

@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getAllUtilitySlugs, getProductPage, productHub } from '../../../data/products';
+import { pageTitle, socialImageFromAsset } from '../../../config/seo';
+import { getPageSeoEntry } from '../../../config/pageSeo';
+import { breadcrumbSchema, productSchema } from '../../../utils/schema';
+import ProductDetail from '../../../components/ProductDetail.astro';
+import { productPath } from '../../../utils/path';
+
+export function getStaticPaths() {
+  return getAllUtilitySlugs().map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const product = getProductPage(slug!);
+
+if (!product) {
+  return Astro.redirect(productHub.path);
+}
+
+const pagePath = productPath(product.slug);
+const seoEntry = getPageSeoEntry(pagePath);
+const metaTitle = seoEntry?.title ?? pageTitle(`Buy ${product.title}`);
+const metaDescription =
+  seoEntry?.description ??
+  `Buy ${product.title} — ${product.desc}`;
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Products', path: productHub.path },
+  { name: product.title, path: pagePath },
+];
+---
+
+<BaseLayout
+  title={metaTitle}
+  description={metaDescription}
+  ogImage={product.images[0] ? socialImageFromAsset(product.images[0].src) : undefined}
+  ogImageAlt={product.images[0]?.alt ?? metaTitle}
+  jsonLd={[
+    productSchema({
+      name: product.title,
+      description: metaDescription,
+      url: pagePath,
+      offerUrl: product.buyUrl,
+      image: product.images[0]?.src,
+      sku: product.slug,
+    }),
+    breadcrumbSchema(breadcrumbs),
+  ]}
+>
+  <ProductDetail product={product} breadcrumbs={breadcrumbs} />
+</BaseLayout>

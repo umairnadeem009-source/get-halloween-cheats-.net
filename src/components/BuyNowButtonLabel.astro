@@ -1,0 +1,13 @@
+---
+import Icon from './icons/Icon.astro';
+
+interface Props {
+  label?: string;
+  iconSize?: number;
+}
+
+const { label = 'Buy now', iconSize = 17 } = Astro.props;
+---
+
+<span class="buy-now-btn__text">{label}</span>
+<Icon name="shoppingCart" size={iconSize} class="buy-now-btn__icon" />

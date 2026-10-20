@@ -11,6 +11,8 @@ import {
   DEFAULT_OG_IMAGE_WIDTH,
   GA_MEASUREMENT_ID,
   absoluteAssetUrl,
+  clampMetaDescription,
+  clampPageTitle,
 } from '../config/seo';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -41,6 +43,8 @@ const {
 } = Astro.props;
 
 const canonical = canonicalUrl(Astro.url.pathname);
+const pageTitleTag = clampPageTitle(title);
+const pageDescription = clampMetaDescription(description);
 const ogImageUrl = absoluteAssetUrl(ogImage);
 const robotsContent = noindex
   ? 'noindex, nofollow'
@@ -62,8 +66,8 @@ const robotsContent = noindex
       })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
+    <title>{pageTitleTag}</title>
+    <meta name="description" content={pageDescription} />
     <meta name="author" content={t.site.name} />
     <meta name="robots" content={robotsContent} />
     <meta name="googlebot" content={robotsContent} />
@@ -79,6 +83,7 @@ const robotsContent = noindex
     />
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
     <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -86,8 +91,8 @@ const robotsContent = noindex
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={pageTitleTag} />
+    <meta property="og:description" content={pageDescription} />
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:secure_url" content={ogImageUrl} />
     <meta property="og:image:alt" content={ogImageAlt} />
@@ -112,8 +117,8 @@ const robotsContent = noindex
     }
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:title" content={pageTitleTag} />
+    <meta name="twitter:description" content={pageDescription} />
     <meta name="twitter:image" content={ogImageUrl} />
     <meta name="twitter:image:alt" content={ogImageAlt} />
     {TWITTER_SITE && <meta name="twitter:site" content={TWITTER_SITE} />}

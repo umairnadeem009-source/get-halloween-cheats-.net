@@ -3,7 +3,6 @@ import type { ProductSlide } from '../data/products';
 import ResponsiveImage from './ResponsiveImage.astro';
 import {
   DEFAULT_IMAGE_WIDTHS,
-  defaultWebpSrc,
   responsiveSrcSet,
   THUMB_IMAGE_WIDTHS,
 } from '../utils/responsiveImage';
@@ -66,8 +65,8 @@ const mainSizes = '(min-width: 1024px) 640px, 100vw';
             aria-label={`Screenshot ${i + 1}`}
             data-product-gallery-thumb
             data-index={i}
-            data-src={defaultWebpSrc(img.src, DEFAULT_IMAGE_WIDTHS)}
-            data-srcset={responsiveSrcSet(img.src, DEFAULT_IMAGE_WIDTHS)}
+            data-src={img.src}
+            data-srcset-webp={responsiveSrcSet(img.src, DEFAULT_IMAGE_WIDTHS)}
             data-sizes={mainSizes}
             data-alt={img.alt}
           >
@@ -101,7 +100,7 @@ const mainSizes = '(min-width: 1024px) 640px, 100vw';
     if (!thumb) return;
 
     const src = thumb.getAttribute('data-src');
-    const srcset = thumb.getAttribute('data-srcset');
+    const srcset = thumb.getAttribute('data-srcset-webp') ?? thumb.getAttribute('data-srcset');
     const sizes = thumb.getAttribute('data-sizes');
     const alt = thumb.getAttribute('data-alt');
 

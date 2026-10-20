@@ -1,0 +1,105 @@
+---
+import type { IconName } from './icons/types';
+import Icon from './icons/Icon.astro';
+import { heroStatIcons } from '../data/sectionIcons';
+
+export interface QuickStat {
+  strong: string;
+  label: string;
+}
+
+interface Props {
+  stats: QuickStat[];
+  icons?: IconName[];
+  variant?: 'blue' | 'purple';
+  class?: string;
+  highlightFirst?: boolean;
+}
+
+const {
+  stats,
+  icons = heroStatIcons,
+  variant = 'blue',
+  class: className,
+  highlightFirst = true,
+} = Astro.props;
+---
+
+<div
+  class:list={['grid w-full grid-cols-2 gap-2.5 sm:gap-3', className]}
+  role="list"
+>
+  {
+    stats.map((m, i) => (
+      <div
+        role="listitem"
+        class:list={[
+          'quick-stat-card flex min-w-0 items-center gap-3 rounded-xl border px-3 py-3 shadow-sm shadow-black/10 backdrop-blur-sm transition-colors',
+          variant === 'purple' ? 'quick-stat-card--purple' : 'quick-stat-card--blue',
+          highlightFirst && i === 0 && variant === 'blue' && 'quick-stat-card--highlight',
+        ]}
+      >
+        <span class="quick-stat-card__icon" aria-hidden="true">
+          <Icon name={icons[i] ?? 'check'} size={18} />
+        </span>
+        <div class="min-w-0">
+          <p class="font-[family-name:var(--font-heading)] text-base font-bold leading-none tracking-tight text-foreground">
+            {m.strong}
+          </p>
+          <p class="mt-1 text-xs leading-tight text-muted-foreground">{m.label}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .quick-stat-card--blue {
+    border-color: color-mix(in oklch, var(--primary) 22%, var(--border));
+    background: color-mix(in oklch, var(--card) 94%, var(--primary) 6%);
+  }
+
+  .quick-stat-card--blue:hover {
+    border-color: color-mix(in oklch, var(--primary) 45%, var(--border));
+  }
+
+  .quick-stat-card--blue.quick-stat-card--highlight {
+    border-color: color-mix(in oklch, var(--primary) 55%, var(--border));
+    box-shadow: 0 0 0 1px color-mix(in oklch, var(--primary) 18%, transparent);
+  }
+
+  .quick-stat-card--blue .quick-stat-card__icon {
+    display: flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    background: color-mix(in oklch, #2d6ee2 20%, transparent);
+    color: var(--primary);
+    box-shadow: inset 0 0 0 1px color-mix(in oklch, #2d6ee2 38%, transparent);
+  }
+
+  .quick-stat-card--purple {
+    border-color: color-mix(in oklch, #8b5cf6 24%, var(--border));
+    background: color-mix(in oklch, var(--card) 90%, #1a1028 10%);
+  }
+
+  .quick-stat-card--purple:hover {
+    border-color: color-mix(in oklch, #8b5cf6 42%, var(--border));
+  }
+
+  .quick-stat-card--purple .quick-stat-card__icon {
+    display: flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    background: color-mix(in oklch, #7c3aed 22%, #120a1e);
+    color: #c4b5fd;
+    box-shadow: inset 0 0 0 1px color-mix(in oklch, #8b5cf6 45%, transparent);
+  }
+</style>

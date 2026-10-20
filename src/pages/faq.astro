@@ -21,9 +21,9 @@ const faqs = getAllFaqs();
   description={seo.description}
   jsonLd={[
     webPageSchema({
-      name: 'FAQ — Fortnite Cheats & Products',
+      name: 'FAQ — Aion 2 Cheats & Products',
       description:
-        'Answers about Fortnite cheat tiers, ESP wallhack, aimbot, HWID tools, blog guides and checkout at fortnite-cheats.com.',
+        'Answers about Aion 2 cheat plans, ESP, soft aim, HWID tools, blog guides and checkout at getaion2cheats.net.',
       url: '/faq/',
     }),
     faqPageSchema(faqs.map((f, i) => ({ num: String(i + 1).padStart(2, '0'), q: f.q, a: f.a.replace(/<[^>]+>/g, '') }))),
@@ -36,8 +36,8 @@ const faqs = getAllFaqs();
       <div class="mt-6">
         <SectionHeader
           eyebrow="Help center"
-          title="Fortnite cheats FAQ"
-          desc="Everything about Lite, Pro, Elite tiers, utilities, safety and blog topics—in one place."
+          title="Aion 2 cheats FAQ"
+          desc="Plans, ESP, utilities, safety, setup, and blog topics for getaion2cheats.net—in one place."
           titleId="faq-page-title"
         />
       </div>

@@ -1,20 +1,30 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
-import { sitemapSerialize } from './src/config/sitemap.ts';
+import { isSitemapExcludedUrl, sitemapSerialize } from './src/config/sitemap.ts';
 
 export default defineConfig({
-  site: 'https://fortnite-cheats.com',
+  site: 'https://getaion2cheats.net',
   trailingSlash: 'always',
   redirects: {
-    '/cheats/': '/products/fortnite-cheats/',
-    '/cheats/lite/': '/products/fortnite-cheats/',
-    '/cheats/pro/': '/products/fortnite-cheats/',
-    '/cheats/elite/': '/products/fortnite-cheats/elite/',
-    '/cheats/compare/': '/blog/fortnite-lite-vs-pro/',
-    '/products/dota-2-cheats/': '/products/fortnite-cheats/',
-    '/products/dota-2-cheats/elite/': '/products/fortnite-cheats/elite/',
-    '/products/dota-2-cheats/utilities/': '/products/fortnite-cheats/utilities/',
+    '/cheats/': '/products/aion-2-cheats/',
+    '/cheats/lite/': '/products/aion-2-cheats/',
+    '/cheats/pro/': '/products/aion-2-cheats/',
+    '/cheats/elite/': '/products/aion-2-cheats/',
+    '/cheats/compare/': '/blog/aion-2-cheat-feature-comparison/',
+    '/products/fortnite-cheats/': '/products/aion-2-cheats/',
+    '/products/fortnite-cheats/elite/': '/products/aion-2-cheats/',
+    '/products/fortnite-cheats/lite/': '/products/aion-2-cheats/',
+    '/products/fortnite-cheats/pro/': '/products/aion-2-cheats/',
+    '/products/fortnite-cheats/utilities/': '/products/',
+    '/products/fortnite-cheats/hwid-spoofer/': '/products/aion-2-cheats/hwid-spoofer/',
+    '/products/fortnite-cheats/ugc/': '/products/aion-2-cheats/game-accounts/',
+    '/products/fortnite-cheats/unlock-all/': '/products/aion-2-cheats/skin-changer/',
+    '/products/dota-2-cheats/': '/products/aion-2-cheats/',
+    '/products/dota-2-cheats/elite/': '/products/aion-2-cheats/',
+    '/products/dota-2-cheats/utilities/': '/products/',
+    '/go/fortnite/': '/go/aion-2-cheats/',
+    '/go/ugc/': '/go/game-accounts/',
     '/contact/': '/support/',
   },
   compressHTML: true,
@@ -27,7 +37,7 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/404') && !page.includes('/go/'),
+      filter: (page) => !page.includes('/404') && !isSitemapExcludedUrl(page),
       serialize: sitemapSerialize,
     }),
   ],

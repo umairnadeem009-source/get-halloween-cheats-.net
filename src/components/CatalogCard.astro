@@ -1,5 +1,6 @@
 ---
 import type { IconName } from './icons/types';
+import BuyNowButtonLabel from './BuyNowButtonLabel.astro';
 import Icon from './icons/Icon.astro';
 import { Badge } from '@/components/starwind/badge';
 import { Button } from '@/components/starwind/button';
@@ -103,9 +104,8 @@ const statusBadgeIcon = (text: string): IconName => {
     </ul>
   </CardContent>
   <CardFooter class="flex flex-col gap-2 sm:flex-row">
-    <Button as="a" href={buyUrl} variant="primary" size="sm" class="w-full sm:flex-1">
-      {buyLabel}
-      <Icon name="arrowRight" size={17} />
+    <Button as="a" href={buyUrl} variant="primary" size="sm" class="buy-now-btn w-full sm:flex-1">
+      <BuyNowButtonLabel label={buyLabel} iconSize={17} />
     </Button>
     <Button as="a" href={href} variant="outline" size="sm" class="w-full sm:flex-1">
       {viewLabel}

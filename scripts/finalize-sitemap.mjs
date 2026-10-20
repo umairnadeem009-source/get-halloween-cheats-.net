@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { resolveDistDir } from './dist-dir.mjs';
 
-const SITE = 'https://fortnite-cheats.com';
+const SITE = 'https://getaion2cheats.net';
 const dist = resolveDistDir();
 
 function loadUrlsetXml(dir) {
@@ -67,12 +67,21 @@ function normalizeUrl(loc) {
     return null;
   }
   if (url.protocol !== 'https:') url.protocol = 'https:';
-  url.hostname = 'fortnite-cheats.com';
+  url.hostname = 'getaion2cheats.net';
   url.hash = '';
   url.search = '';
   let pathname = url.pathname;
   if (!pathname.endsWith('/')) pathname += '/';
   if (pathname.includes('/404') || pathname.startsWith('/go/')) return null;
+  if (
+    pathname.startsWith('/cheats/') ||
+    pathname.startsWith('/contact/') ||
+    pathname.startsWith('/products/fortnite-cheats/') ||
+    pathname.startsWith('/products/dota-2-cheats/') ||
+    pathname === '/rss.xml'
+  ) {
+    return null;
+  }
   return `${SITE}${pathname}`;
 }
 

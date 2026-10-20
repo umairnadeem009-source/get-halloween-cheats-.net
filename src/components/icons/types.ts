@@ -19,6 +19,7 @@ export type IconName =
   | 'layers'
   | 'monitor'
   | 'stream'
+  | 'shoppingCart'
   | 'package'
   | 'settings'
   | 'alert'

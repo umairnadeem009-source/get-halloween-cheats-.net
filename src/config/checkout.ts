@@ -9,10 +9,10 @@ export type CheckoutProduct = keyof typeof CHECKOUT;
 
 /** URL slug for /go/[slug]/ checkout redirect pages. */
 export const CHECKOUT_SLUGS: Record<CheckoutProduct, string> = {
-  fortnite: 'fortnite',
+  aion2Cheats: 'aion-2-cheats',
   skinChanger: 'skin-changer',
   hwidSpoofer: 'hwid-spoofer',
-  ugc: 'ugc',
+  gameAccounts: 'game-accounts',
 };
 
 export const CHECKOUT_SLUG_TO_PRODUCT = Object.fromEntries(
@@ -20,28 +20,28 @@ export const CHECKOUT_SLUG_TO_PRODUCT = Object.fromEntries(
 ) as Record<string, CheckoutProduct>;
 
 /** Internal checkout path shown to users (hides external URL on hover). */
-export function checkoutPath(product: CheckoutProduct = 'fortnite'): string {
+export function checkoutPath(product: CheckoutProduct = 'aion2Cheats'): string {
   return `/go/${CHECKOUT_SLUGS[product]}/`;
 }
 
 /** Default product checkout redirect (replaces legacy Discord CTAs). */
-export const PRIMARY_CHECKOUT_PATH = checkoutPath('fortnite');
+export const PRIMARY_CHECKOUT_PATH = checkoutPath('aion2Cheats');
 
 /** Map internal product slugs to checkout redirect paths. */
 export function checkoutForSlug(slug: string): string {
   switch (slug) {
+    case 'skin-changer':
     case 'unlock-all':
       return checkoutPath('skinChanger');
     case 'hwid-spoofer':
       return checkoutPath('hwidSpoofer');
+    case 'game-accounts':
     case 'ugc':
     case 'account-recovery':
-      return checkoutPath('ugc');
-    case 'lite':
-    case 'pro':
-    case 'elite':
+      return checkoutPath('gameAccounts');
+    case 'main':
     default:
-      return checkoutPath('fortnite');
+      return checkoutPath('aion2Cheats');
   }
 }
 
@@ -57,21 +57,17 @@ export function resolveCheckoutHref(href: string): string {
     }
   }
 
-  // Legacy / encoded product paths → internal checkout
-  if (href.includes('%2Fproducts%2Fcloud-dma') || href.includes('/products/cloud-dma')) {
-    return checkoutPath('fortnite');
+  if (href.includes('%2Faion-2-cheats') || href.includes('/aion-2-cheats')) {
+    return checkoutPath('aion2Cheats');
   }
-  if (href.includes('%2Fproducts%2Fskin-changer') || href.includes('/products/skin-changer')) {
+  if (href.includes('%2Fskin-changer') || href.includes('/skin-changer')) {
     return checkoutPath('skinChanger');
   }
-  if (href.includes('%2Fproducts%2Fhwid-spoofer') || href.includes('/products/hwid-spoofer')) {
+  if (href.includes('%2Fhwid-spoofer') || href.includes('/hwid-spoofer')) {
     return checkoutPath('hwidSpoofer');
   }
-  if (href.includes('%2Fproducts%2Fugc') || href.includes('/products/ugc')) {
-    return checkoutPath('ugc');
-  }
-  if (href.includes('%2Fproducts%2Ffortnite') || href.includes('/products/fortnite')) {
-    return checkoutPath('fortnite');
+  if (href.includes('%2Fgame-accounts') || href.includes('/game-accounts')) {
+    return checkoutPath('gameAccounts');
   }
 
   return href;

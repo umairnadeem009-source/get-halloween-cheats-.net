@@ -1,6 +1,7 @@
 ---
 import type { ProductAcquisition } from '../data/products';
 import { acquisitionStepIcons } from '../data/sectionIcons';
+import BuyNowButtonLabel from './BuyNowButtonLabel.astro';
 import Icon from './icons/Icon.astro';
 import { Badge } from '@/components/starwind/badge';
 import { Button } from '@/components/starwind/button';
@@ -40,9 +41,8 @@ const hasMeta = Boolean(badge || tier || category || variant);
 
     <Card class="w-full max-w-sm shrink-0">
       <CardContent class="space-y-3 pt-6">
-        <Button as="a" href={buyUrl} variant="primary" class="w-full">
-          Buy Now
-          <Icon name="arrowRight" size={17} />
+        <Button as="a" href={buyUrl} variant="primary" class="buy-now-btn w-full">
+          <BuyNowButtonLabel label="Buy Now" iconSize={17} />
         </Button>
         <p class="text-center text-xs text-muted-foreground">Instant access · Discord setup support</p>
       </CardContent>

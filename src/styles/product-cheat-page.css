@@ -19,7 +19,7 @@
 .products-carousel {
   --products-carousel-gap: 1rem;
   position: relative;
-  margin-top: 4.75rem;
+  margin-top: 2.5rem;
 }
 
 @media (min-width: 768px) {
@@ -46,69 +46,6 @@
 
 .products-carousel__viewport [data-slot='carousel-content'] {
   overflow: hidden;
-}
-
-.products-carousel__stage .products-carousel__arrow {
-  position: absolute;
-  top: -3.6rem;
-  z-index: 3;
-  display: none;
-  width: 2.75rem;
-  height: 2.75rem;
-  translate: none;
-  border-radius: 999px;
-  border: 1px solid color-mix(in oklch, var(--border) 85%, var(--foreground) 15%);
-  background: color-mix(in oklch, var(--background) 92%, var(--foreground) 8%);
-  box-shadow: 0 4px 24px color-mix(in oklch, var(--background) 55%, transparent);
-  transform: none !important;
-  opacity: 0;
-  pointer-events: none;
-  transition:
-    opacity 0.2s ease,
-    border-color 0.2s ease,
-    background 0.2s ease;
-}
-
-.products-carousel__arrow--prev {
-  left: auto !important;
-  right: 3.6rem !important;
-}
-
-.products-carousel__arrow--next {
-  right: 0 !important;
-  left: auto !important;
-}
-
-.products-carousel__arrow.is-visible {
-  display: inline-flex;
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.products-carousel__arrow[hidden] {
-  display: none !important;
-}
-
-.products-carousel__arrow:hover {
-  border-color: color-mix(in oklch, var(--primary) 45%, var(--border));
-  background: color-mix(in oklch, var(--muted) 40%, var(--background));
-}
-
-.products-carousel__arrow svg {
-  width: 1.35rem;
-  height: 1.35rem;
-}
-
-@media (min-width: 768px) {
-  .products-carousel__arrow {
-    width: 3rem;
-    height: 3rem;
-  }
-
-  .products-carousel__arrow svg {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
 }
 
 /* class="products-carousel__track" is merged onto the flex container, not a wrapper */
@@ -394,22 +331,6 @@ html:not(.dark) .product-feature-check .icon-app:hover {
 
 .desc-wrap {
   position: relative;
-}
-
-.desc-wrap.collapsible:not(.open) .description-content {
-  max-height: 26.875rem;
-  overflow: hidden;
-}
-
-.desc-wrap.collapsible:not(.open)::after {
-  position: absolute;
-  right: 0;
-  bottom: 3.25rem;
-  left: 0;
-  height: 6rem;
-  pointer-events: none;
-  background: linear-gradient(to bottom, transparent, var(--card));
-  content: '';
 }
 
 @media (max-width: 1000px) {

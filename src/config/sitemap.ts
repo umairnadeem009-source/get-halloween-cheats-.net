@@ -1,8 +1,32 @@
 import type { SitemapItem } from '@astrojs/sitemap';
 import { blogPosts } from '../data/blog';
 import { parseBlogDate } from '../utils/schema';
+import { normalizeSeoPath } from './pageSeo';
 
 const buildDate = new Date().toISOString();
+
+/** Paths that must never appear in sitemaps (redirects, checkout, feeds). */
+export const SITEMAP_EXCLUDED_PREFIXES = [
+  '/go/',
+  '/cheats/',
+  '/contact/',
+  '/products/fortnite-cheats/',
+  '/products/dota-2-cheats/',
+] as const;
+
+export function isSitemapExcludedPathname(pathname: string): boolean {
+  const path = normalizeSeoPath(pathname);
+  if (path === '/404/' || path === '/rss.xml' || path === '/rss.xml/') return true;
+  return SITEMAP_EXCLUDED_PREFIXES.some((prefix) => path.startsWith(prefix));
+}
+
+export function isSitemapExcludedUrl(pageUrl: string): boolean {
+  try {
+    return isSitemapExcludedPathname(new URL(pageUrl).pathname);
+  } catch {
+    return true;
+  }
+}
 
 const blogLastmod = new Map(
   blogPosts.map((post) => [`/blog/${post.slug}/`, parseBlogDate(post.date)] as const),
@@ -16,7 +40,7 @@ function pathnameFromUrl(url: string): string {
 export function sitemapSerialize(item: SitemapItem): SitemapItem | undefined {
   const path = pathnameFromUrl(item.url);
 
-  if (path.includes('/404') || path.startsWith('/go/') || path.includes('/rss.xml')) {
+  if (isSitemapExcludedPathname(path) || path.includes('/404')) {
     return undefined;
   }
 

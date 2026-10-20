@@ -7,8 +7,12 @@ import { Badge } from '@/components/starwind/badge';
 
 const s = t.features;
 
-function isScriptsHero(title: string) {
-  return title === 'Scripts';
+function isWideFeatureCard(title: string) {
+  return title === 'Scripts' || title === 'Player ESP';
+}
+
+function isCompactSidebar(title: string) {
+  return title === 'Compatibility';
 }
 ---
 
@@ -17,21 +21,22 @@ function isScriptsHero(title: string) {
     <SectionHeader eyebrow={s.eyebrow} title={s.title} desc={s.subtitle} titleId="features-title" />
 
     <div
-      class="features-bento mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-12 lg:grid-rows-[repeat(6,auto)] lg:items-stretch lg:gap-4"
+      class="features-bento mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-12 lg:auto-rows-auto lg:items-stretch lg:gap-4"
     >
       {
         s.items.map((item) => {
-          const aimbotHero = isScriptsHero(item.title);
+          const wideCard = isWideFeatureCard(item.title);
           return (
             <article
               class:list={[
                 'group flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-border bg-card text-left shadow-sm transition-colors hover:border-primary/35',
                 item.bento ?? 'sm:col-span-2 lg:col-span-4',
-                aimbotHero && 'features-bento-card--scripts',
+                wideCard && 'features-bento-card--scripts',
+                isCompactSidebar(item.title) && 'lg:self-start',
               ]}
             >
               {
-                aimbotHero ? (
+                wideCard ? (
                   <>
                     <header class="card-title-band px-5 py-4 sm:px-6 sm:py-5">
                       <div class="flex items-start gap-3">
