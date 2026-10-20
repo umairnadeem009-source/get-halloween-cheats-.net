@@ -13,6 +13,8 @@ import {
 
 const why = t.whyUs;
 const lastRowIndex = why.rows.length - 1;
+const planMetrics = why.metrics.slice(0, 3);
+const platformMetric = why.metrics[3];
 ---
 
 <section id="why-us" class="py-16 md:py-24" aria-labelledby="why-title">
@@ -163,7 +165,7 @@ const lastRowIndex = why.rows.length - 1;
       aria-label="Platform metrics"
     >
       {
-        why.metrics.map((metric) => (
+        planMetrics.map((metric) => (
           <div class="space-y-2">
             <p class="font-[family-name:var(--font-heading)] text-4xl font-bold tracking-tight text-primary md:text-5xl">
               {metric.value}
@@ -176,6 +178,21 @@ const lastRowIndex = why.rows.length - 1;
             </p>
           </div>
         ))
+      }
+      {
+        platformMetric && (
+          <div class="space-y-2 sm:col-start-2">
+            <p class="font-[family-name:var(--font-heading)] text-4xl font-bold tracking-tight text-primary md:text-5xl">
+              {platformMetric.value}
+            </p>
+            <p class="text-base font-semibold text-foreground">
+              {platformMetric.title}
+            </p>
+            <p class="text-sm leading-relaxed text-muted-foreground">
+              {platformMetric.desc}
+            </p>
+          </div>
+        )
       }
     </div>
   </div>
