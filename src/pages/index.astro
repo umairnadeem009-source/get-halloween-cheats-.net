@@ -13,14 +13,14 @@ import { webpSrc } from '../utils/responsiveImage';
 
 const seo = resolvePageSeo('/');
 const homeFaqs = getLandingFaqs();
-const heroLcpImage = webpSrc('/images/gameplay/aion-2-player-esp.png', 512);
+const heroLcpImage = webpSrc('/images/gameplay/halloween-player-esp.png', 512);
 ---
 
 <BaseLayout
   title={seo.title}
   description={seo.description}
   ogImage={DEFAULT_OG_IMAGE}
-  ogImageAlt="Aion 2 player ESP overlay on Windows PC"
+  ogImageAlt="Halloween: The Game player ESP overlay on Windows PC"
   jsonLd={[websiteSchema(), organizationSchema(), faqPageSchema(homeFaqs.map((f, i) => ({ num: String(i + 1).padStart(2, '0'), q: f.q, a: f.a.replace(/<[^>]+>/g, '') })))]}
 >
   <link

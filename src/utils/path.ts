@@ -20,8 +20,8 @@ export const LEGACY_PATH_MAP: Record<string, string> = {
   '/cheats/pro/': PRODUCT_BASE,
   '/cheats/elite': PRODUCT_BASE,
   '/cheats/elite/': PRODUCT_BASE,
-  '/cheats/compare': '/blog/aion-2-cheat-feature-comparison/',
-  '/cheats/compare/': '/blog/aion-2-cheat-feature-comparison/',
+  '/cheats/compare': '/blog/halloween-cheat-feature-comparison/',
+  '/cheats/compare/': '/blog/halloween-cheat-feature-comparison/',
   '/contact': '/support/',
   '/contact/': '/support/',
 };

@@ -26,9 +26,9 @@ const html = fs.readFileSync(htmlPath, 'utf8');
 const IMPORTED = [
   {
     tag: 'Guides',
-    title: 'AION 2 cheats: what to review first',
-    desc: 'A practical overview of AION 2 cheats on the global PC client, including ESP, flight markers, and plan choices.',
-    slug: 'aion-2-cheats-explained',
+    title: 'Halloween: The Game cheats: what to review first',
+    desc: 'A practical overview of Halloween: The Game cheats on the global PC client, including ESP, flight markers, and plan choices.',
+    slug: 'halloween-cheats-explained',
     imageFile: 'aion2-lab-combat-400.webp',
     readMinutes: 8,
     ts: 1791763200000,
@@ -36,117 +36,117 @@ const IMPORTED = [
   },
   {
     tag: 'Features',
-    title: 'AION 2 player ESP: faction, class, and distance',
+    title: 'Halloween: The Game player ESP: faction, class, and distance',
     desc: 'How player ESP presents nearby Daevas with faction, class, level, and distance information.',
-    slug: 'aion-2-player-esp-guide',
+    slug: 'halloween-player-esp-guide',
     imageFile: 'aion2-player-esp-400.webp',
     readMinutes: 6,
     ts: 1791676800000,
   },
   {
     tag: 'Features',
-    title: 'AION 2 soft aim options',
+    title: 'Halloween: The Game soft aim options',
     desc: 'What soft aim is listed for, and why it should stay optional after you check status.',
-    slug: 'aion-2-soft-aim-guide',
+    slug: 'halloween-soft-aim-guide',
     imageFile: 'aion2-snaplines-400.webp',
     readMinutes: 5,
     ts: 1791590400000,
   },
   {
     tag: 'Features',
-    title: 'AION 2 flight markers for aerial combat',
-    desc: 'Aerial target ESP, altitude readouts, and sky contested zone highlights for AION 2 flight PvP.',
-    slug: 'aion-2-flight-aerial-esp',
+    title: 'Halloween: The Game flight markers for aerial combat',
+    desc: 'Aerial target ESP, altitude readouts, and sky contested zone highlights for Halloween: The Game flight PvP.',
+    slug: 'halloween-flight-aerial-esp',
     imageFile: 'aion2-flight-view-400.webp',
     readMinutes: 6,
     ts: 1791504000000,
   },
   {
     tag: 'Features',
-    title: 'AION 2 radar features',
+    title: 'Halloween: The Game radar features',
     desc: 'How 2D radar complements ESP when you need nearby player, boss, and node cues.',
-    slug: 'aion-2-radar-system-guide',
+    slug: 'halloween-radar-system-guide',
     imageFile: 'aion2-radar-map-400.webp',
     readMinutes: 5,
     ts: 1791417600000,
   },
   {
     tag: 'Features',
-    title: 'AION 2 gathering node ESP',
-    desc: 'Ore, herb, material, and chest markers from the current private Aion 2 suite listing.',
-    slug: 'aion-2-gathering-node-esp',
+    title: 'Halloween: The Game gathering node ESP',
+    desc: 'Ore, herb, material, and chest markers from the current private Halloween: The Game suite listing.',
+    slug: 'halloween-gathering-node-esp',
     imageFile: 'aion2-dungeon-quest-400.webp',
     readMinutes: 5,
     ts: 1791331200000,
   },
   {
     tag: 'Features',
-    title: 'AION 2 world and boss markers',
+    title: 'Halloween: The Game world and boss markers',
     desc: 'NPC, elite, world boss, dungeon, quest, and portal overlays for Atreia.',
-    slug: 'aion-2-world-boss-esp',
+    slug: 'halloween-world-boss-esp',
     imageFile: 'aion2-safehaven-combat-400.webp',
     readMinutes: 6,
     ts: 1791244800000,
   },
   {
     tag: 'Setup',
-    title: 'AION 2 cheats PC setup on Windows',
+    title: 'Halloween: The Game cheats PC setup on Windows',
     desc: 'Windows PC requirements, Steam and PURPLE notes, and a conservative first-run configuration.',
-    slug: 'aion-2-cheat-setup-guide',
+    slug: 'halloween-cheat-setup-guide',
     imageFile: 'aion2-lab-combat-400.webp',
     readMinutes: 7,
     ts: 1791158400000,
   },
   {
     tag: 'Updates',
-    title: 'AION 2 anti-cheat and compatibility notes',
-    desc: 'What published AION 2 anti-bot measures mean and how to treat status after a patch.',
-    slug: 'aion-2-anti-cheat-bypass-explained',
+    title: 'Halloween: The Game anti-cheat and compatibility notes',
+    desc: 'What published Halloween: The Game anti-bot measures mean and how to treat status after a patch.',
+    slug: 'halloween-anti-cheat-bypass-explained',
     imageFile: 'aion2-radar-map-400.webp',
     readMinutes: 6,
     ts: 1791072000000,
   },
   {
     tag: 'Guides',
-    title: 'AION 2 Cheats monthly vs lifetime plans',
+    title: 'Halloween: The Game Cheats monthly vs lifetime plans',
     desc: 'Compare the $35 monthly plan and the $150 lifetime plan before checkout.',
-    slug: 'aion-2-monthly-vs-lifetime-plans',
+    slug: 'halloween-monthly-vs-lifetime-plans',
     imageFile: 'aion2-lab-combat-400.webp',
     readMinutes: 4,
     ts: 1790985600000,
   },
   {
     tag: 'Guides',
-    title: 'AION 2 classes on the global PC build',
-    desc: 'The eight launch classes on the global AION 2 client and how to confirm current gender rules.',
-    slug: 'aion-2-classes-global-pc-build',
+    title: 'Halloween: The Game classes on the global PC build',
+    desc: 'The eight launch classes on the global Halloween: The Game client and how to confirm current gender rules.',
+    slug: 'halloween-classes-global-pc-build',
     imageFile: 'aion2-player-esp-400.webp',
     readMinutes: 6,
     ts: 1790899200000,
   },
   {
     tag: 'Guides',
-    title: 'AION 2 gameplay guide: combat, flight, and factions',
-    desc: 'A short AION 2 gameplay guide covering aerial combat, factions, and what to review before buying tools.',
-    slug: 'aion-2-gameplay-combat-flight-factions',
+    title: 'Halloween: The Game gameplay guide: combat, flight, and factions',
+    desc: 'A short Halloween: The Game gameplay guide covering aerial combat, factions, and what to review before buying tools.',
+    slug: 'halloween-gameplay-combat-flight-factions',
     imageFile: 'aion2-flight-view-400.webp',
     readMinutes: 7,
     ts: 1790812800000,
   },
   {
     tag: 'Guides',
-    title: 'AION 2 release date and global access',
-    desc: 'When AION 2 opened globally on Steam and PURPLE, plus what that means for product compatibility.',
-    slug: 'aion-2-release-date-global-access',
+    title: 'Halloween: The Game release date and global access',
+    desc: 'When Halloween: The Game opened globally on Steam and PURPLE, plus what that means for product compatibility.',
+    slug: 'halloween-release-date-global-access',
     imageFile: 'aion2-dungeon-quest-400.webp',
     readMinutes: 5,
     ts: 1790726400000,
   },
   {
     tag: 'Guides',
-    title: 'AION 2 North America servers and regions',
-    desc: 'North America server location notes for AION 2 and how regional access differs from Korea or Taiwan progress.',
-    slug: 'aion-2-north-america-servers',
+    title: 'Halloween: The Game North America servers and regions',
+    desc: 'North America server location notes for Halloween: The Game and how regional access differs from Korea or Taiwan progress.',
+    slug: 'halloween-north-america-servers',
     imageFile: 'aion2-safehaven-combat-400.webp',
     readMinutes: 5,
     ts: 1790640000000,
@@ -157,7 +157,7 @@ const DOMAIN_BLOCK = /aion2cheats\.org/gi;
 
 function sanitize(text) {
   return text
-    .replace(DOMAIN_BLOCK, 'getaion2cheats.net')
+    .replace(DOMAIN_BLOCK, 'gethalloweencheats.com')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -173,17 +173,17 @@ function formatDate(ts) {
 
 function metaDescription(title, desc) {
   const d = sanitize(desc);
-  return `${title} — ${d} Guides for Windows PC on getaion2cheats.net.`;
+  return `${title} — ${d} Guides for Windows PC on gethalloweencheats.com.`;
 }
 
 function bodyFor(entry) {
-  const product = '[Aion 2 Private Cheats](/products/aion-2-cheats/)';
-  const hwid = '[HWID Spoofer](/products/aion-2-cheats/hwid-spoofer/)';
-  const accounts = '[UGC tool](/products/aion-2-cheats/game-accounts/)';
-  const skin = '[Skin Changer](/products/aion-2-cheats/skin-changer/)';
+  const product = '[Halloween Private Cheats](/products/halloween-cheats/)';
+  const hwid = '[HWID Spoofer](/products/halloween-cheats/hwid-spoofer/)';
+  const accounts = '[UGC tool](/products/halloween-cheats/game-accounts/)';
+  const skin = '[Skin Changer](/products/halloween-cheats/skin-changer/)';
   const faq = '[FAQ](/faq/)';
   const intro = sanitize(
-    `${entry.desc} This article covers ${entry.title.toLowerCase()} for the global AION 2 PC client on Steam and PURPLE. Check compatibility on getaion2cheats.net before you buy or launch—patch days can change overlay behavior.`,
+    `${entry.desc} This article covers ${entry.title.toLowerCase()} for the global Halloween: The Game PC client on Steam and PURPLE. Check compatibility on gethalloweencheats.com before you buy or launch—patch days can change overlay behavior.`,
   );
 
   return [
@@ -214,13 +214,13 @@ function bodyFor(entry) {
     { type: 'h2', text: 'Internal links worth reading next' },
     {
       type: 'p',
-      text: 'Continue with [Player ESP guide](/blog/aion-2-player-esp-guide/), [Radar system guide](/blog/aion-2-radar-system-guide/), and [Setup guide](/blog/aion-2-cheat-setup-guide/) for a full first-week configuration path.',
+      text: 'Continue with [Player ESP guide](/blog/halloween-player-esp-guide/), [Radar system guide](/blog/halloween-radar-system-guide/), and [Setup guide](/blog/halloween-cheat-setup-guide/) for a full first-week configuration path.',
     },
     {
       type: 'cta',
       title: 'Review plans and checkout',
-      text: 'Compare Monthly and Lifetime access for the private Aion 2 suite, then finish checkout through our secure redirect.',
-      href: '/go/aion-2-cheats/',
+      text: 'Compare Monthly and Lifetime access for the private Halloween: The Game suite, then finish checkout through our secure redirect.',
+      href: '/go/halloween-cheats/',
     },
     { type: 'h2', text: 'Quick FAQ' },
     { type: 'h3', text: 'Which platform is supported?' },
@@ -332,12 +332,12 @@ console.log(`Wrote ${importedPosts.length} imported + ${supplemental.length} sup
 
 // Blog index SEO from saved listing meta (no competitor domain).
 const listingDesc =
-  'Explore AION 2 guides, gameplay tips, class information, game updates, compatibility news, and product-related information.';
+  'Explore Halloween: The Game guides, gameplay tips, class information, game updates, compatibility news, and product-related information.';
 const pageSeoPath = path.join(root, 'src/config/pageSeo.ts');
 let pageSeo = fs.readFileSync(pageSeoPath, 'utf8');
 pageSeo = pageSeo.replace(
   /(\s+'\/blog\/': \{\s+title: ')[^']+(',\s+description:\s+\n\s+')([^']+)(')/,
-  `$1AION 2 Guides and Updates | Aion 2 Cheats$2${listingDesc}$4`,
+  `$1Halloween: The Game Guides and Updates | Halloween Cheats$2${listingDesc}$4`,
 );
 fs.writeFileSync(pageSeoPath, pageSeo);
 

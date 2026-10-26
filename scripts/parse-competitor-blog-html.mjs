@@ -48,7 +48,7 @@ for (const m of html.matchAll(cardRe)) {
 const slugRe = /href="https:\/\/aion2cheats\.org\/blog\/([^"/?]+)\/?"/g;
 const slugs = [...new Set([...html.matchAll(slugRe)].map((m) => m[1]))];
 
-const localImgs = [...new Set([...html.matchAll(/AION 2 Guides and Updates _ AION 2 Cheats_files\/(aion2-[^"]+\.webp)/g)].map((m) => m[1]))];
+const localImgs = [...new Set([...html.matchAll(/Halloween: The Game Guides and Updates _ Halloween: The Game Cheats_files\/(aion2-[^"]+\.webp)/g)].map((m) => m[1]))];
 
 // Pair cards with nearest article link after each card block (fragile but works on saved HTML)
 const articleLinks = [...html.matchAll(/href="https:\/\/aion2cheats\.org\/blog\/([^"/?]+)\/?"[^>]*>\s*Read/g)];

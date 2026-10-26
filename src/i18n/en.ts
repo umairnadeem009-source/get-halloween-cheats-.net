@@ -14,11 +14,11 @@ const productQuickStats = [
 
 export const en: Translations = {
   site: {
-    name: 'Aion 2 Cheats',
-    domain: 'getaion2cheats.net',
-    title: 'Aion 2 Cheats | Private ESP, Radar & Soft Aim for PC',
+    name: 'Halloween Cheats',
+    domain: 'gethalloweencheats.com',
+    title: 'Halloween Cheats | Private ESP, Radar & aim assist for PC',
     description:
-      'Aion 2 cheats for Windows PC — player ESP, flight markers, gathering nodes, 2D radar, and optional soft aim. Weekly, monthly, and lifetime plans on Steam and PURPLE.',
+      'Halloween cheats for Windows PC — player ESP, stalk markers, escape item markers, 2D radar, and optional aim assist. Weekly, monthly, and lifetime plans on Steam.',
     discord: DISCORD_URL,
   },
   nav: [
@@ -29,80 +29,80 @@ export const en: Translations = {
     { href: '/support/', label: 'Support' },
   ],
   hero: {
-    status: 'Aion 2 on Windows PC',
-    eyebrow: 'Private Aion 2 cheats',
-    titleLine1: 'Aion 2 Cheats',
-    titleLine2: 'ESP, Radar & Soft Aim',
+    status: 'Halloween: The Game on Windows PC',
+    eyebrow: 'Private Halloween cheats',
+    titleLine1: 'Halloween Cheats',
+    titleLine2: 'ESP, Radar & aim assist',
     subtitle:
-      'Private Aion 2 cheats for Windows PC — player ESP, faction filters, flight markers, gathering nodes, 2D radar, and optional soft aim. Plus HWID Spoofer, UGC tool, and Skin Changer utilities.',
+      'Private Halloween cheats for Windows PC — player ESP, role filters, stalk markers, escape item markers, 2D radar, and optional aim assist. Plus HWID Spoofer, UGC tool, and Skin Changer utilities.',
     ctaPrimary: 'Buy now',
     ctaDiscord: 'Join Discord',
     modesLabel: 'Platform',
-    modes: ['Steam global PC', 'PURPLE client', 'Windows 10 & 11', 'Intel / AMD'],
+    modes: ['Steam global PC', 'Steam PC', 'Windows 10 & 11', 'Intel / AMD'],
     metrics: [...productQuickStats],
   },
   productQuickStats: [...productQuickStats],
   features: {
     eyebrow: 'Cheat features',
-    title: 'Aion 2 modules you can inspect',
+    title: 'Halloween: The Game modules you can inspect',
     subtitle:
-      'Player ESP, flight markers, gathering nodes, radar, and soft aim taken from the current product listing—no invented farming bots.',
+      'Survivor and Myers ESP, world markers, terror radius cues, radar, and aim assist from the current product listing—no invented bots.',
     items: [
       {
-        title: 'Player ESP',
-        subtitle: 'Faction, class, and distance',
-        desc: 'Read nearby Daevas with nameplates, class, level, faction, distance, and flying state before you commit.',
+        title: 'Survivor ESP',
+        subtitle: 'Health, weapons, and actions',
+        desc: 'Read nearby survivors with boxes, skeletons, health state, held weapons, and looting or healing action states.',
         bullets: [
-          'Box, skeleton, and nameplate readouts',
-          'Class, level, and faction filters',
-          'Health bar and view-direction cues',
-          'Flying or grounded state plus off-screen arrows',
+          'Survivor box, skeleton, and name readouts',
+          'Health state and held weapon tags',
+          'Teammate distance, health, and items',
+          'Off-screen arrows and distance caps',
         ],
-        tags: ['aion 2 ESP', 'player ESP', 'faction filter'],
+        tags: ['Halloween survivor ESP', 'survivor ESP', 'teammate tracker'],
         bento: 'sm:col-span-2 lg:col-span-8 lg:col-start-5 lg:row-start-1 lg:min-h-full',
       },
       {
         title: 'Compatibility',
-        subtitle: 'Global PC on Windows',
-        desc: 'Windows 10 and 11 on the global Steam or PURPLE client. Re-check status after game updates before launching.',
-        bullets: ['Windows 10 and 11', 'Steam and PURPLE global PC', 'Review status after patches'],
-        tags: ['Windows PC', 'Steam', 'PURPLE'],
+        subtitle: 'Windows PC',
+        desc: 'Windows 10 and 11 for Halloween: The Game on Steam PC. Re-check status after game updates before launching.',
+        bullets: ['Windows 10 and 11', 'Steam PC client', 'Review status after patches'],
+        tags: ['Windows PC', 'Steam', 'Easy Anti-Cheat'],
         bento: 'sm:col-span-2 lg:col-span-4 lg:col-start-1 lg:row-start-1',
       },
       {
-        title: 'Soft Aim',
+        title: 'Aim assist',
         subtitle: 'Optional targeting help',
         desc: 'Combat option on the listing—leave it off until you confirm current status and accept the extra risk combat modules add.',
         bullets: [
           'Aim key, FOV, and smoothness',
           'Bone selection and visible check',
-          'Ignore friendly faction or party',
+          'Draw FOV and max aim distance',
         ],
-        tags: ['aion 2 soft aim', 'aim assist'],
+        tags: ['Halloween aim assist', 'aim assist', 'mod menu'],
         bento: 'sm:col-span-2 lg:col-span-8 lg:col-start-1 lg:row-start-2',
       },
       {
-        title: 'Flight Markers',
-        subtitle: 'Track aerial targets',
-        desc: 'Highlight flying targets, altitude, wing or glide state, and sky contested zones so aerial combat is easier to read.',
-        bullets: ['Aerial target ESP', 'Altitude and wing-state readouts', 'Sky contested zone highlights'],
-        tags: ['flight ESP', 'aerial markers'],
+        title: 'Myers ESP',
+        subtitle: 'Stalk and terror radius',
+        desc: 'Track Michael Myers with threat state, proximity warnings, stalk highlights, terror radius, and line-of-sight checks.',
+        bullets: ['Myers box, skeleton, and distance', 'Stalking / chasing threat state', 'Terror radius and LOS indicators'],
+        tags: ['Myers ESP', 'stalk tracker', 'terror radius'],
         bento: 'sm:col-span-2 lg:col-span-6 lg:col-start-1 lg:row-start-3',
       },
       {
-        title: 'Gathering Nodes',
-        subtitle: 'Ore, herbs, and loot',
-        desc: 'Node ESP highlights ore, herbs, materials, chests, and loot objects with distance filters.',
-        bullets: ['Node ESP with material filters', 'Chest and loot object markers', 'Max world distance filter'],
-        tags: ['node ESP', 'gathering'],
+        title: 'World ESP',
+        subtitle: 'Items and escape routes',
+        desc: 'Weapon and item ESP, hide spots, vehicles, alert objects, and escape route highlights with max world distance.',
+        bullets: ['Household weapons and phones', 'Closets, doors, and interactables', 'Rescue and escape objective markers'],
+        tags: ['item ESP', 'escape routes', 'Halloween hacks'],
         bento: 'sm:col-span-2 lg:col-span-6 lg:col-start-7 lg:row-start-3',
       },
       {
         title: 'Radar',
         subtitle: 'Local 2D awareness',
-        desc: '2D radar sits next to ESP so you can rotate around nearby players, bosses, and nodes without covering the screen.',
-        bullets: ['Player and faction color coding', 'Boss and node markers', 'Adjustable range and zoom'],
-        tags: ['aion 2 radar', '2D radar'],
+        desc: '2D radar sits next to ESP so you can track survivors, Myers, and items without covering the screen.',
+        bullets: ['Role color coding on radar', 'Survivor and Myers blips', 'Adjustable range and zoom'],
+        tags: ['Halloween radar', '2D radar', 'ESP overlay'],
         bento: 'sm:col-span-2 lg:col-span-8 lg:col-start-1 lg:row-start-4',
       },
       {
@@ -125,15 +125,15 @@ export const en: Translations = {
   },
   whyUs: {
     eyebrow: 'Why us',
-    title: 'A single-game listing for Aion 2',
+    title: 'A single-game listing for Halloween: The Game',
     subtitle:
-      'Copy, plans, and guides stay on Aion 2 instead of mixing unrelated games into one catalog. Listed features only—ESP, flight markers, nodes, radar, and soft aim.',
-    usLabel: 'Aion 2 Cheats',
+      'Copy, plans, and guides stay on Halloween: The Game instead of mixing unrelated games into one catalog. Listed features only—ESP, stalk markers, nodes, radar, and aim assist.',
+    usLabel: 'Halloween Cheats',
     otherLabel: 'Typical listing',
     rows: [
       {
-        title: 'Aion 2 only',
-        desc: 'The catalog, pricing, and guides stay locked to Aion 2 rather than bundling other titles.',
+        title: 'Halloween: The Game only',
+        desc: 'The catalog, pricing, and guides stay locked to Halloween: The Game rather than bundling other titles.',
       },
       {
         title: 'Listed features only',
@@ -149,7 +149,7 @@ export const en: Translations = {
       },
       {
         title: 'Windows PC requirements',
-        desc: 'Windows 10/11 on Steam or PURPLE. Full functionality may require vendor Cloud DMA notes where listed.',
+        desc: 'Windows 10/11 on Steam. Full functionality may require vendor Cloud DMA notes where listed.',
       },
       {
         title: 'Support on the record',
@@ -160,7 +160,7 @@ export const en: Translations = {
       { value: '$15', title: 'Weekly plan', desc: 'Seven-day access billed in USD.' },
       { value: '$35', title: 'Monthly plan', desc: 'Thirty-day access billed in USD.' },
       { value: '$150', title: 'Lifetime plan', desc: 'One-time USD purchase for long-term access.' },
-      { value: 'PC', title: 'Official platform', desc: 'Aion 2 global service on Windows through Steam and PURPLE.' },
+      { value: 'PC', title: 'Official platform', desc: 'Halloween: The Game global service on Windows through Steam.' },
     ],
   },
   setup: {
@@ -168,7 +168,7 @@ export const en: Translations = {
     titleLead: 'From checkout to a configured overlay in',
     titleHighlight: 'three clear steps',
     intro:
-      'Confirm compatibility, finish checkout, then follow vendor notes for Windows PC and the global Steam or PURPLE client before you launch Aion 2.',
+      'Confirm compatibility, finish checkout, then follow vendor notes for Windows PC and the global Steam or Steam PC before you launch Halloween: The Game.',
     ctaPrimary: 'Compare plans',
     ctaSecondary: 'Setup questions',
     ctaPrimaryHref: productBase,
@@ -177,7 +177,7 @@ export const en: Translations = {
       {
         step: 'Step 1',
         title: 'Confirm status and requirements',
-        desc: 'Read Support and FAQ notes after any Aion 2 client update.',
+        desc: 'Read Support and FAQ notes after any Halloween: The Game client update.',
       },
       {
         step: 'Step 2',
@@ -194,11 +194,11 @@ export const en: Translations = {
   compatibility: {
     eyebrow: 'Platform',
     title: 'Windows PC',
-    subtitle: 'Check compatibility notes after Aion 2 updates before you launch.',
+    subtitle: 'Check compatibility notes after Halloween: The Game updates before you launch.',
     items: [
       'Windows 10 & 11',
       'Steam global PC',
-      'PURPLE client',
+      'Steam PC',
       'Intel / AMD',
       'Saveable configs',
       'Discord support',
@@ -208,8 +208,8 @@ export const en: Translations = {
   },
   cheats: {
     eyebrow: 'Main suite',
-    title: 'Aion 2 Private Cheats',
-    subtitle: 'Full module list — ESP, flight markers, nodes, radar, and optional soft aim.',
+    title: 'Halloween Private Cheats',
+    subtitle: 'Full module list — ESP, stalk markers, nodes, radar, and optional aim assist.',
     viewAll: 'View main suite',
     explore: 'Explore',
     items: [
@@ -217,9 +217,9 @@ export const en: Translations = {
         badge: 'Available',
         tier: 'Private',
         name: 'Main',
-        title: 'Aion 2 Private Cheats',
-        desc: 'Player ESP, faction filters, flight markers, gathering nodes, radar, and optional soft aim for Windows PC.',
-        features: ['Player ESP', 'Soft aim', 'Flight markers', 'Radar', 'Gathering nodes', 'Saveable configs'],
+        title: 'Halloween Private Cheats',
+        desc: 'Player ESP, role filters, stalk markers, escape item markers, radar, and optional aim assist for Windows PC.',
+        features: ['Player ESP', 'aim assist', 'stalk markers', 'Radar', 'escape item markers', 'Saveable configs'],
         more: 40,
         href: productBase,
         variant: 'popular',
@@ -228,7 +228,7 @@ export const en: Translations = {
   },
   products: {
     eyebrow: 'Shop',
-    title: 'Aion 2 products',
+    title: 'Halloween: The Game products',
     subtitle: 'Private cheats, HWID Spoofer, UGC tool, and Skin Changer — four focused utilities for PC.',
     viewAll: 'View all products',
     get: 'Buy',
@@ -237,10 +237,10 @@ export const en: Translations = {
       {
         badge: 'Available',
         category: 'Main suite',
-        title: 'Aion 2 Private Cheats',
-        subtitle: 'ESP, radar, and soft aim',
-        desc: 'Monthly and lifetime access to the private Aion 2 overlay suite on Windows PC.',
-        features: ['Player ESP', 'Soft aim', 'Flight markers', '2D radar', 'Gathering nodes'],
+        title: 'Halloween Private Cheats',
+        subtitle: 'ESP, radar, and aim assist',
+        desc: 'Monthly and lifetime access to the private Halloween: The Game overlay suite on Windows PC.',
+        features: ['Player ESP', 'aim assist', 'stalk markers', '2D radar', 'escape item markers'],
         more: 40,
         href: productBase,
       },
@@ -278,10 +278,10 @@ export const en: Translations = {
   },
   blog: {
     eyebrow: 'Guides',
-    title: 'AION 2 guides and updates',
+    title: 'Halloween: The Game guides and updates',
     subtitle:
-      'Explore AION 2 guides, gameplay tips, class information, game updates, compatibility news, and product-related information.',
-    latestTitle: 'Latest Aion 2 guides',
+      'Explore Halloween: The Game guides, gameplay tips, class information, game updates, compatibility news, and product-related information.',
+    latestTitle: 'Latest Halloween: The Game guides',
     latestSubtitle: 'Filter by topic or sort to find ESP, radar, setup, and anti-cheat articles.',
     filterAll: 'All articles',
     sortLabel: 'Sort by',
@@ -304,14 +304,14 @@ export const en: Translations = {
   },
   toolkit: {
     eyebrow: 'Cheat menu',
-    title: 'Aion 2 overlay menu, organized',
-    subtitle: 'Modules grouped so you can tune ESP, radar, and soft aim without cluttering the HUD.',
+    title: 'Halloween: The Game overlay menu, organized',
+    subtitle: 'Modules grouped so you can tune ESP, radar, and aim assist without cluttering the HUD.',
     items: [
-      { num: '01', label: 'ESP', title: 'Player and world readouts', desc: 'Faction filters, bosses, nodes, and portals with distance caps.' },
-      { num: '02', label: 'Aim', title: 'Optional soft aim', desc: 'FOV, smoothness, bone selection, and visible check toggles.' },
+      { num: '01', label: 'ESP', title: 'Player and world readouts', desc: 'role filters, bosses, nodes, and portals with distance caps.' },
+      { num: '02', label: 'Aim', title: 'Optional aim assist', desc: 'FOV, smoothness, bone selection, and visible check toggles.' },
       { num: '03', label: 'Radar', title: '2D awareness', desc: 'Faction colors, boss dots, and zoom beside ESP.' },
       { num: '04', label: 'Flight', title: 'Aerial markers', desc: 'Altitude, wing state, and contested sky zones.' },
-      { num: '05', label: 'World', title: 'PvE routing', desc: 'Quest objectives, dungeons, and gathering filters.' },
+      { num: '05', label: 'World', title: 'Haddonfield routing', desc: 'Weapons, hide spots, phones, and escape objective filters.' },
       { num: '06', label: 'Profiles', title: 'Saveable configs', desc: 'Menu key, panic key, and cloud-friendly presets.' },
     ],
   },
@@ -320,7 +320,7 @@ export const en: Translations = {
     badge: '4 steps',
     titleBefore: 'From status check to',
     titleHighlight: 'a saved config.',
-    subtitle: 'A straight path from reviewing Aion 2 compatibility to a profile you can reuse.',
+    subtitle: 'A straight path from reviewing Halloween: The Game compatibility to a profile you can reuse.',
     ctaLabel: 'See current plans',
     ctaHref: productBase,
     ctaSecondary: 'Read setup FAQ',
@@ -330,7 +330,7 @@ export const en: Translations = {
         num: '01',
         phase: 'Before purchase',
         title: 'Check current status',
-        desc: 'Read Support notes on getaion2cheats.net after any Aion 2 client update.',
+        desc: 'Read Support notes on gethalloweencheats.com after any Halloween: The Game client update.',
       },
       {
         num: '02',
@@ -342,7 +342,7 @@ export const en: Translations = {
         num: '03',
         phase: 'Loader',
         title: 'Follow Windows PC instructions',
-        desc: 'Use vendor setup notes for Steam or PURPLE. Confirm Cloud DMA requirements if listed.',
+        desc: 'Use vendor setup notes for Steam. Confirm Cloud DMA requirements if listed.',
       },
       {
         num: '04',
@@ -356,14 +356,14 @@ export const en: Translations = {
     eyebrow: 'Notes',
     title: 'Quick tips',
     items: [
-      { num: '01', title: 'After patches', desc: 'Check Support before you fly into contested airspace after an Aion 2 update.' },
-      { num: '02', title: 'Start slow', desc: 'Use default ESP distance and keep soft aim off until the HUD feels clean.' },
+      { num: '01', title: 'After patches', desc: 'Check Support before you fly into contested airspace after an Halloween: The Game update.' },
+      { num: '02', title: 'Start slow', desc: 'Use default ESP distance and keep aim assist off until the HUD feels clean.' },
       { num: '03', title: 'Discord help', desc: 'Stuck on loader or configs? Ask in Discord with your order email ready.' },
     ],
   },
   support: {
     eyebrow: 'Support',
-    title: 'Aion 2 Cheats support',
+    title: 'Halloween Cheats support',
     subtitle: 'Loader, HWID, checkout, and account help.',
     channels: [
       {
@@ -397,35 +397,35 @@ export const en: Translations = {
     ],
     ticketTitle: 'Include in your ticket',
     ticketItems: [
-      { title: 'Order email', desc: 'The email you used at checkout on getaion2cheats.net.' },
-      { title: 'Platform', desc: 'Windows 10 or 11, Steam or PURPLE client, and your Aion 2 build.' },
+      { title: 'Order email', desc: 'The email you used at checkout on gethalloweencheats.com.' },
+      { title: 'Platform', desc: 'Windows 10 or 11, Steam or Steam PC, and your Halloween: The Game build.' },
       { title: 'Error detail', desc: 'Screenshot or exact text from the loader or game client.' },
     ],
   },
   faq: {
     eyebrow: 'FAQ',
-    title: 'Aion 2 cheats FAQ',
+    title: 'Halloween cheats FAQ',
     subtitle: 'Compatibility, plans, utilities, and setup — straight answers before you buy.',
     items: [
       {
         num: '01',
-        q: 'Where do I check if Aion 2 cheats are currently compatible?',
-        a: 'Open Support and FAQ on getaion2cheats.net before purchase or launch, especially after an Aion 2 client update.',
+        q: 'Where do I check if Halloween cheats are currently compatible?',
+        a: 'Open Support and FAQ on gethalloweencheats.com before purchase or launch, especially after an Halloween: The Game client update.',
       },
       {
         num: '02',
         q: 'What happens after I buy?',
-        a: 'Checkout provides access and setup instructions. Follow those notes plus the setup guide for Windows PC before launching Aion 2.',
+        a: 'Checkout provides access and setup instructions. Follow those notes plus the setup guide for Windows PC before launching Halloween: The Game.',
       },
       {
         num: '03',
-        q: 'Can I get banned using third-party Aion 2 software?',
+        q: 'Can I get banned using third-party Halloween: The Game software?',
         a: 'Yes. Any third-party modification can conflict with published anti-bot measures and may lead to account action. You use this software at your own risk.',
       },
       {
         num: '04',
         q: 'Which platforms are supported?',
-        a: 'Aion 2 on Windows 10/11 PC through the global Steam or PURPLE client. macOS, Linux, and consoles are not listed.',
+        a: 'Halloween: The Game on Windows 10/11 PC through the global Steam or Steam PC. macOS, Linux, and consoles are not listed.',
       },
       {
         num: '05',
@@ -435,18 +435,18 @@ export const en: Translations = {
       {
         num: '06',
         q: 'Where are products listed?',
-        a: 'All four products live at getaion2cheats.net/products/ with feature lists and checkout via our secure redirect.',
+        a: 'All four products live at gethalloweencheats.com/products/ with feature lists and checkout via our secure redirect.',
       },
     ],
   },
   footer: {
-    tagline: 'Aion 2 cheats — ESP, flight markers, and plans for Windows PC.',
+    tagline: 'Halloween cheats — ESP, stalk markers, and plans for Windows PC.',
     explore: 'Explore',
     exploreLinks: [
       { href: '/', label: 'Feature overview', ariaLabel: 'Features', scrollTarget: 'features' },
-      { href: productBase, label: 'Aion 2 private cheats', ariaLabel: 'Main suite' },
+      { href: productBase, label: 'Halloween private cheats', ariaLabel: 'Main suite' },
       { href: PRODUCTS_HUB, label: 'All products', ariaLabel: 'Products' },
-      { href: '/blog/', label: 'Read Aion 2 guides', ariaLabel: 'Blog' },
+      { href: '/blog/', label: 'Read Halloween: The Game guides', ariaLabel: 'Blog' },
       { href: '/faq/', label: 'Pre-purchase FAQ', ariaLabel: 'FAQ' },
     ],
     support: 'Support',
@@ -457,21 +457,21 @@ export const en: Translations = {
   },
   legalPages: {
     about: {
-      title: 'About Aion 2 Cheats | PC ESP & Utilities',
+      title: 'About Halloween Cheats | PC ESP & Utilities',
       description:
-        'About Aion 2 Cheats — private suite, utilities, and guides for the global Aion 2 PC client at getaion2cheats.net.',
+        'About Halloween Cheats — private suite, utilities, and guides for the global Halloween: The Game PC client at gethalloweencheats.com.',
       sections: [
         {
           heading: 'Who we are',
           paragraphs: [
-            'Aion 2 Cheats documents listed overlay tools and utilities for the global Aion 2 PC client. We publish setup guides, plan comparisons, and compatibility notes.',
+            'Halloween Cheats documents listed overlay tools and utilities for the global Halloween: The Game PC client. We publish setup guides, plan comparisons, and compatibility notes.',
             'Game and product names are for identification only.',
           ],
         },
         {
           heading: 'What we sell',
           paragraphs: [
-            'Aion 2 Private Cheats (Monthly and Lifetime), HWID Spoofer, UGC tool, and Skin Changer utilities. The blog covers ESP, radar, flight combat, and anti-cheat context.',
+            'Halloween Private Cheats (Monthly and Lifetime), HWID Spoofer, UGC tool, and Skin Changer utilities. The blog covers ESP, radar, flight combat, and anti-cheat context.',
             'Pages update when the client or loader changes. Check Support before you play after patches.',
           ],
         },
@@ -484,13 +484,13 @@ export const en: Translations = {
       ],
     },
     privacy: {
-      title: 'Privacy Policy | Aion 2 Cheats',
-      description: 'How getaion2cheats.net handles analytics, cookies and contact data.',
+      title: 'Privacy Policy | Halloween Cheats',
+      description: 'How gethalloweencheats.com handles analytics, cookies and contact data.',
       sections: [
         {
           heading: 'Information we collect',
           paragraphs: [
-            'We may collect basic analytics such as page views, device type, browser and approximate region through Google Analytics when enabled. Checkout runs on external pages. We do not store payment card data on getaion2cheats.net.',
+            'We may collect basic analytics such as page views, device type, browser and approximate region through Google Analytics when enabled. Checkout runs on external pages. We do not store payment card data on gethalloweencheats.com.',
           ],
         },
         {
@@ -510,26 +510,26 @@ export const en: Translations = {
       ],
     },
     terms: {
-      title: 'Terms for Aion 2 Cheats | License & Refunds',
-      description: 'Terms for buying Aion 2 cheats on getaion2cheats.net — license use, delivery, refunds and account risk.',
+      title: 'Terms for Halloween Cheats | License & Refunds',
+      description: 'Terms for buying Halloween cheats on gethalloweencheats.com — license use, delivery, refunds and account risk.',
       sections: [
         {
           heading: 'Agreement',
           paragraphs: [
-            'Last updated: October 2026. By using getaion2cheats.net or buying a product listed here, you agree to these Terms & Conditions and our Privacy Policy.',
+            'Last updated: October 2026. By using gethalloweencheats.com or buying a product listed here, you agree to these Terms & Conditions and our Privacy Policy.',
           ],
         },
         {
           heading: 'What you purchase',
           paragraphs: [
-            'We sell Aion 2 Private Cheats access and utilities (HWID Spoofer, UGC tool, Skin Changer) through a portal and Windows loader for Steam or PURPLE.',
-            'Product pages list what is included when you buy. Features can change when Aion 2 or anti-cheat systems update.',
+            'We sell Halloween Private Cheats access and utilities (HWID Spoofer, UGC tool, Skin Changer) through a portal and Windows loader for Steam.',
+            'Product pages list what is included when you buy. Features can change when Halloween: The Game or anti-cheat systems update.',
           ],
         },
         {
           heading: 'Checkout and delivery',
           paragraphs: [
-            'Payment and license delivery run on external checkout pages. getaion2cheats.net does not process or store payment card numbers.',
+            'Payment and license delivery run on external checkout pages. gethalloweencheats.com does not process or store payment card numbers.',
             'After purchase, use the operator portal linked from your order flow to download the current loader and setup guide.',
           ],
         },
@@ -548,7 +548,7 @@ export const en: Translations = {
         {
           heading: 'Availability and risk',
           paragraphs: [
-            'Third-party tools for Aion 2 can conflict with game updates and anti-cheat systems. You use this software at your own risk, including possible account action.',
+            'Third-party tools for Halloween: The Game can conflict with game updates and anti-cheat systems. You use this software at your own risk, including possible account action.',
             'Check compatibility notes before every session.',
           ],
         },
@@ -565,17 +565,17 @@ export const en: Translations = {
       ],
     },
     support: {
-      title: 'Aion 2 Cheats Support | Setup & Checkout',
-      description: 'Support for Aion 2 loader setup, HWID spoofing, and checkout help at getaion2cheats.net.',
+      title: 'Halloween Cheats Support | Setup & Checkout',
+      description: 'Support for Halloween: The Game loader setup, HWID spoofing, and checkout help at gethalloweencheats.com.',
     },
   },
   ui: {
     skipLink: 'Skip to main content',
     browseCheats: 'Try Now',
     browseCheatsMobile: 'Start checkout',
-    homeAria: 'Aion 2 Cheats home',
-    checkoutAria: 'Start checkout for Aion 2 private cheats',
-    discordAria: 'Join Aion 2 Cheats on Discord',
+    homeAria: 'Halloween Cheats home',
+    checkoutAria: 'Start checkout for Halloween private cheats',
+    discordAria: 'Join Halloween Cheats on Discord',
     menuOpen: 'Open menu',
     menuClose: 'Close menu',
     themeLight: 'Switch to light mode',

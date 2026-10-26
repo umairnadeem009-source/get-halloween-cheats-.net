@@ -25,6 +25,8 @@ interface Props {
   buyLabel?: string;
   viewLabel?: string;
   maxFeatures?: number;
+  featured?: boolean;
+  desc?: string;
   class?: string;
 }
 
@@ -41,6 +43,8 @@ const {
   buyLabel = 'Buy now',
   viewLabel = 'View details',
   maxFeatures = 10,
+  featured = false,
+  desc,
   class: className,
 } = Astro.props;
 
@@ -53,9 +57,15 @@ const statusBadgeIcon = (text: string): IconName => {
 };
 ---
 
-<Card class:list={['group flex h-full flex-col transition-shadow hover:shadow-md', className]}>
+<Card
+  class:list={[
+    'group flex h-full flex-col transition-shadow hover:shadow-md',
+    featured && 'catalog-card--featured-root',
+    className,
+  ]}
+>
   <CardHeader class="space-y-2.5">
-    <CardTitle class="text-lg normal-case leading-snug">
+    <CardTitle class:list={['normal-case leading-snug', featured ? 'text-xl md:text-2xl' : 'text-lg']}>
       <a href={href} class="hover:text-primary">{title}</a>
     </CardTitle>
     <div class="catalog-card__badges flex flex-wrap items-center gap-1.5">
@@ -91,9 +101,15 @@ const statusBadgeIcon = (text: string): IconName => {
         )
       }
     </div>
+    {desc && featured && <p class="text-sm leading-relaxed text-muted-foreground md:text-base">{desc}</p>}
   </CardHeader>
   <CardContent class="flex-1">
-    <ul class="space-y-2 text-sm text-muted-foreground">
+    <ul
+      class:list={[
+        'text-sm text-muted-foreground',
+        featured ? 'catalog-card__feature-grid gap-2' : 'space-y-2',
+      ]}
+    >
       {displayFeatures.map((feature) => (
         <li class="flex items-start gap-2">
           <Icon name="check" size={14} class="mt-0.5 shrink-0" />

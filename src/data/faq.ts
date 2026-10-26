@@ -30,9 +30,9 @@ function link(text: string, href: string): string {
   return `<a href="${normalizeInternalPath(href)}">${text}</a>`;
 }
 
-const mainSuite = link('Aion 2 Private Cheats', PRODUCT_BASE);
+const mainSuite = link('Halloween Private Cheats', PRODUCT_BASE);
 const utilitiesHub = link('utilities compare page', `${PRODUCT_BASE}utilities/`);
-const productsHub = link('Aion 2 products', ROUTES.products);
+const productsHub = link('Halloween: The Game products', ROUTES.products);
 const hwid = link('HWID Spoofer', productPath('hwid-spoofer'));
 const ugc = link('UGC tool', productPath('game-accounts'));
 const skin = link('Skin Changer', productPath('skin-changer'));
@@ -44,21 +44,21 @@ export const siteFaqs: SiteFaqItem[] = [
     id: 'status',
     topic: 'setup',
     icon: 'faqStatus',
-    q: 'Where do I check if Aion 2 cheats are online?',
-    a: a('The live status banner is on getaion2cheats.net and in the Discord #status channel. Always check after a Aion 2 or anti-cheat update.'),
+    q: 'Where do I check if Halloween cheats are online?',
+    a: a('The live status banner is on gethalloweencheats.com and in the Discord #status channel. Always check after a Halloween: The Game or anti-cheat update.'),
   },
   {
     id: 'after-buy',
     topic: 'setup',
     icon: 'faqAfterBuy',
     q: 'What happens after I buy?',
-    a: a('Your portal unlocks the loader, setup guide and config library via our secure checkout. Follow the guide before launching Aion 2.'),
+    a: a('Your portal unlocks the loader, setup guide and config library via our secure checkout. Follow the guide before launching Halloween: The Game.'),
   },
   {
     id: 'ban-risk',
     topic: 'safety',
     icon: 'faqBanRisk',
-    q: 'Can I get banned using third-party Aion 2 cheats?',
+    q: 'Can I get banned using third-party Halloween cheats?',
     a: a('Yes—any modification carries risk. anti-cheat and report systems evolve. Read current status and accept the risk before use.'),
   },
   {
@@ -66,7 +66,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'setup',
     icon: 'faqPlatforms',
     q: 'Which platforms are supported?',
-    a: a('Aion 2 via Steam or PURPLE Launcher on Windows 10/11 64-bit only. macOS and Linux are not supported.'),
+    a: a('Halloween: The Game via Steam Launcher on Windows 10/11 64-bit only. macOS and Linux are not supported.'),
   },
   {
     id: 'license-move',
@@ -86,31 +86,31 @@ export const siteFaqs: SiteFaqItem[] = [
     id: 'what-is-esp',
     topic: 'esp',
     icon: 'faqWhatIsEsp',
-    q: 'What is Aion 2 ESP wallhack / ESP?',
-    a: `Player and world ESP show nearby Daevas, bosses, gathering nodes, portals, and flight targets on the ${mainSuite} overlay. Enable only what you can read during combat.`,
+    q: 'What is Halloween: The Game ESP wallhack / ESP?',
+    a: `Player and world ESP show nearby survivors, bosses, escape item markers, portals, and flight targets on the ${mainSuite} overlay. Enable only what you can read during combat.`,
     scopes: ['main'],
   },
   {
     id: 'esp-vs-scripts',
     topic: 'esp',
     icon: 'faqEspVsScripts',
-    q: 'What is the difference between ESP and soft aim?',
-    a: `ESP is read-only overlay information. Optional soft aim on ${mainSuite} assists targeting—you can leave aim modules off and run ESP plus radar only.`,
+    q: 'What is the difference between ESP and aim assist?',
+    a: `ESP is read-only overlay information. Optional aim assist on ${mainSuite} assists targeting—you can leave aim modules off and run ESP plus radar only.`,
   },
   {
     id: 'which-tier-esp',
     topic: 'plans',
     icon: 'faqWhichTierEsp',
     q: 'Can I use the suite for ESP only?',
-    a: `Yes. ${mainSuite} lets you enable player ESP, 2D radar, node markers, and flight readouts without turning on soft aim. Save a profile after tuning distance caps.`,
+    a: `Yes. ${mainSuite} lets you enable player ESP, 2D radar, node markers, and flight readouts without turning on aim assist. Save a profile after tuning distance caps.`,
     scopes: ['main'],
   },
   {
     id: 'which-tier-scripts',
     topic: 'scripts',
     icon: 'faqWhichTierScripts',
-    q: 'Does the private suite include soft aim?',
-    a: `Yes—${mainSuite} lists optional soft aim with FOV, smoothness, visible check, and bone selection. Start conservative before open-world or PvP.`,
+    q: 'Does the private suite include aim assist?',
+    a: `Yes—${mainSuite} lists optional aim assist with FOV, smoothness, visible check, and bone selection. Start conservative before open-world or PvP.`,
     scopes: ['main'],
   },
   {
@@ -139,7 +139,7 @@ export const siteFaqs: SiteFaqItem[] = [
     id: 'undetected',
     topic: 'safety',
     icon: 'faqUndetected',
-    q: 'Are undetected Aion 2 cheats guaranteed?',
+    q: 'Are undetected Halloween cheats guaranteed?',
     a: a('No. Undetected is current status on the product page—not a permanent guarantee. Stop if the build shows updating, testing, or detected.'),
   },
   {
@@ -154,14 +154,14 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'products',
     icon: 'faqHwidWhen',
     q: 'When do I need the HWID Spoofer?',
-    a: `Use ${hwid} when fresh Aion 2 accounts fail instantly on one PC but work elsewhere—hardware enforcement. Not for account-only cases; see ${ugc} instead.`,
+    a: `Use ${hwid} when fresh Halloween: The Game accounts fail instantly on one PC but work elsewhere—hardware enforcement. Not for account-only cases; see ${ugc} instead.`,
     scopes: ['hwid-spoofer'],
   },
   {
     id: 'ugc-what',
     topic: 'products',
     icon: 'faqUgcWhat',
-    q: 'What is the Aion 2 UGC tool?',
+    q: 'What is the Halloween: The Game UGC tool?',
     a: `${ugc} detects restriction types, verifies live status, and runs supported remediation workflows where authorized access exists—not a guaranteed unban service.`,
     scopes: ['ugc'],
   },
@@ -169,7 +169,7 @@ export const siteFaqs: SiteFaqItem[] = [
     id: 'skin-changer',
     topic: 'products',
     icon: 'faqSkinChanger',
-    q: 'Does Skin Changer modify my Aion 2 wardrobe for other players?',
+    q: 'Does Skin Changer modify my Halloween: The Game wardrobe for other players?',
     a: `${skin} previews supported cosmetics locally on your client. Other players still see your real inventory. Buy it standalone on the Skin Changer product page.`,
     scopes: ['skin-changer'],
   },
@@ -177,8 +177,8 @@ export const siteFaqs: SiteFaqItem[] = [
     id: 'external-loader',
     topic: 'products',
     icon: 'faqExternalLoader',
-    q: 'Is the loader injected into the Steam or PURPLE folder?',
-    a: `Aion 2 Cheats runs external with cloud config sync—no files injected into the Aion 2 directory. anti-cheat risk still applies. See ${productsHub}.`,
+    q: 'Is the loader injected into the Steam folder?',
+    a: `Halloween Cheats runs external with cloud config sync—no files injected into the Halloween: The Game directory. anti-cheat risk still applies. See ${productsHub}.`,
   },
   {
     id: 'blog-vs-cheats',
@@ -214,7 +214,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqWhoPro',
     q: 'Who should pick the monthly plan?',
-    a: `Most players choose the $35 monthly plan for ongoing access to ${mainSuite} ESP, radar, and optional soft aim on getaion2cheats.net.`,
+    a: `Most players choose the $35 monthly plan for ongoing access to ${mainSuite} ESP, radar, and optional aim assist on gethalloweencheats.com.`,
     scopes: ['main'],
   },
   {
@@ -230,21 +230,21 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'safety',
     icon: 'faqEacUpdate',
     q: 'What should I do after a anti-cheat update?',
-    a: a('Check getaion2cheats.net status and Discord #status. Do not launch until the banner shows online. Load conservative presets after any patch.'),
+    a: a('Check gethalloweencheats.com status and Discord #status. Do not launch until the banner shows online. Load conservative presets after any patch.'),
   },
   {
     id: 'discord-help',
     topic: 'setup',
     icon: 'faqDiscordHelp',
     q: 'How do I get install help?',
-    a: a('Open Discord after purchase with your order email, Windows version and Aion 2 client build. Staff walk through loader setup live.'),
+    a: a('Open Discord after purchase with your order email, Windows version and Halloween: The Game client build. Staff walk through loader setup live.'),
   },
   {
     id: 'zero-build-ranked',
     topic: 'plans',
     icon: 'faqZoomRanked',
     q: 'Do modules work in open world and instances?',
-    a: `Yes—${mainSuite} profiles apply in open world, PvP, and instances where modules are supported. Tune ESP distance and soft aim before faction fights.`,
+    a: `Yes—${mainSuite} profiles apply in open world, PvP, and instances where modules are supported. Tune ESP distance and aim assist before faction fights.`,
   },
   {
     id: 'zoom-hack',
@@ -258,16 +258,16 @@ export const siteFaqs: SiteFaqItem[] = [
     id: 'auto-farm',
     topic: 'scripts',
     icon: 'faqAutoFarm',
-    q: 'Does the suite include gathering node ESP?',
-    a: `Node and material ESP is part of ${mainSuite}—filter ore, herbs, and chests with distance caps. No separate farming bot is listed.`,
+    q: 'Does the suite include weapon and item ESP?',
+    a: `Household weapons, healing items, phones, and escape objectives are part of ${mainSuite}—use distance caps so Haddonfield stays readable. No separate farming bot is listed.`,
     scopes: ['main'],
   },
   {
     id: 'private-cheats',
     topic: 'safety',
     icon: 'faqPrivateCheats',
-    q: 'What are private Aion 2 cheats?',
-    a: a('Private means per-user keys and maintained builds—not public zip packs. getaion2cheats.net delivers the loader and configs through your portal after checkout.'),
+    q: 'What are private Halloween cheats?',
+    a: a('Private means per-user keys and maintained builds—not public zip packs. gethalloweencheats.com delivers the loader and configs through your portal after checkout.'),
   },
   {
     id: 'faq-more',
@@ -291,7 +291,7 @@ export function getAllFaqs(): SiteFaqItem[] {
 /** Shared FAQ block copy + filters (home, /faq/, products, blog). */
 export const SITE_FAQ_SECTION_COPY = {
   eyebrow: 'All topics',
-  title: 'Aion 2 cheats FAQ',
+  title: 'Halloween cheats FAQ',
   subtitle: 'Filter by cheat plans, ESP wallhack, aimbot, products, setup and guides.',
 } as const;
 
@@ -309,7 +309,7 @@ export const SITE_FAQ_FILTER_TOPICS: FaqTopic[] = [
 /** Section copy when FAQ list is scoped to the current page (not /faq/). */
 export const CONTEXTUAL_FAQ_SECTION_COPY = {
   eyebrow: 'Cheat FAQ',
-  title: 'Aion 2 cheats questions',
+  title: 'Halloween cheats questions',
   subtitle: 'Straight answers on aimbot, ESP, bans and setup — see the full FAQ for every topic.',
 } as const;
 
@@ -353,7 +353,7 @@ const blogTopicFaqs: Record<string, SiteFaqItem[]> = {
       topic: 'blog',
       icon: 'faqBlogGuideStart',
       q: 'Should I use dev-console codes in live PvP?',
-      a: a('No. Developer-console commands only work in practice instances with cheats enabled. Live overlays require the private suite from getaion2cheats.net.'),
+      a: a('No. Developer-console commands only work in practice instances with cheats enabled. Live overlays require the private suite from gethalloweencheats.com.'),
     },
     {
       id: 'blog-guide-tier',
@@ -383,7 +383,7 @@ const blogTopicFaqs: Record<string, SiteFaqItem[]> = {
       topic: 'blog',
       icon: 'faqBlogSetupLobby',
       q: 'Should I test in a quiet zone first?',
-      a: a('Yes. Load conservative presets in a practice instance or quiet open-world area before PvP. Tune soft aim and ESP distance caps over several sessions.'),
+      a: a('Yes. Load conservative presets in a practice instance or quiet open-world area before PvP. Tune aim assist and ESP distance caps over several sessions.'),
     },
   ],
   Security: [
@@ -417,7 +417,7 @@ const defaultBlogFaqs: SiteFaqItem[] = [
     topic: 'blog',
     icon: 'faqBlogDefault3',
     q: 'Will settings in this article work next patch?',
-    a: a('Re-check status after every Aion 2 update. Portal presets update with patch notes—reload configs instead of copying old sliders.'),
+    a: a('Re-check status after every Halloween: The Game update. Portal presets update with patch notes—reload configs instead of copying old sliders.'),
   },
 ];
 
@@ -431,7 +431,7 @@ export function getBlogFaqs(tag: string, slug: string): SiteFaqItem[] {
       topic: 'esp',
       icon: 'faqBlogSlugEsp',
       q: 'Which product covers ESP from this article?',
-      a: `${mainSuite} includes player ESP, gathering nodes, world markers, and 2D radar on one overlay stack.`,
+      a: `${mainSuite} includes player ESP, escape item markers, world markers, and 2D radar on one overlay stack.`,
     });
   }
   if (slug.includes('script') || slug.includes('combo') || slug.includes('auto-combo')) {
@@ -439,8 +439,8 @@ export function getBlogFaqs(tag: string, slug: string): SiteFaqItem[] {
       id: 'blog-slug-scripts',
       topic: 'scripts',
       icon: 'faqBlogSlugScripts',
-      q: 'Which product includes soft aim from this article?',
-      a: `Optional soft aim modules are listed on ${mainSuite}. You can disable aim features and run ESP-only profiles.`,
+      q: 'Which product includes aim assist from this article?',
+      a: `Optional aim assist modules are listed on ${mainSuite}. You can disable aim features and run ESP-only profiles.`,
     });
   }
   if (slug.includes('hwid') || slug.includes('ban') || slug.includes('eac')) {

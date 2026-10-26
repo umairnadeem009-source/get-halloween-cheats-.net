@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { resolveDistDir } from './dist-dir.mjs';
 
-const SITE = 'https://getaion2cheats.net';
+const SITE = 'https://gethalloweencheats.com';
 const dist = resolveDistDir();
 
 function loadUrlsetXml(dir) {
@@ -67,7 +67,7 @@ function normalizeUrl(loc) {
     return null;
   }
   if (url.protocol !== 'https:') url.protocol = 'https:';
-  url.hostname = 'getaion2cheats.net';
+  url.hostname = 'gethalloweencheats.com';
   url.hash = '';
   url.search = '';
   let pathname = url.pathname;

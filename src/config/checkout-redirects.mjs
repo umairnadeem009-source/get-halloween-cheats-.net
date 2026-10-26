@@ -1,6 +1,6 @@
 /** Checkout destinations keyed by internal product id (no affiliate codes in HTML). */
 export const CHECKOUT_URLS = {
-  aion2Cheats: 'https://levocheats.com/go/UMAIR?to=%2Faion-2-cheats',
+  halloweenCheats: 'https://levocheats.com/go/UMAIR?to=%2Fhalloween-cheats',
   skinChanger: 'https://levocheats.com/go/UMAIR?to=%2Fskin-changer-cheats',
   hwidSpoofer: 'https://levocheats.com/go/UMAIR?to=%2Fhwid-spoofer',
   gameAccounts: 'https://levocheats.com/go/UMAIR?to=%2Fgame-accounts',
@@ -8,8 +8,10 @@ export const CHECKOUT_URLS = {
 
 /** Checkout paths → external product URLs (used by Node serve + Astro middleware). */
 export const CHECKOUT_PATH_REDIRECTS = new Map([
-  ['/go/aion-2-cheats', CHECKOUT_URLS.aion2Cheats],
-  ['/go/aion-2-cheats/', CHECKOUT_URLS.aion2Cheats],
+  ['/go/halloween-cheats', CHECKOUT_URLS.halloweenCheats],
+  ['/go/halloween-cheats/', CHECKOUT_URLS.halloweenCheats],
+  ['/go/halloween-cheats', CHECKOUT_URLS.halloweenCheats],
+  ['/go/halloween-cheats/', CHECKOUT_URLS.halloweenCheats],
   ['/go/skin-changer', CHECKOUT_URLS.skinChanger],
   ['/go/skin-changer/', CHECKOUT_URLS.skinChanger],
   ['/go/hwid-spoofer', CHECKOUT_URLS.hwidSpoofer],

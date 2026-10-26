@@ -1,17 +1,17 @@
-# Search Console workflow (getaion2cheats.net)
+# Search Console workflow (gethalloweencheats.com)
 
 Verify the domain at your DNS provider—no HTML meta tags in the repo.
 
 ## Setup (once)
 
-1. Open [Google Search Console](https://search.google.com/search-console) and add the **domain** property for `getaion2cheats.net`.
+1. Open [Google Search Console](https://search.google.com/search-console) and add the **domain** property for `gethalloweencheats.com`.
 2. Under **Sitemaps**, submit:
-   - `https://getaion2cheats.net/sitemap.xml`
+   - `https://gethalloweencheats.com/sitemap.xml`
 3. Optional child sitemaps:
-   - `https://getaion2cheats.net/sitemap-pages.xml`
-   - `https://getaion2cheats.net/sitemap-products.xml`
-   - `https://getaion2cheats.net/sitemap-blog.xml`
-   - `https://getaion2cheats.net/sitemap-forum.xml`
+   - `https://gethalloweencheats.com/sitemap-pages.xml`
+   - `https://gethalloweencheats.com/sitemap-products.xml`
+   - `https://gethalloweencheats.com/sitemap-blog.xml`
+   - `https://gethalloweencheats.com/sitemap-forum.xml`
 4. Repeat in [Bing Webmaster Tools](https://www.bing.com/webmasters) if you use Bing.
 
 ## Monthly tune (15 minutes)
@@ -26,6 +26,6 @@ Verify the domain at your DNS provider—no HTML meta tags in the repo.
 | Common query intent | Edit path in `pageSeo.ts` |
 | ------------------- | ------------------------- |
 | aion 2 cheats (broad) | `/` |
-| buy / private cheats | `/products/aion-2-cheats/` |
+| buy / private cheats | `/products/halloween-cheats/` |
 | product catalog | `/products/` |
 | ESP / setup guides | `/blog/` + specific post slugs |

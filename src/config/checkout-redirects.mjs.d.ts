@@ -1,5 +1,5 @@
 export declare const CHECKOUT_URLS: {
-  readonly aion2Cheats: string;
+  readonly halloweenCheats: string;
   readonly skinChanger: string;
   readonly hwidSpoofer: string;
   readonly gameAccounts: string;

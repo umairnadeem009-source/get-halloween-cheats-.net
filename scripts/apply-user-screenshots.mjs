@@ -1,6 +1,6 @@
 /**
- * Replace all blog + gameplay raster assets from scripts/image-sources/ (11 files).
- * Deletes previous PNG/WebP/JPEG in those folders; keeps brand/ untouched.
+ * Replace blog + gameplay + product raster assets from user screenshots in assets/.
+ * Keeps public/images/brand/ (logo/favicon) untouched.
  *
  * Run: node scripts/apply-user-screenshots.mjs
  */
@@ -9,62 +9,45 @@ import path from 'node:path';
 import sharp from 'sharp';
 
 const root = process.cwd();
-const sourceDir = path.join(root, 'scripts/image-sources');
 const widths = [320, 400, 512, 640, 960];
 
-const SOURCE_FILES = {
-  gather: '01-gather.png',
-  gatherFlight: '02-gather-flight.png',
-  grind: '03-grind.jpg',
-  grindCombat: '04-grind-combat.jpg',
-  grindUi: '05-grind-ui.jpg',
-  safehavenCombat: '06-safehaven-combat.png',
-  cohta: '07-cohta-dungeon.png',
-  safehavenFlight: '08-safehaven-flight.png',
-  bioLab: '09-bio-lab.png',
-  safehavenSkills: '10-safehaven-skills.png',
-  bossMap: '11-boss-map.png',
-};
+const assetsDir = path.join(root, 'assets');
+const assetFiles = fs
+  .readdirSync(assetsDir)
+  .filter((n) => /^XertrickPro.*\.png$/i.test(n))
+  .sort()
+  .map((n) => path.join(assetsDir, n));
 
-const GAMEPLAY_TARGETS = {
-  'aion-2-player-esp': 'bossMap',
-  'aion-2-aimbot-combat': 'safehavenSkills',
-  'aion-2-radar-hack': 'bossMap',
-  'aion-2-skin-changer': 'safehavenCombat',
-  'aion-2-auto-aim': 'safehavenSkills',
-  'aion-2-loot-radar': 'gather',
-  'aion-2-thermal-esp': 'bossMap',
-  'aion-2-build-fight-esp': 'safehavenFlight',
-  'aion-2-arena-wallhack': 'cohta',
-  'aion-2-spawn-island-esp': 'bioLab',
-  'aion-2-long-range-esp': 'gatherFlight',
-  'aion-2-chams-esp': 'grindCombat',
-  'aion-2-combat-esp': 'bioLab',
-};
+if (assetFiles.length < 1) {
+  console.error('No XertrickPro*.png files in assets/');
+  process.exit(1);
+}
 
-/** Cycle order for blog card / article heroes. */
-const BLOG_CYCLE = [
-  'gather',
-  'gatherFlight',
-  'grind',
-  'grindCombat',
-  'grindUi',
-  'safehavenCombat',
-  'cohta',
-  'safehavenFlight',
-  'bioLab',
-  'safehavenSkills',
-  'bossMap',
+console.log(`Using ${assetFiles.length} screenshot(s) from assets/`);
+
+const GAMEPLAY_BASES = [
+  'halloween-player-esp',
+  'halloween-aimbot-combat',
+  'halloween-radar-hack',
+  'halloween-skin-changer',
+  'halloween-auto-aim',
+  'halloween-loot-radar',
+  'halloween-thermal-esp',
+  'halloween-build-fight-esp',
+  'halloween-arena-wallhack',
+  'halloween-spawn-island-esp',
+  'halloween-long-range-esp',
+  'halloween-chams-esp',
+  'halloween-combat-esp',
 ];
 
-function sourcePath(key) {
-  const file = SOURCE_FILES[key];
-  const full = path.join(sourceDir, file);
-  if (!fs.existsSync(full)) {
-    throw new Error(`Missing source image: ${full}`);
-  }
-  return full;
-}
+const PRODUCT_EXPORTS = [
+  { rel: 'products/skin-changer/skin-changer-emblem', index: 3 },
+  { rel: 'products/game-accounts/ugc-tool-icon', index: 1 },
+  { rel: 'products/hwid-spoofer/hwid-spoofer-icon', index: 5 },
+  { rel: 'products/hwid-spoofer/phoenix-satano-chip', index: 6 },
+  { rel: 'products/hwid-spoofer/phoenix-wh-satano-brand', index: 7 },
+];
 
 function clearRasterDir(relativeDir) {
   const dir = path.join(root, relativeDir);
@@ -94,25 +77,36 @@ async function writePngAndWebps(outBase, fromFile) {
 
 function extractBlogSlugs() {
   const postsTs = fs.readFileSync(path.join(root, 'src/data/blog/posts.ts'), 'utf8');
-  const slugs = [...postsTs.matchAll(/slug:\s*"([^"]+)"/g)].map((m) => m[1]);
-  return [...new Set(slugs)];
+  return [...new Set([...postsTs.matchAll(/slug:\s*"([^"]+)"/g)].map((m) => m[1]))];
+}
+
+function pickSource(index) {
+  return assetFiles[index % assetFiles.length];
 }
 
 clearRasterDir('public/images/blog');
 clearRasterDir('public/images/gameplay');
+clearRasterDir('public/images/products');
 
-for (const [base, key] of Object.entries(GAMEPLAY_TARGETS)) {
+for (let i = 0; i < GAMEPLAY_BASES.length; i++) {
+  const base = GAMEPLAY_BASES[i];
   const outBase = path.join(root, 'public/images/gameplay', base);
-  await writePngAndWebps(outBase, sourcePath(key));
-  console.log('gameplay', base);
+  await writePngAndWebps(outBase, pickSource(i));
+  console.log('gameplay', base, '<-', path.basename(pickSource(i)));
 }
 
 const slugs = extractBlogSlugs();
 for (let i = 0; i < slugs.length; i++) {
-  const key = BLOG_CYCLE[i % BLOG_CYCLE.length];
   const outBase = path.join(root, 'public/images/blog', slugs[i]);
-  await writePngAndWebps(outBase, sourcePath(key));
-  console.log('blog', slugs[i], '<-', key);
+  await writePngAndWebps(outBase, pickSource(i));
+  console.log('blog', slugs[i]);
 }
 
-console.log(`Done: ${Object.keys(GAMEPLAY_TARGETS).length} gameplay + ${slugs.length} blog images.`);
+for (const { rel, index } of PRODUCT_EXPORTS) {
+  const outBase = path.join(root, 'public/images', rel);
+  fs.mkdirSync(path.dirname(outBase), { recursive: true });
+  await writePngAndWebps(outBase, pickSource(index));
+  console.log('product', rel);
+}
+
+console.log(`Done: ${GAMEPLAY_BASES.length} gameplay + ${slugs.length} blog + ${PRODUCT_EXPORTS.length} product images.`);

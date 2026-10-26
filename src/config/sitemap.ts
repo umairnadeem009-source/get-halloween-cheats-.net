@@ -12,6 +12,7 @@ export const SITEMAP_EXCLUDED_PREFIXES = [
   '/contact/',
   '/products/fortnite-cheats/',
   '/products/dota-2-cheats/',
+  '/products/aion-2-cheats/',
 ] as const;
 
 export function isSitemapExcludedPathname(pathname: string): boolean {

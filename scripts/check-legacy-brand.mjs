@@ -18,6 +18,10 @@ const ALLOWLIST_FILE_SUFFIX = ['types.ts', 'registry.ts', 'sectionIcons.ts'];
 
 const FORBIDDEN = [
   { pattern: /\bfortnite\b/i, label: 'fortnite' },
+  { pattern: /\bvalheim\b/i, label: 'valheim' },
+  { pattern: /\bzadeyo\b/i, label: 'zadeyo' },
+  { pattern: /\baion\b/i, label: 'aion' },
+  { pattern: /getaion2cheats/i, label: 'getaion2cheats' },
   { pattern: /\bdota-2-cheats\b/i, label: 'dota-2-cheats' },
   { pattern: /fortnite-cheats\.com/i, label: 'fortnite-cheats.com' },
   { pattern: /dotacheats\.com/i, label: 'dotacheats.com' },
@@ -29,6 +33,11 @@ const FORBIDDEN = [
   { pattern: /\bbattle royale\b/i, label: 'battle royale' },
   { pattern: /\bLite vs Pro\b/i, label: 'Lite vs Pro' },
   { pattern: /\bElite tier\b/i, label: 'Elite tier' },
+  { pattern: /\bPURPLE client\b/i, label: 'PURPLE client' },
+  { pattern: /\bElyos\b/i, label: 'Elyos' },
+  { pattern: /\bAsmodian\b/i, label: 'Asmodian' },
+  { pattern: /\bDaeva\b/i, label: 'Daeva' },
+  { pattern: /\bBalaur\b/i, label: 'Balaur' },
 ];
 
 function shouldSkip(file) {

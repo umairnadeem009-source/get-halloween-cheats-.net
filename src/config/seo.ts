@@ -6,11 +6,11 @@ import { webpSrc } from '../utils/responsiveImage';
 export const SITE_ORIGIN = SITE_URL;
 
 /** WebP variant survives dist PNG prune and matches ResponsiveImage output. */
-export const DEFAULT_OG_IMAGE = '/images/gameplay/aion-2-player-esp-960.webp';
+export const DEFAULT_OG_IMAGE = '/images/gameplay/halloween-player-esp-960.webp';
 
 export const GA_MEASUREMENT_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID as string | undefined;
 
-/** @example @getaion2cheats */
+/** @example @gethalloweencheats */
 export const TWITTER_SITE = import.meta.env.PUBLIC_TWITTER_SITE as string | undefined;
 
 export const TWITTER_CREATOR = import.meta.env.PUBLIC_TWITTER_CREATOR as string | undefined;
@@ -79,11 +79,11 @@ export function socialImageFromAsset(src: string): string {
   return webpSrc(src, 960);
 }
 
-/** Keep meta descriptions aligned with Aion 2 cheat topics for SERP snippets. */
+/** Keep meta descriptions aligned with Halloween: The Game cheat topics for SERP snippets. */
 export function cheatMetaDescription(text: string): string {
   const trimmed = text.trim();
-  if (/aion\s*2/i.test(trimmed)) return trimmed;
-  return `Aion 2 cheats guide: ${trimmed}`;
+  if (/halloween/i.test(trimmed)) return trimmed;
+  return `Halloween cheats guide: ${trimmed}`;
 }
 
 export const DEFAULT_OG_IMAGE_WIDTH = 1200;

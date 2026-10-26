@@ -1,6 +1,6 @@
 # Static Astro site → Cloudflare Workers static assets (npm run build && npm run deploy).
 # Do not add @astrojs/cloudflare SSR adapter; keep prerendered HTML in dist/.
-name = "getaion2cheats-net"
+name = "gethalloweencheats-com"
 compatibility_date = "2025-10-11"
 workers_dev = true
 

@@ -1,6 +1,6 @@
-# SERP competitors — Aion 2 cheat queries
+# SERP competitors — Halloween: The Game cheat queries
 
-Research date: October 2026. Use for positioning getaion2cheats.net (4 products, $35/$150 main suite).
+Research date: October 2026. Use for positioning gethalloweencheats.com (4 products, $35/$150 main suite).
 
 ## Primary commercial competitors
 

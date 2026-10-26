@@ -61,26 +61,26 @@ export const MAIN_PRODUCT_SLUG = 'main';
 
 export const productRelatedBlogSlugs: Record<string, string[]> = {
   main: [
-    'aion-2-cheats-explained',
-    'aion-2-player-esp-guide',
-    'aion-2-soft-aim-guide',
-    'aion-2-cheat-setup-guide',
+    'halloween-the-game-cheats-explained',
+    'halloween-survivor-esp-guide',
+    'halloween-michael-myers-esp-stalk-tracker',
+    'halloween-cheat-setup-guide',
   ],
   'hwid-spoofer': [
-    'aion-2-hwid-spoofer-guide',
-    'fix-anti-cheat-hardware-bans-aion-2',
-    'aion-2-anti-cheat-bypass-explained',
-    'aion-2-cheat-troubleshooting',
+    'halloween-hwid-spoofer-guide',
+    'fix-anti-cheat-hardware-bans-halloween',
+    'halloween-anti-cheat-bypass-explained',
+    'halloween-cheat-troubleshooting',
   ],
   'game-accounts': [
-    'aion-2-game-accounts-recovery',
-    'aion-2-cheats-faq',
-    'aion-2-cheat-setup-guide',
+    'halloween-account-unban-recovery',
+    'halloween-cheats-faq',
+    'halloween-cheat-setup-guide',
   ],
   'skin-changer': [
-    'aion-2-skin-changer-guide',
-    'aion-2-stream-proof-overlay',
-    'aion-2-safe-configuration-guide',
+    'halloween-skin-changer-cosmetics-guide',
+    'halloween-stream-proof-overlay',
+    'halloween-safe-configuration-preset-sharing',
   ],
 };
 
@@ -88,7 +88,7 @@ const defaultAcquisitionSteps: AcquisitionStep[] = [
   {
     num: '01',
     title: 'Check compatibility',
-    desc: 'Review current status notes on getaion2cheats.net and Support before purchase—especially after an Aion 2 client patch.',
+    desc: 'Review current status notes on gethalloweencheats.com and Support before purchase—especially after an Halloween: The Game client patch.',
   },
   {
     num: '02',
@@ -103,7 +103,7 @@ const defaultAcquisitionSteps: AcquisitionStep[] = [
   {
     num: '04',
     title: 'Configure and save a profile',
-    desc: 'Enable only the ESP, radar, and aim options you can read clearly. Save configs before flying into contested zones or PvP.',
+    desc: 'Enable only the ESP, radar, and aim options you can read clearly. Save configs before jumping into 1v4 or co-op matches.',
   },
 ];
 
@@ -115,14 +115,14 @@ function acquisitionFor(productName: string): ProductAcquisition {
 }
 
 const sharedGoodToKnow =
-  'Aion 2 and anti-cheat systems receive frequent updates. Confirm module availability before you purchase or launch. Overlay behavior may differ in cinematics, instances, and spectator views after patches.';
+  'Halloween: The Game and anti-cheat systems receive frequent updates. Confirm module availability before you purchase or launch. Overlay behavior may differ in cinematics, instances, and spectator views after patches.';
 
 const sharedLimitations =
   'Third-party software can conflict with published anti-bot measures and may lead to account action. You use this software at your own risk. Compatibility can change after game, anti-cheat, or Windows updates without notice.';
 
-const aionSystemRequirements: SystemRequirement[] = [
+const pcSystemRequirements: SystemRequirement[] = [
   { icon: 'reqWindows', text: 'Windows 10 or 11 64-bit with administrator access for loader setup.' },
-  { icon: 'reqEpic', text: 'Global Aion 2 on PC through Steam or PURPLE with current patches applied.' },
+  { icon: 'reqEpic', text: 'Global Halloween: The Game on PC through Steam with current patches applied.' },
   { icon: 'reqSettings', text: 'Intel or AMD CPU and GPU that meet the game’s published requirements.' },
   { icon: 'reqWifi', text: 'Stable internet for portal access, updates, and config sync.' },
   { icon: 'reqCpu', text: 'Optional Cloud DMA or AWS paths may be listed for full functionality—confirm in checkout notes.' },
@@ -132,80 +132,80 @@ const gameplay = '/images/gameplay';
 
 const galleryRaw = {
   gpHeroEsp: {
-    src: `${gameplay}/aion-2-player-esp.png`,
-    alt: 'Aion 2 player ESP overlay with faction-colored nameplates, class tags, and distance readouts',
-    caption: 'Player ESP',
-    captionDesc: 'Faction, class, level, and distance on nearby Daevas.',
+    src: `${gameplay}/halloween-player-esp.png`,
+    alt: 'Halloween The Game survivor ESP with item labels special targets and minimap overlay',
+    caption: 'Survivor ESP',
+    captionDesc: 'Resident objectives, item tags, and role readouts on PC.',
   },
   gpScripts: {
-    src: `${gameplay}/aion-2-aimbot-combat.png`,
-    alt: 'Aion 2 soft aim overlay with FOV circle and skeleton ESP during aerial combat',
-    caption: 'Soft aim',
+    src: `${gameplay}/halloween-aimbot-combat.png`,
+    alt: 'Halloween: The Game aim assist overlay with FOV circle and skeleton ESP during aerial combat',
+    caption: 'aim assist',
     captionDesc: 'Optional aim assist with visible check and bone selection.',
   },
   gpZoomHack: {
-    src: `${gameplay}/aion-2-radar-hack.png`,
-    alt: 'Aion 2 2D radar beside ESP showing bosses, nodes, and faction markers',
+    src: `${gameplay}/halloween-radar-hack.png`,
+    alt: 'Halloween: The Game 2D radar beside ESP showing bosses, nodes, and faction markers',
     caption: '2D radar',
     captionDesc: 'Local awareness next to ESP without covering the whole screen.',
   },
   gpSkinChanger: {
-    src: `${gameplay}/aion-2-skin-changer.png`,
-    alt: 'Aion 2 cosmetic preview interface with outfit and weapon skin slots',
+    src: `${gameplay}/halloween-skin-changer.png`,
+    alt: 'Halloween: The Game cosmetic preview interface with outfit and weapon skin slots',
     caption: 'Cosmetics',
     captionDesc: 'Preview supported skins before applying loadouts.',
   },
   gpAutoKill: {
-    src: `${gameplay}/aion-2-auto-aim.png`,
-    alt: 'Aion 2 aim assist reticle with target line and head bone highlight',
+    src: `${gameplay}/halloween-auto-aim.png`,
+    alt: 'Halloween: The Game aim assist reticle with target line and head bone highlight',
     caption: 'Aim assist',
     captionDesc: 'Draw FOV, target line, and max aim distance controls.',
   },
   gpFarmBot: {
-    src: `${gameplay}/aion-2-loot-radar.png`,
-    alt: 'Aion 2 gathering node ESP highlighting ore, herbs, and chest markers',
+    src: `${gameplay}/halloween-loot-radar.png`,
+    alt: 'Halloween: The Game gathering node ESP highlighting ore, herbs, and chest markers',
     caption: 'Node ESP',
     captionDesc: 'Ore, herb, and material filters with distance caps.',
   },
   gpThermal: {
-    src: `${gameplay}/aion-2-thermal-esp.png`,
-    alt: 'Aion 2 world boss ESP with elite mob markers and health bars',
+    src: `${gameplay}/halloween-thermal-esp.png`,
+    alt: 'Halloween: The Game world boss ESP with elite mob markers and health bars',
     caption: 'World ESP',
     captionDesc: 'World and dungeon boss markers with quest objective cues.',
   },
   gpBuildFight: {
-    src: `${gameplay}/aion-2-build-fight-esp.png`,
-    alt: 'Aion 2 flight ESP showing aerial targets, altitude, and wing state',
+    src: `${gameplay}/halloween-build-fight-esp.png`,
+    alt: 'Halloween: The Game flight ESP showing aerial targets, altitude, and wing state',
     caption: 'Flight ESP',
     captionDesc: 'Aerial targets, glide state, and sky zone highlights.',
   },
   gpArena: {
-    src: `${gameplay}/aion-2-arena-wallhack.png`,
-    alt: 'Aion 2 PvP ESP with Elyos and Asmodian faction filters in open world',
+    src: `${gameplay}/halloween-arena-wallhack.png`,
+    alt: 'Halloween: The Game PvP ESP with Survivor and Myers role filters in open world',
     caption: 'Faction ESP',
-    captionDesc: 'Elyos, Asmodian, and Balaur filters with party ignore rules.',
+    captionDesc: 'survivors, Myers, and civilians filters with party ignore rules.',
   },
   gpSpawn: {
-    src: `${gameplay}/aion-2-spawn-island-esp.png`,
-    alt: 'Aion 2 portal and instance entrance markers with distance readouts',
+    src: `${gameplay}/halloween-spawn-island-esp.png`,
+    alt: 'Halloween: The Game portal and instance entrance markers with distance readouts',
     caption: 'Portal ESP',
     captionDesc: 'Instance entrances and portal markers for PvE routing.',
   },
   gpLongRange: {
-    src: `${gameplay}/aion-2-long-range-esp.png`,
-    alt: 'Aion 2 long-range ESP with view direction arrows and out-of-screen indicators',
+    src: `${gameplay}/halloween-long-range-esp.png`,
+    alt: 'Halloween: The Game long-range ESP with view direction arrows and out-of-screen indicators',
     caption: 'Long range ESP',
     captionDesc: 'Max ESP distance, view direction, and off-screen arrows.',
   },
   gpChams: {
-    src: `${gameplay}/aion-2-chams-esp.png`,
-    alt: 'Aion 2 overlay combat mode hiding world ESP while keeping player readouts',
+    src: `${gameplay}/halloween-chams-esp.png`,
+    alt: 'Halloween: The Game overlay combat mode hiding world ESP while keeping player readouts',
     caption: 'Combat mode',
     captionDesc: 'Hide world ESP during fights while keeping combat readouts.',
   },
   gpCombat: {
-    src: `${gameplay}/aion-2-combat-esp.png`,
-    alt: 'Aion 2 combat overlay with stream-proof HUD and custom crosshair',
+    src: `${gameplay}/halloween-combat-esp.png`,
+    alt: 'Halloween: The Game combat overlay with stream-proof HUD and custom crosshair',
     caption: 'Overlay options',
     captionDesc: 'Stream-proof overlay, custom crosshair, and color sets.',
   },
@@ -223,7 +223,7 @@ function slide(...keys: GalleryKey[]): ProductSlide[] {
 const skinChangerProductImages: ProductSlide[] = [
   {
     src: '/images/products/skin-changer/skin-changer-emblem.png',
-    alt: 'Skin Changer emblem with shield, stars, and crossed weapons',
+    alt: 'Halloween The Game skin changer preview screenshot with Myers glow ESP',
     caption: 'Skin Changer',
     captionDesc: 'Skin library, live preview, loadout manager, and restore tools for supported cosmetics.',
   },
@@ -232,7 +232,7 @@ const skinChangerProductImages: ProductSlide[] = [
 const ugcToolProductImages: ProductSlide[] = [
   {
     src: '/images/products/game-accounts/ugc-tool-icon.png',
-    alt: 'Red gear and clock icon representing the Aion 2 UGC tool utility',
+    alt: 'Halloween The Game account recovery tool screenshot with in-game ESP HUD',
     caption: 'UGC tool',
     captionDesc: 'Restriction detection, live status checks, and supported recovery workflows.',
   },
@@ -241,39 +241,38 @@ const ugcToolProductImages: ProductSlide[] = [
 const hwidSpooferProductImages: ProductSlide[] = [
   {
     src: '/images/products/hwid-spoofer/phoenix-satano-chip.png',
-    alt: 'Phoenix Satano HWID spoofer branding on a stylized CPU and motherboard',
+    alt: 'Halloween The Game HWID spoofer workflow screenshot with outdoor ESP overlay',
     caption: 'Phoenix Satano',
     captionDesc: 'Hardware-level profile tools for disk and MAC identifiers on Windows PC.',
   },
   {
     src: '/images/products/hwid-spoofer/phoenix-wh-satano-brand.png',
-    alt: 'Phoenix WH-Satano logo on a dark background',
+    alt: 'Halloween The Game PC spoofer companion screenshot with night exterior ESP',
     caption: 'WH-Satano suite',
     captionDesc: 'Portal workflow, compatibility scan, and post-spoof verification steps.',
   },
   {
     src: '/images/products/hwid-spoofer/hwid-spoofer-icon.png',
-    alt: 'Red CPU and gear icon representing HWID spoofer system utilities',
+    alt: 'Halloween The Game hardware flag recovery screenshot with porch ESP view',
     caption: 'System utility',
     captionDesc: 'Disk serial tools, MAC rotation, and identifier diff reports after reboot.',
   },
 ];
 
 const mainFullFeatures = [
-  'Soft aim: aim key, FOV, smoothness, bone selection (head / chest / closest)',
-  'Visible check, ignore friendly faction, ignore same party / alliance',
-  'Draw FOV, draw target line, max aim distance',
-  'Player ESP: full / corner boxes, skeleton, head circle, health bar',
-  'Nameplate, class / job, level, faction (Elyos / Asmodian / Balaur)',
-  'Distance, view direction, flying / grounded state, off-screen arrows',
-  'Aerial target ESP, flight path markers, altitude readout',
-  'Glide / wing state, sky contested zone highlights',
-  'NPC / mob ESP, elite markers, world boss ESP, dungeon boss markers',
-  'Quest objective markers, gathering node ESP, ore / herb / material filters',
-  'Chest / loot object ESP, portal / instance entrance markers',
-  '2D radar with faction color coding, boss and node markers, range and zoom',
-  'Stream-proof overlay, combat mode (hide world ESP), custom crosshair',
-  'Custom ESP colors, menu key, panic key, save / load configs',
+  'Myers toolkit: Myers ESP, box, skeleton, distance, view direction, threat state (stalking / chasing)',
+  'Myers proximity warning, stalk target highlight, terror radius indicator, line of sight check',
+  'Out-of-screen arrows and last known position marker for Myers',
+  'Survivor toolkit: survivor ESP, box, skeleton, health state, distance, name, held weapon',
+  'Survivor action state (looting / healing / alerting), teammate ESP, distance, health, held item',
+  'Aim assist: aim key, FOV, smooth, bone selection, visible check, draw FOV',
+  'Civilian NPC ESP, family / resident markers, weapon and item ESP, household weapon markers',
+  'Phone / alert object markers, door and interactable highlights, closet / hide spot markers',
+  'Vehicle markers, alert / authority objective markers, rescue objectives, escape route highlights',
+  'Max world distance filter, box styles (full / corner), skeleton thickness, snaplines, health bars',
+  'Distance readouts, custom ESP colors, visible / hidden colors, 2D radar with range control',
+  'Fullbright / night clear, stream-proof overlay, custom crosshair, combat mode (hide world ESP)',
+  'Custom menu key, custom panic key, config system (save / load)',
 ];
 
 const mainProduct: ProductPage = {
@@ -281,39 +280,39 @@ const mainProduct: ProductPage = {
   kind: 'main',
   badge: 'Available',
   tier: 'Private suite',
-  name: 'Aion 2 Private Cheats',
-  title: 'Aion 2 Private Cheats',
-  subtitle: 'Player ESP, flight markers, gathering nodes, radar, and optional soft aim for Windows PC.',
-  desc: 'Private Aion 2 cheats with faction filters, aerial ESP, world boss markers, 2D radar, and configurable soft aim.',
-  features: ['Player ESP', 'Soft aim', 'Flight markers', 'Gathering nodes', '2D radar', 'Saveable configs'],
+  name: 'Halloween Private Cheats',
+  title: 'Halloween Private Cheats',
+  subtitle: 'Player ESP, stalk markers, escape item markers, radar, and optional aim assist for Windows PC.',
+  desc: 'Private Halloween cheats with role filters, aerial ESP, world boss markers, 2D radar, and configurable aim assist.',
+  features: ['Player ESP', 'aim assist', 'stalk markers', 'escape item markers', '2D radar', 'Saveable configs'],
   more: mainFullFeatures.length - 6,
   variant: 'popular',
   buyUrl: checkoutForSlug('main'),
   images: slide('gpHeroEsp', 'gpBuildFight', 'gpZoomHack', 'gpScripts'),
   overview: {
-    title: 'Aion 2 private cheat suite',
+    title: 'Halloween: The Game private cheat suite',
     paragraphs: [
-      'The main suite documents listed overlay tools for NC’s sky-battlefield MMORPG: player ESP, faction filters, flight markers, gathering nodes, 2D radar, and optional soft aim. Compare weekly, monthly, and lifetime plans before checkout.',
-      'Start with conservative ESP and radar ranges, then enable soft aim only after you confirm current compatibility notes. Save profiles so you are not toggling every module each session.',
+      'The main suite documents Myers / Shape and survivor ESP, world and objective markers, 2D radar, and optional aim assist for Halloween: The Game on Windows PC. Compare weekly, monthly, and lifetime plans before checkout.',
+      'Start with conservative ESP and radar ranges, then enable aim assist only after you confirm current compatibility notes. Save profiles so you are not toggling every module each session.',
     ],
   },
-  acquisition: acquisitionFor('Aion 2 Private Cheats'),
+  acquisition: acquisitionFor('Halloween Private Cheats'),
   goodToKnow: sharedGoodToKnow,
   limitations: sharedLimitations,
   fullFeatures: mainFullFeatures,
-  systemRequirements: aionSystemRequirements,
+  systemRequirements: pcSystemRequirements,
   about: [
-    { type: 'h2', text: 'Built for Aion 2 PC' },
+    { type: 'h2', text: 'Built for Halloween: The Game PC' },
     {
       type: 'p',
-      text: 'Modules are described from the live product listing—ESP, flight markers, nodes, radar, and soft aim—without unverified automation extras. Re-check compatibility after every major client patch.',
+      text: 'Modules are described from the live product listing—Myers and survivor ESP, item markers, radar, and aim assist—without unverified automation extras. Re-check compatibility after every major client patch.',
     },
   ],
   body: [
     { type: 'h2', text: 'Modules you can inspect before checkout' },
     {
       type: 'p',
-      text: 'Player ESP covers Elyos, Asmodian, and Balaur targets with class, level, and flying state. World overlays mark bosses, quests, and portals. Radar sits beside ESP so the HUD stays readable.',
+      text: 'Survivor ESP covers health, weapons, and action states while Myers ESP highlights stalking, terror radius, and line of sight. World overlays mark weapons, hide spots, and escape routes. Radar sits beside ESP so the HUD stays readable.',
     },
   ],
   relatedBlogSlugs: productRelatedBlogSlugs.main,
@@ -326,7 +325,7 @@ const utilityProducts: ProductPage[] = [
     badge: 'Available',
     category: 'System utility',
     name: 'HWID Spoofer',
-    title: 'Aion 2 HWID Spoofer',
+    title: 'Halloween: The Game HWID Spoofer',
     subtitle: 'Disk and MAC profile tools when hardware is flagged',
     desc: 'HWID Spoofer for PC hardware flags—disk serial tools, MAC rotation, compatibility scan, and post-spoof verification.',
     features: ['Disk serial tools', 'MAC rotation', 'Compatibility scan', 'Post-spoof verification'],
@@ -342,7 +341,7 @@ const utilityProducts: ProductPage[] = [
     },
     acquisition: acquisitionFor('HWID Spoofer'),
     goodToKnow:
-      'Run the compatibility scan before spoofing. Create a Windows restore point first. Verify identifiers changed after a cold reboot before launching Aion 2 again.',
+      'Run the compatibility scan before spoofing. Create a Windows restore point first. Verify identifiers changed after a cold reboot before launching Halloween: The Game again.',
     limitations:
       'Spoofing does not help account-only cases. Never stack two spoof tools. You accept all risk from driver-level changes.',
     fullFeatures: [
@@ -367,7 +366,7 @@ const utilityProducts: ProductPage[] = [
       { type: 'h2', text: 'When you need it' },
       {
         type: 'p',
-        text: 'Use after hardware-level anti-cheat flags. Pair with [UGC tool](/products/aion-2-cheats/game-accounts/) when the restriction is account-side instead.',
+        text: 'Use after hardware-level anti-cheat flags. Pair with [UGC tool](/products/halloween-cheats/game-accounts/) when the restriction is account-side instead.',
       },
     ],
     relatedBlogSlugs: productRelatedBlogSlugs['hwid-spoofer'],
@@ -378,9 +377,9 @@ const utilityProducts: ProductPage[] = [
     badge: 'Available',
     category: 'Account tools',
     name: 'UGC tool',
-    title: 'Aion 2 UGC tool',
+    title: 'Halloween: The Game UGC tool',
     subtitle: 'Restriction detection and supported recovery workflows',
-    desc: 'The Aion 2 UGC tool detects ban types, verifies live status, and runs supported remediation steps where authorized access exists.',
+    desc: 'The Halloween: The Game UGC tool detects ban types, verifies live status, and runs supported remediation steps where authorized access exists.',
     features: ['Ban detection', 'Live status checks', 'One-click workflows', 'Detailed error reporting'],
     more: 6,
     buyUrl: checkoutForSlug('game-accounts'),
@@ -409,7 +408,7 @@ const utilityProducts: ProductPage[] = [
       'Secure operation without unnecessary credential collection',
     ],
     systemRequirements: [
-      { icon: 'reqMailOrder', text: 'Order email used at checkout on getaion2cheats.net.' },
+      { icon: 'reqMailOrder', text: 'Order email used at checkout on gethalloweencheats.com.' },
       { icon: 'reqShieldAccount', text: 'Account details and restriction notification if available.' },
       { icon: 'reqWifiPortal', text: 'Internet access for Support and status checks.' },
     ],
@@ -417,7 +416,7 @@ const utilityProducts: ProductPage[] = [
       { type: 'h2', text: 'Realistic expectations' },
       {
         type: 'p',
-        text: 'Organize evidence and follow portal workflows. Pair with [HWID Spoofer](/products/aion-2-cheats/hwid-spoofer/) when hardware is flagged.',
+        text: 'Organize evidence and follow portal workflows. Pair with [HWID Spoofer](/products/halloween-cheats/hwid-spoofer/) when hardware is flagged.',
       },
     ],
     relatedBlogSlugs: productRelatedBlogSlugs['game-accounts'],
@@ -428,7 +427,7 @@ const utilityProducts: ProductPage[] = [
     badge: 'Available',
     category: 'Cosmetic',
     name: 'Skin Changer',
-    title: 'Aion 2 Skin Changer & Cosmetics',
+    title: 'Halloween: The Game Skin Changer & Cosmetics',
     subtitle: 'Preview and apply supported cosmetic profiles',
     desc: 'Skin library, live preview, loadout manager, and restore tools for supported cosmetic changes from one interface.',
     features: ['Skin library', 'Live preview', 'Loadout manager', 'Restore & reset'],
@@ -438,7 +437,7 @@ const utilityProducts: ProductPage[] = [
     overview: {
       title: 'Skin Changer and cosmetic utilities',
       paragraphs: [
-        'Centralized skin library with game-specific compatibility profiles, custom import support, and preset sharing for supported titles including Aion 2.',
+        'Centralized skin library with game-specific compatibility profiles, custom import support, and preset sharing for supported titles including Halloween: The Game.',
         'Restore original assets before patches—update compatibility checks flag outdated skin configurations after game updates.',
       ],
     },
@@ -459,12 +458,12 @@ const utilityProducts: ProductPage[] = [
       'Update compatibility checks after patches',
       'Profile and preset import / export',
     ],
-    systemRequirements: aionSystemRequirements,
+    systemRequirements: pcSystemRequirements,
     body: [
       { type: 'h2', text: 'Cosmetic workflow' },
       {
         type: 'p',
-        text: 'Detect installation, pick a compatibility profile, preview combinations, then save presets. See the [Skin Changer guide](/blog/aion-2-skin-changer-guide/) for conservative first steps.',
+        text: 'Detect installation, pick a compatibility profile, preview combinations, then save presets. See the [Skin Changer guide](/blog/halloween-skin-changer-cosmetics-guide/) for conservative first steps.',
       },
     ],
     relatedBlogSlugs: productRelatedBlogSlugs['skin-changer'],
@@ -518,6 +517,6 @@ export const productHub = {
   title: t.products.title,
   subtitle: t.products.subtitle,
   description:
-    'Aion 2 private cheats plus HWID Spoofer, UGC tool, and Skin Changer utilities for Windows PC.',
-  buyUrl: checkoutPath('aion2Cheats'),
+    'Halloween private cheats plus HWID Spoofer, UGC tool, and Skin Changer utilities for Windows PC.',
+  buyUrl: checkoutPath('halloweenCheats'),
 };

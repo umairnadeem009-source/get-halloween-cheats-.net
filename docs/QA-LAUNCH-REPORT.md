@@ -1,4 +1,4 @@
-# getaion2cheats.net — Launch QA Report (18 checkpoints)
+# gethalloweencheats.com — Launch QA Report (18 checkpoints)
 
 Date: 2026-10-20
 
@@ -6,9 +6,9 @@ Date: 2026-10-20
 
 - **Config:** `src/config/site.ts`, `checkout.ts`, `checkout-redirects.mjs`, `pageSeo.ts`, `seo.ts`, `astro.config.mjs`, `wrangler.toml`
 - **Data:** `src/data/products.ts`, `src/data/blog/posts.ts` (30 posts), `src/data/faq.ts`, `src/data/forum.ts`, `src/i18n/en.ts`
-- **Pages:** `src/pages/products/index.astro`, `src/pages/products/aion-2-cheats/*`, removed legacy `fortnite-cheats` routes
+- **Pages:** `src/pages/products/index.astro`, `src/pages/products/halloween-cheats/*`, removed legacy `fortnite-cheats` routes
 - **Components:** Header (logo + Try Now CTA), Footer, Blog, FAQ, Forum, product headers
-- **Assets:** `public/images/brand/logo.webp`, renamed gameplay/blog images to `aion-2-*`, `public/robots.txt`, `site.webmanifest`
+- **Assets:** `public/images/brand/logo.webp`, renamed gameplay/blog images to `halloween-*`, `public/robots.txt`, `site.webmanifest`
 - **Docs:** `docs/seo/*`, `docs/search-console.md`, this report
 - **Git:** remote renamed to `template-upstream` (no push to template repo)
 
@@ -16,8 +16,8 @@ Date: 2026-10-20
 
 - `/` home
 - `/products/` catalog hub (4 products)
-- `/products/aion-2-cheats/` main private suite
-- `/products/aion-2-cheats/hwid-spoofer/`, `game-accounts/`, `skin-changer/`, `utilities/`
+- `/products/halloween-cheats/` main private suite
+- `/products/halloween-cheats/hwid-spoofer/`, `game-accounts/`, `skin-changer/`, `utilities/`
 - `/blog/` + **30** posts
 - `/forum/` + discussions
 - `/faq/`, `/support/`, `/about/`, `/terms/`, `/privacy/`, `/404/`
@@ -26,11 +26,11 @@ Date: 2026-10-20
 
 ## 3. Blogs
 
-30 Aion 2 articles in `src/data/blog/posts.ts` (generated via `scripts/generate-aion2-posts.mjs`), each with H2/H3 body, internal links, CTA, and end FAQ blocks.
+30 Halloween: The Game articles in `src/data/blog/posts.ts` (generated via `scripts/generate-aion2-posts.mjs`), each with H2/H3 body, internal links, CTA, and end FAQ blocks.
 
 ## 4. Keyword map
 
-Transactional: `/`, `/products/aion-2-cheats/`, `/products/`  
+Transactional: `/`, `/products/halloween-cheats/`, `/products/`  
 Feature: home `#features`, blog ESP/flight/radar/soft aim cluster  
 Utilities: HWID, accounts, skin product pages + blogs 14–17  
 Informational: botting vs cheats, anti-cheat, classic Aion queries in blogs 28–29  
@@ -46,7 +46,7 @@ See `docs/seo/keyword-gap.md` — remaining opportunities: faction resource guid
 
 ## 7. Technical SEO
 
-- Canonical site: `https://getaion2cheats.net` in Astro config
+- Canonical site: `https://gethalloweencheats.com` in Astro config
 - `robots.txt` + sitemap index + section sitemaps
 - `pageSeo.ts` per-route titles/descriptions
 - Trailing slash consistency
@@ -64,7 +64,7 @@ See `docs/seo/keyword-gap.md` — remaining opportunities: faction resource guid
 
 ## 10. Canonicals
 
-`BaseLayout` canonical URLs via `canonicalUrl()` — domain `getaion2cheats.net`.
+`BaseLayout` canonical URLs via `canonicalUrl()` — domain `gethalloweencheats.com`.
 
 ## 11. Hreflang
 
@@ -86,12 +86,12 @@ Template responsive grid/carousel preserved; manual pass recommended on real dev
 
 | Internal path | Affiliate destination |
 |---------------|----------------------|
-| `/go/aion-2-cheats/` | levocheats.com … `/aion-2-cheats` |
+| `/go/halloween-cheats/` | levocheats.com … `/halloween-cheats` |
 | `/go/hwid-spoofer/` | … `/hwid-spoofer` |
 | `/go/game-accounts/` | … `/game-accounts` |
 | `/go/skin-changer/` | … `/skin-changer-cheats` |
 
-Navbar **Try Now** → `/go/aion-2-cheats/`.
+Navbar **Try Now** → `/go/halloween-cheats/`.
 
 ## 16. Branding check
 
@@ -112,4 +112,4 @@ See `docs/seo/backlink-prospects.md`, `outreach-follow-up.md`, and `linkable-ass
 
 ---
 
-**Deploy:** `npm run deploy` (Wrangler) after DNS for `getaion2cheats.net` points to Cloudflare. Submit sitemap in Search Console per `docs/search-console.md`.
+**Deploy:** `npm run deploy` (Wrangler) after DNS for `gethalloweencheats.com` points to Cloudflare. Submit sitemap in Search Console per `docs/search-console.md`.

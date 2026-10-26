@@ -9,7 +9,7 @@ export type CheckoutProduct = keyof typeof CHECKOUT;
 
 /** URL slug for /go/[slug]/ checkout redirect pages. */
 export const CHECKOUT_SLUGS: Record<CheckoutProduct, string> = {
-  aion2Cheats: 'aion-2-cheats',
+  halloweenCheats: 'halloween-cheats',
   skinChanger: 'skin-changer',
   hwidSpoofer: 'hwid-spoofer',
   gameAccounts: 'game-accounts',
@@ -20,12 +20,12 @@ export const CHECKOUT_SLUG_TO_PRODUCT = Object.fromEntries(
 ) as Record<string, CheckoutProduct>;
 
 /** Internal checkout path shown to users (hides external URL on hover). */
-export function checkoutPath(product: CheckoutProduct = 'aion2Cheats'): string {
+export function checkoutPath(product: CheckoutProduct = 'halloweenCheats'): string {
   return `/go/${CHECKOUT_SLUGS[product]}/`;
 }
 
 /** Default product checkout redirect (replaces legacy Discord CTAs). */
-export const PRIMARY_CHECKOUT_PATH = checkoutPath('aion2Cheats');
+export const PRIMARY_CHECKOUT_PATH = checkoutPath('halloweenCheats');
 
 /** Map internal product slugs to checkout redirect paths. */
 export function checkoutForSlug(slug: string): string {
@@ -41,7 +41,7 @@ export function checkoutForSlug(slug: string): string {
       return checkoutPath('gameAccounts');
     case 'main':
     default:
-      return checkoutPath('aion2Cheats');
+      return checkoutPath('halloweenCheats');
   }
 }
 
@@ -57,8 +57,8 @@ export function resolveCheckoutHref(href: string): string {
     }
   }
 
-  if (href.includes('%2Faion-2-cheats') || href.includes('/aion-2-cheats')) {
-    return checkoutPath('aion2Cheats');
+  if (href.includes('%2Fhalloween-cheats') || href.includes('/halloween-cheats')) {
+    return checkoutPath('halloweenCheats');
   }
   if (href.includes('%2Fskin-changer') || href.includes('/skin-changer')) {
     return checkoutPath('skinChanger');

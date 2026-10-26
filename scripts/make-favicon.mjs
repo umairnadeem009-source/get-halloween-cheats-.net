@@ -4,7 +4,7 @@ import path from 'path';
 
 const src = process.argv[2];
 const out = process.argv[3] ?? path.resolve('public');
-const brandLabel = process.argv[4] ?? 'Aion 2 Cheats';
+const brandLabel = process.argv[4] ?? 'Halloween Cheats';
 
 if (!src) {
   console.error('Usage: node scripts/make-favicon.mjs <source.png> [outDir] [ariaLabel]');
@@ -14,17 +14,40 @@ if (!src) {
 const meta = await sharp(src).metadata();
 console.log('source', meta.width, meta.height, meta.format);
 
-/** Turn near-black pixels transparent (keeps gold emblem edges). */
+function sampleCornerRgb(data, width, height, channels, x, y) {
+  const i = (y * width + x) * channels;
+  return [data[i], data[i + 1], data[i + 2]];
+}
+
+function colorDistance(r1, g1, b1, r2, g2, b2) {
+  return Math.hypot(r1 - r2, g1 - g2, b1 - b2);
+}
+
+/** Remove flat background (corners) plus near-white and near-black pixels. */
 async function loadTransparentPng() {
   const { data, info } = await sharp(src).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
   const { width, height, channels } = info;
-  const threshold = 42;
+  const insetX = Math.max(1, Math.floor(width * 0.04));
+  const insetY = Math.max(1, Math.floor(height * 0.04));
+  const corners = [
+    sampleCornerRgb(data, width, height, channels, insetX, insetY),
+    sampleCornerRgb(data, width, height, channels, width - 1 - insetX, insetY),
+    sampleCornerRgb(data, width, height, channels, insetX, height - 1 - insetY),
+    sampleCornerRgb(data, width, height, channels, width - 1 - insetX, height - 1 - insetY),
+  ];
+  const bg = corners.reduce((acc, [r, g, b]) => [acc[0] + r, acc[1] + g, acc[2] + b], [0, 0, 0]).map((v) => v / 4);
+  const bgMatch = 52;
+  const blackMax = 28;
+  const whiteMin = 248;
 
   for (let i = 0; i < data.length; i += channels) {
     const r = data[i];
     const g = data[i + 1];
     const b = data[i + 2];
-    if (r <= threshold && g <= threshold && b <= threshold) {
+    const nearBg = colorDistance(r, g, b, bg[0], bg[1], bg[2]) <= bgMatch;
+    const nearWhite = r >= whiteMin && g >= whiteMin && b >= whiteMin;
+    const nearBlack = r <= blackMax && g <= blackMax && b <= blackMax;
+    if (nearBg || nearWhite || nearBlack) {
       data[i + 3] = 0;
     }
   }

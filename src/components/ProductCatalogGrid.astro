@@ -1,0 +1,76 @@
+---
+import type { ProductPage } from '../data/products';
+import { productPages as defaultPages } from '../data/products';
+import { cheatTierIcons, productCategoryIcons } from '../data/sectionIcons';
+import CatalogCard from './CatalogCard.astro';
+import { productPath } from '../utils/path';
+
+interface Props {
+  pages?: ProductPage[];
+  class?: string;
+}
+
+const { pages = defaultPages, class: className } = Astro.props;
+
+const mainProduct = pages.find((p) => p.kind === 'main');
+const utilityProducts = pages.filter((p) => p.kind !== 'main');
+
+function cardIcon(product: ProductPage) {
+  if (product.kind === 'main') {
+    return cheatTierIcons['Elite'] ?? 'crosshair';
+  }
+  return productCategoryIcons[product.category ?? ''] ?? 'package';
+}
+
+function cardLabel(product: ProductPage) {
+  if (product.kind === 'main') {
+    return product.tier ?? product.name;
+  }
+  return product.category ?? 'Utility';
+}
+---
+
+<div class:list={['products-catalog flex flex-col gap-6', className]}>
+  {
+    mainProduct && (
+      <CatalogCard
+        featured
+        class="catalog-card--featured"
+        label={cardLabel(mainProduct)}
+        title={mainProduct.title}
+        desc={mainProduct.desc}
+        href={productPath(mainProduct.slug)}
+        buyUrl={mainProduct.buyUrl}
+        features={mainProduct.features}
+        more={mainProduct.more}
+        icon={cardIcon(mainProduct)}
+        badge={mainProduct.badge}
+        variant={mainProduct.variant}
+        buyLabel="Buy now"
+        viewLabel="View details"
+        maxFeatures={6}
+      />
+    )
+  }
+  <div class="products-catalog__utilities grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      utilityProducts.map((product) => (
+        <CatalogCard
+          class="catalog-card--utility h-full"
+          label={cardLabel(product)}
+          title={product.title}
+          href={productPath(product.slug)}
+          buyUrl={product.buyUrl}
+          features={product.features}
+          more={product.more}
+          icon={cardIcon(product)}
+          badge={product.badge}
+          variant={product.variant}
+          buyLabel="Buy now"
+          viewLabel="View details"
+          maxFeatures={4}
+        />
+      ))
+    }
+  </div>
+</div>

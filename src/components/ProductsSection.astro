@@ -1,73 +1,15 @@
 ---
 import '../styles/product-cheat-page.css';
 import { t } from '../i18n';
-import { productPages } from '../data/products';
-import { cheatTierIcons, productCategoryIcons } from '../data/sectionIcons';
 import SectionHeader from './SectionHeader.astro';
-import CatalogCard from './CatalogCard.astro';
-import { productPath } from '../utils/path';
-import { Carousel, CarouselContent, CarouselItem } from '@/components/starwind/carousel';
+import ProductCatalogGrid from './ProductCatalogGrid.astro';
 
 const s = t.products;
-
-function cardIcon(product: (typeof productPages)[number]) {
-  if (product.kind === 'main') {
-    return cheatTierIcons['Elite'] ?? 'crosshair';
-  }
-  return productCategoryIcons[product.category ?? ''] ?? 'package';
-}
-
-function cardLabel(product: (typeof productPages)[number]) {
-  if (product.kind === 'main') {
-    return product.tier ?? product.name;
-  }
-  return product.category ?? 'Utility';
-}
 ---
 
 <section id="products" class="py-16 md:py-24" aria-labelledby="products-title">
   <div class="mx-auto max-w-6xl px-5">
     <SectionHeader eyebrow={s.eyebrow} title={s.title} desc={s.subtitle} titleId="products-title" />
-
-    <div class="products-carousel" data-products-carousel>
-      <Carousel
-        autoInit
-        opts={{ align: 'start', containScroll: 'trimSnaps', dragFree: false }}
-        class="products-carousel__root"
-      >
-        <div class="products-carousel__stage">
-          <div class="products-carousel__viewport">
-            <CarouselContent class="products-carousel__track">
-              {
-                productPages.map((product) => (
-                  <CarouselItem class="products-carousel__slide">
-                    <CatalogCard
-                      class="catalog-card--carousel"
-                      label={cardLabel(product)}
-                      title={product.title}
-                      href={productPath(product.slug)}
-                      buyUrl={product.buyUrl}
-                      features={product.features}
-                      more={product.more}
-                      icon={cardIcon(product)}
-                      badge={product.badge}
-                      variant={product.variant}
-                      buyLabel="Buy now"
-                      viewLabel="View details"
-                      maxFeatures={5}
-                    />
-                  </CarouselItem>
-                ))
-              }
-            </CarouselContent>
-          </div>
-        </div>
-      </Carousel>
-    </div>
+    <ProductCatalogGrid class="mt-10" />
   </div>
 </section>
-
-<script>
-  import { setupProductsCarousel } from '../scripts/products-carousel.ts';
-  setupProductsCarousel();
-</script>

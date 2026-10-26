@@ -3,11 +3,10 @@ import '../../styles/product-cheat-page.css';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { t } from '../../i18n';
 import { productHub, productPages } from '../../data/products';
-import { productCategoryIcons } from '../../data/sectionIcons';
 import { resolvePageSeo } from '../../config/seo';
 import { breadcrumbSchema, collectionPageSchema, itemListSchema } from '../../utils/schema';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import CatalogCard from '../../components/CatalogCard.astro';
+import ProductCatalogGrid from '../../components/ProductCatalogGrid.astro';
 import { productPath } from '../../utils/path';
 
 const seo = resolvePageSeo('/products/');
@@ -16,15 +15,6 @@ const breadcrumbs = [
   { name: 'Products', path: productHub.path },
 ];
 
-function cardIcon(product: (typeof productPages)[number]) {
-  if (product.kind === 'main') return 'crosshair';
-  return productCategoryIcons[product.category ?? ''] ?? 'package';
-}
-
-function cardLabel(product: (typeof productPages)[number]) {
-  if (product.kind === 'main') return product.tier ?? 'Main suite';
-  return product.category ?? 'Utility';
-}
 ---
 
 <BaseLayout
@@ -54,23 +44,7 @@ function cardLabel(product: (typeof productPages)[number]) {
         <p class="text-lg text-muted-foreground">{t.products.subtitle}</p>
       </div>
 
-      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
-        {productPages.map((product) => (
-          <CatalogCard
-            label={cardLabel(product)}
-            title={product.title}
-            href={productPath(product.slug)}
-            buyUrl={product.buyUrl}
-            features={product.features}
-            more={product.more}
-            icon={cardIcon(product)}
-            badge={product.badge}
-            variant={product.variant}
-            buyLabel="Buy now"
-            viewLabel="View details"
-          />
-        ))}
-      </div>
+      <ProductCatalogGrid class="mt-10" />
     </div>
   </section>
 </BaseLayout>
