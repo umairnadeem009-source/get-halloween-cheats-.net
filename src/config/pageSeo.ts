@@ -11,12 +11,12 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/': {
     title: 'Halloween Cheats | Myers ESP, Survivor Radar & PC Tools',
     description:
-      'Halloween: The Game cheats for Windows PC — survivor and Myers ESP, item markers, HWID spoofer, account tools, and skin changer. Private suite from $15 weekly on gethalloweencheats.com.',
+      'Halloween: The Game cheats for Windows PC — survivor and Myers ESP, item markers, HWID spoofer, account tools, and skin changer. Private suite from $15 weekly on gethalloweencheats.net.',
   },
   '/products/': {
     title: 'Halloween: The Game Products | Cheats, HWID Spoofer, UGC & Skins',
     description:
-      'Shop Halloween private cheats, HWID Spoofer, UGC tool, and Skin Changer for the global Steam PC client. Compare plans from $15 weekly on gethalloweencheats.com.',
+      'Shop Halloween private cheats, HWID Spoofer, UGC tool, and Skin Changer for the global Steam PC client. Compare plans from $15 weekly on gethalloweencheats.net.',
   },
   '/products/halloween-cheats/': {
     title: 'Buy Halloween Private Cheats | Myers & Survivor ESP',
@@ -31,7 +31,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/products/halloween-cheats/game-accounts/': {
     title: 'Buy Halloween: The Game UGC Tool | Ban Detection & Recovery',
     description:
-      'Halloween: The Game UGC tool for restriction detection, live status checks, and supported recovery workflows. Weekly, monthly, and lifetime access from $15 USD on gethalloweencheats.com.',
+      'Halloween: The Game UGC tool for restriction detection, live status checks, and supported recovery workflows. Weekly, monthly, and lifetime access from $15 USD on gethalloweencheats.net.',
   },
   '/products/halloween-cheats/skin-changer/': {
     title: 'Buy Halloween: The Game Skin Changer | Cosmetic Preview & Loadouts',
@@ -51,7 +51,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/forum/': {
     title: 'Halloween Cheats Forum | Setup, ESP & Patch Discussion',
     description:
-      'Community forum for Halloween: The Game cheat setup, ESP tuning, patch notes, spoofer questions, and product help before checkout on gethalloweencheats.com.',
+      'Community forum for Halloween: The Game cheat setup, ESP tuning, patch notes, spoofer questions, and product help before checkout on gethalloweencheats.net.',
   },
   '/faq/': {
     title: 'Halloween Cheats FAQ | Plans, Compatibility & Risk',
@@ -61,22 +61,22 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/terms/': {
     title: 'Terms for Halloween Cheats | License & Refunds',
     description:
-      'Terms for buying Halloween cheats on gethalloweencheats.com — license use, delivery, refunds, and account risk.',
+      'Terms for buying Halloween cheats on gethalloweencheats.net — license use, delivery, refunds, and account risk.',
   },
   '/privacy/': {
     title: 'Privacy Policy | Halloween Cheats',
     description:
-      'How gethalloweencheats.com uses analytics, cookies, and contact data when you browse guides or purchase Halloween: The Game products.',
+      'How gethalloweencheats.net uses analytics, cookies, and contact data when you browse guides or purchase Halloween: The Game products.',
   },
   '/about/': {
     title: 'About Halloween Cheats | PC ESP & Utilities',
     description:
-      'About Halloween Cheats — private suite, utilities, and guides for the global Halloween: The Game PC client at gethalloweencheats.com.',
+      'About Halloween Cheats — private suite, utilities, and guides for the global Halloween: The Game PC client at gethalloweencheats.net.',
   },
   '/support/': {
     title: 'Halloween Cheats Support | Setup & Checkout Help',
     description:
-      'Support for Halloween: The Game loader setup, HWID spoofing, UGC and skin tools, and checkout questions at gethalloweencheats.com.',
+      'Support for Halloween: The Game loader setup, HWID spoofing, UGC and skin tools, and checkout questions at gethalloweencheats.net.',
   },
 };
 

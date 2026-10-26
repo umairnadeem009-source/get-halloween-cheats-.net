@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import { isSitemapExcludedUrl, sitemapSerialize } from './src/config/sitemap.ts';
 
 export default defineConfig({
-  site: 'https://gethalloweencheats.com',
+  site: 'https://gethalloweencheats.net',
   trailingSlash: 'always',
   redirects: {
     '/cheats/': '/products/halloween-cheats/',

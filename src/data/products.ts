@@ -88,7 +88,7 @@ const defaultAcquisitionSteps: AcquisitionStep[] = [
   {
     num: '01',
     title: 'Check compatibility',
-    desc: 'Review current status notes on gethalloweencheats.com and Support before purchase—especially after an Halloween: The Game client patch.',
+    desc: 'Review current status notes on gethalloweencheats.net and Support before purchase—especially after an Halloween: The Game client patch.',
   },
   {
     num: '02',
@@ -149,12 +149,6 @@ const galleryRaw = {
     caption: '2D radar',
     captionDesc: 'Local awareness next to ESP without covering the whole screen.',
   },
-  gpSkinChanger: {
-    src: `${gameplay}/halloween-skin-changer.png`,
-    alt: 'Halloween: The Game cosmetic preview interface with outfit and weapon skin slots',
-    caption: 'Cosmetics',
-    captionDesc: 'Preview supported skins before applying loadouts.',
-  },
   gpAutoKill: {
     src: `${gameplay}/halloween-auto-aim.png`,
     alt: 'Halloween: The Game aim assist reticle with target line and head bone highlight',
@@ -173,12 +167,6 @@ const galleryRaw = {
     caption: 'World ESP',
     captionDesc: 'World and dungeon boss markers with quest objective cues.',
   },
-  gpBuildFight: {
-    src: `${gameplay}/halloween-build-fight-esp.png`,
-    alt: 'Halloween: The Game flight ESP showing aerial targets, altitude, and wing state',
-    caption: 'Flight ESP',
-    captionDesc: 'Aerial targets, glide state, and sky zone highlights.',
-  },
   gpArena: {
     src: `${gameplay}/halloween-arena-wallhack.png`,
     alt: 'Halloween: The Game PvP ESP with Survivor and Myers role filters in open world',
@@ -196,12 +184,6 @@ const galleryRaw = {
     alt: 'Halloween: The Game long-range ESP with view direction arrows and out-of-screen indicators',
     caption: 'Long range ESP',
     captionDesc: 'Max ESP distance, view direction, and off-screen arrows.',
-  },
-  gpChams: {
-    src: `${gameplay}/halloween-chams-esp.png`,
-    alt: 'Halloween: The Game overlay combat mode hiding world ESP while keeping player readouts',
-    caption: 'Combat mode',
-    captionDesc: 'Hide world ESP during fights while keeping combat readouts.',
   },
   gpCombat: {
     src: `${gameplay}/halloween-combat-esp.png`,
@@ -288,7 +270,7 @@ const mainProduct: ProductPage = {
   more: mainFullFeatures.length - 6,
   variant: 'popular',
   buyUrl: checkoutForSlug('main'),
-  images: slide('gpHeroEsp', 'gpBuildFight', 'gpZoomHack', 'gpScripts'),
+  images: slide('gpHeroEsp', 'gpArena', 'gpZoomHack', 'gpScripts'),
   overview: {
     title: 'Halloween: The Game private cheat suite',
     paragraphs: [
@@ -408,7 +390,7 @@ const utilityProducts: ProductPage[] = [
       'Secure operation without unnecessary credential collection',
     ],
     systemRequirements: [
-      { icon: 'reqMailOrder', text: 'Order email used at checkout on gethalloweencheats.com.' },
+      { icon: 'reqMailOrder', text: 'Order email used at checkout on gethalloweencheats.net.' },
       { icon: 'reqShieldAccount', text: 'Account details and restriction notification if available.' },
       { icon: 'reqWifiPortal', text: 'Internet access for Support and status checks.' },
     ],
@@ -500,15 +482,12 @@ export const heroSlides = slide(
   'gpHeroEsp',
   'gpScripts',
   'gpZoomHack',
-  'gpBuildFight',
+  'gpAutoKill',
   'gpFarmBot',
   'gpThermal',
   'gpArena',
   'gpCombat',
   'gpLongRange',
-  'gpChams',
-  'gpSkinChanger',
-  'gpAutoKill',
   'gpSpawn',
 );
 

@@ -157,7 +157,7 @@ const DOMAIN_BLOCK = /aion2cheats\.org/gi;
 
 function sanitize(text) {
   return text
-    .replace(DOMAIN_BLOCK, 'gethalloweencheats.com')
+    .replace(DOMAIN_BLOCK, 'gethalloweencheats.net')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -173,7 +173,7 @@ function formatDate(ts) {
 
 function metaDescription(title, desc) {
   const d = sanitize(desc);
-  return `${title} — ${d} Guides for Windows PC on gethalloweencheats.com.`;
+  return `${title} — ${d} Guides for Windows PC on gethalloweencheats.net.`;
 }
 
 function bodyFor(entry) {
@@ -183,7 +183,7 @@ function bodyFor(entry) {
   const skin = '[Skin Changer](/products/halloween-cheats/skin-changer/)';
   const faq = '[FAQ](/faq/)';
   const intro = sanitize(
-    `${entry.desc} This article covers ${entry.title.toLowerCase()} for the global Halloween: The Game PC client on Steam and PURPLE. Check compatibility on gethalloweencheats.com before you buy or launch—patch days can change overlay behavior.`,
+    `${entry.desc} This article covers ${entry.title.toLowerCase()} for the global Halloween: The Game PC client on Steam and PURPLE. Check compatibility on gethalloweencheats.net before you buy or launch—patch days can change overlay behavior.`,
   );
 
   return [

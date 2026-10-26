@@ -1,4 +1,4 @@
-# gethalloweencheats.com — Launch QA Report (18 checkpoints)
+# gethalloweencheats.net — Launch QA Report (18 checkpoints)
 
 Date: 2026-10-20
 
@@ -46,7 +46,7 @@ See `docs/seo/keyword-gap.md` — remaining opportunities: faction resource guid
 
 ## 7. Technical SEO
 
-- Canonical site: `https://gethalloweencheats.com` in Astro config
+- Canonical site: `https://gethalloweencheats.net` in Astro config
 - `robots.txt` + sitemap index + section sitemaps
 - `pageSeo.ts` per-route titles/descriptions
 - Trailing slash consistency
@@ -64,7 +64,7 @@ See `docs/seo/keyword-gap.md` — remaining opportunities: faction resource guid
 
 ## 10. Canonicals
 
-`BaseLayout` canonical URLs via `canonicalUrl()` — domain `gethalloweencheats.com`.
+`BaseLayout` canonical URLs via `canonicalUrl()` — domain `gethalloweencheats.net`.
 
 ## 11. Hreflang
 
@@ -112,4 +112,4 @@ See `docs/seo/backlink-prospects.md`, `outreach-follow-up.md`, and `linkable-ass
 
 ---
 
-**Deploy:** `npm run deploy` (Wrangler) after DNS for `gethalloweencheats.com` points to Cloudflare. Submit sitemap in Search Console per `docs/search-console.md`.
+**Deploy:** `npm run deploy` (Wrangler) after DNS for `gethalloweencheats.net` points to Cloudflare. Submit sitemap in Search Console per `docs/search-console.md`.

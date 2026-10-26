@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { resolveDistDir } from './dist-dir.mjs';
 
-const SITE = 'https://gethalloweencheats.com';
+const SITE = 'https://gethalloweencheats.net';
 const dist = resolveDistDir();
 
 const EXCLUDED_PREFIXES = [

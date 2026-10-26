@@ -9,7 +9,7 @@ const REPLACEMENTS = [
   [/Steam and PURPLE/gi, 'Steam'],
   [/Steam or PURPLE/gi, 'Steam'],
   [/global Steam or PURPLE/gi, 'Steam'],
-  [/getaion2cheats\.net/g, 'gethalloweencheats.com'],
+  [/getaion2cheats\.net/g, 'gethalloweencheats.net'],
   [/AionMod_/g, 'HWC_Mod_'],
   [/daeva_runner/g, 'haddon_runner'],
   [/daeva_grind/g, 'survivor_main'],

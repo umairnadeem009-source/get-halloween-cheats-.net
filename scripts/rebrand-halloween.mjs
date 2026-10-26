@@ -1,5 +1,5 @@
 /**
- * Bulk rebrand Aion template → Halloween: The Game (gethalloweencheats.com).
+ * Bulk rebrand Aion template → Halloween: The Game (gethalloweencheats.net).
  * Run from repo root: node scripts/rebrand-halloween.mjs
  */
 import fs from 'node:fs';
@@ -17,7 +17,7 @@ const SKIP_FILES = new Set([
 ]);
 
 const REPLACEMENTS = [
-  ['getaion2cheats.net', 'gethalloweencheats.com'],
+  ['getaion2cheats.net', 'gethalloweencheats.net'],
   ['getaion2cheats-net', 'gethalloweencheats-com'],
   ["checkoutPath('aion2Cheats')", "checkoutPath('halloweenCheats')"],
   ['checkoutPath("aion2Cheats")', 'checkoutPath("halloweenCheats")'],

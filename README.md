@@ -1,8 +1,8 @@
-# gethalloweencheats.com
+# gethalloweencheats.net
 
 Halloween: The Game cheat-product site (Astro 7) — ESP, flight markers, radar, soft aim, HWID spoofer, UGC tool, and skin utilities for Windows PC.
 
-**Domain:** `https://gethalloweencheats.com`
+**Domain:** `https://gethalloweencheats.net`
 
 This project was bootstrapped from the levoredirect template. The read-only git remote is `template-upstream`. Do **not** push Aion-specific work to that remote unless you intentionally sync template updates.
 
@@ -22,7 +22,7 @@ npm run seo:audit    # after build — titles, canonicals, sitemap
 - Build output lives in `dist/`; `wrangler.toml` serves it via `[assets]` with trailing-slash HTML.
 - Edge redirects: `public/_redirects` (checkout `/go/*`, legacy Fortnite/Dota paths).
 - Security/cache headers: `public/_headers`.
-- Sitemaps: submit `https://gethalloweencheats.com/sitemap.xml` in Search Console (index points to section sitemaps).
+- Sitemaps: submit `https://gethalloweencheats.net/sitemap.xml` in Search Console (index points to section sitemaps).
 - Set `INDEXNOW_KEY` and optional `PUBLIC_GA_MEASUREMENT_ID` in the Worker/environment for postbuild IndexNow and analytics.
 ```
 

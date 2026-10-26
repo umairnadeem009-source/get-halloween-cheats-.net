@@ -15,7 +15,7 @@ const productQuickStats = [
 export const en: Translations = {
   site: {
     name: 'Halloween Cheats',
-    domain: 'gethalloweencheats.com',
+    domain: 'gethalloweencheats.net',
     title: 'Halloween Cheats | Private ESP, Radar & aim assist for PC',
     description:
       'Halloween cheats for Windows PC — player ESP, stalk markers, escape item markers, 2D radar, and optional aim assist. Weekly, monthly, and lifetime plans on Steam.',
@@ -330,7 +330,7 @@ export const en: Translations = {
         num: '01',
         phase: 'Before purchase',
         title: 'Check current status',
-        desc: 'Read Support notes on gethalloweencheats.com after any Halloween: The Game client update.',
+        desc: 'Read Support notes on gethalloweencheats.net after any Halloween: The Game client update.',
       },
       {
         num: '02',
@@ -397,7 +397,7 @@ export const en: Translations = {
     ],
     ticketTitle: 'Include in your ticket',
     ticketItems: [
-      { title: 'Order email', desc: 'The email you used at checkout on gethalloweencheats.com.' },
+      { title: 'Order email', desc: 'The email you used at checkout on gethalloweencheats.net.' },
       { title: 'Platform', desc: 'Windows 10 or 11, Steam or Steam PC, and your Halloween: The Game build.' },
       { title: 'Error detail', desc: 'Screenshot or exact text from the loader or game client.' },
     ],
@@ -410,7 +410,7 @@ export const en: Translations = {
       {
         num: '01',
         q: 'Where do I check if Halloween cheats are currently compatible?',
-        a: 'Open Support and FAQ on gethalloweencheats.com before purchase or launch, especially after an Halloween: The Game client update.',
+        a: 'Open Support and FAQ on gethalloweencheats.net before purchase or launch, especially after an Halloween: The Game client update.',
       },
       {
         num: '02',
@@ -435,7 +435,7 @@ export const en: Translations = {
       {
         num: '06',
         q: 'Where are products listed?',
-        a: 'All four products live at gethalloweencheats.com/products/ with feature lists and checkout via our secure redirect.',
+        a: 'All four products live at gethalloweencheats.net/products/ with feature lists and checkout via our secure redirect.',
       },
     ],
   },
@@ -459,7 +459,7 @@ export const en: Translations = {
     about: {
       title: 'About Halloween Cheats | PC ESP & Utilities',
       description:
-        'About Halloween Cheats — private suite, utilities, and guides for the global Halloween: The Game PC client at gethalloweencheats.com.',
+        'About Halloween Cheats — private suite, utilities, and guides for the global Halloween: The Game PC client at gethalloweencheats.net.',
       sections: [
         {
           heading: 'Who we are',
@@ -485,12 +485,12 @@ export const en: Translations = {
     },
     privacy: {
       title: 'Privacy Policy | Halloween Cheats',
-      description: 'How gethalloweencheats.com handles analytics, cookies and contact data.',
+      description: 'How gethalloweencheats.net handles analytics, cookies and contact data.',
       sections: [
         {
           heading: 'Information we collect',
           paragraphs: [
-            'We may collect basic analytics such as page views, device type, browser and approximate region through Google Analytics when enabled. Checkout runs on external pages. We do not store payment card data on gethalloweencheats.com.',
+            'We may collect basic analytics such as page views, device type, browser and approximate region through Google Analytics when enabled. Checkout runs on external pages. We do not store payment card data on gethalloweencheats.net.',
           ],
         },
         {
@@ -511,12 +511,12 @@ export const en: Translations = {
     },
     terms: {
       title: 'Terms for Halloween Cheats | License & Refunds',
-      description: 'Terms for buying Halloween cheats on gethalloweencheats.com — license use, delivery, refunds and account risk.',
+      description: 'Terms for buying Halloween cheats on gethalloweencheats.net — license use, delivery, refunds and account risk.',
       sections: [
         {
           heading: 'Agreement',
           paragraphs: [
-            'Last updated: October 2026. By using gethalloweencheats.com or buying a product listed here, you agree to these Terms & Conditions and our Privacy Policy.',
+            'Last updated: October 2026. By using gethalloweencheats.net or buying a product listed here, you agree to these Terms & Conditions and our Privacy Policy.',
           ],
         },
         {
@@ -529,7 +529,7 @@ export const en: Translations = {
         {
           heading: 'Checkout and delivery',
           paragraphs: [
-            'Payment and license delivery run on external checkout pages. gethalloweencheats.com does not process or store payment card numbers.',
+            'Payment and license delivery run on external checkout pages. gethalloweencheats.net does not process or store payment card numbers.',
             'After purchase, use the operator portal linked from your order flow to download the current loader and setup guide.',
           ],
         },
@@ -566,7 +566,7 @@ export const en: Translations = {
     },
     support: {
       title: 'Halloween Cheats Support | Setup & Checkout',
-      description: 'Support for Halloween: The Game loader setup, HWID spoofing, and checkout help at gethalloweencheats.com.',
+      description: 'Support for Halloween: The Game loader setup, HWID spoofing, and checkout help at gethalloweencheats.net.',
     },
   },
   ui: {

@@ -2,68 +2,53 @@
   "gameplay": [
     {
       "file": "halloween-player-esp.png",
-      "alt": "Halloween The Game ESP overlay showing survivor targets item labels and minimap on PC",
+      "alt": "Halloween: The Game indoor survivor ESP with Myers skeleton through walls and item markers",
       "srcIndex": 0
     },
     {
       "file": "halloween-aimbot-combat.png",
-      "alt": "Halloween The Game cheat overlay with Myers silhouette skeleton ESP and special target HUD",
+      "alt": "Halloween: The Game night combat with player ESP boxes and handgun aim overlay",
       "srcIndex": 1
     },
     {
       "file": "halloween-radar-hack.png",
-      "alt": "Halloween The Game wallhack showing item ESP tags through interior walls",
+      "alt": "Halloween: The Game stalk tracker with minimap, Myers highlight, and teammate ESP",
       "srcIndex": 2
-    },
-    {
-      "file": "halloween-skin-changer.png",
-      "alt": "Halloween The Game gameplay with glowing Myers model and objective checklist",
-      "srcIndex": 3
     },
     {
       "file": "halloween-auto-aim.png",
-      "alt": "Halloween The Game stalk mode with orange target ESP and XP notifications",
-      "srcIndex": 4
+      "alt": "Halloween: The Game Myers ESP with red outline during outdoor confrontation",
+      "srcIndex": 3
     },
     {
       "file": "halloween-loot-radar.png",
-      "alt": "Halloween The Game item ESP listing weapons health spray and escape keys",
-      "srcIndex": 5
+      "alt": "Halloween: The Game item ESP icons on a foggy suburban street at night",
+      "srcIndex": 4
     },
     {
       "file": "halloween-thermal-esp.png",
-      "alt": "Halloween The Game outdoor ESP with fence line skeleton highlight and loot tags",
-      "srcIndex": 6
-    },
-    {
-      "file": "halloween-build-fight-esp.png",
-      "alt": "Halloween The Game night exterior ESP highlighting Laurie special target through walls",
-      "srcIndex": 7
+      "alt": "Halloween: The Game bloodlust overlay with red fog and distant player markers",
+      "srcIndex": 5
     },
     {
       "file": "halloween-arena-wallhack.png",
-      "alt": "Halloween The Game porch ESP with pumpkin lighting and resident objective markers",
-      "srcIndex": 8
+      "alt": "Halloween: The Game player ESP boxes with distance readouts on a residential block",
+      "srcIndex": 6
     },
     {
       "file": "halloween-spawn-island-esp.png",
-      "alt": "Halloween The Game interior ESP with motion-blur stalk view and item labels",
-      "srcIndex": 0
+      "alt": "Halloween: The Game house approach with Myers ESP visible through the front door",
+      "srcIndex": 7
     },
     {
       "file": "halloween-long-range-esp.png",
-      "alt": "Halloween The Game living room ESP with dual skeleton highlights on Myers and survivor",
-      "srcIndex": 1
-    },
-    {
-      "file": "halloween-chams-esp.png",
-      "alt": "Halloween The Game combat ESP with resident kill XP and weapon item tags",
-      "srcIndex": 2
+      "alt": "Halloween: The Game chase scene with bloodlust ESP and long-range player tags",
+      "srcIndex": 8
     },
     {
       "file": "halloween-combat-esp.png",
-      "alt": "Halloween The Game full HUD with special targets minimap and stream-ready overlay",
-      "srcIndex": 3
+      "alt": "Halloween: The Game third-person view with Myers stalk ESP on Orange Grove Ave",
+      "srcIndex": 9
     }
   ]
 }

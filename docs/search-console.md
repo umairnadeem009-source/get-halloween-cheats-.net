@@ -1,17 +1,17 @@
-# Search Console workflow (gethalloweencheats.com)
+# Search Console workflow (gethalloweencheats.net)
 
 Verify the domain at your DNS provider—no HTML meta tags in the repo.
 
 ## Setup (once)
 
-1. Open [Google Search Console](https://search.google.com/search-console) and add the **domain** property for `gethalloweencheats.com`.
+1. Open [Google Search Console](https://search.google.com/search-console) and add the **domain** property for `gethalloweencheats.net`.
 2. Under **Sitemaps**, submit:
-   - `https://gethalloweencheats.com/sitemap.xml`
+   - `https://gethalloweencheats.net/sitemap.xml`
 3. Optional child sitemaps:
-   - `https://gethalloweencheats.com/sitemap-pages.xml`
-   - `https://gethalloweencheats.com/sitemap-products.xml`
-   - `https://gethalloweencheats.com/sitemap-blog.xml`
-   - `https://gethalloweencheats.com/sitemap-forum.xml`
+   - `https://gethalloweencheats.net/sitemap-pages.xml`
+   - `https://gethalloweencheats.net/sitemap-products.xml`
+   - `https://gethalloweencheats.net/sitemap-blog.xml`
+   - `https://gethalloweencheats.net/sitemap-forum.xml`
 4. Repeat in [Bing Webmaster Tools](https://www.bing.com/webmasters) if you use Bing.
 
 ## Monthly tune (15 minutes)

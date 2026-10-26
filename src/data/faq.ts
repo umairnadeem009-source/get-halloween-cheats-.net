@@ -45,7 +45,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'setup',
     icon: 'faqStatus',
     q: 'Where do I check if Halloween cheats are online?',
-    a: a('The live status banner is on gethalloweencheats.com and in the Discord #status channel. Always check after a Halloween: The Game or anti-cheat update.'),
+    a: a('The live status banner is on gethalloweencheats.net and in the Discord #status channel. Always check after a Halloween: The Game or anti-cheat update.'),
   },
   {
     id: 'after-buy',
@@ -214,7 +214,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqWhoPro',
     q: 'Who should pick the monthly plan?',
-    a: `Most players choose the $35 monthly plan for ongoing access to ${mainSuite} ESP, radar, and optional aim assist on gethalloweencheats.com.`,
+    a: `Most players choose the $35 monthly plan for ongoing access to ${mainSuite} ESP, radar, and optional aim assist on gethalloweencheats.net.`,
     scopes: ['main'],
   },
   {
@@ -230,7 +230,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'safety',
     icon: 'faqEacUpdate',
     q: 'What should I do after a anti-cheat update?',
-    a: a('Check gethalloweencheats.com status and Discord #status. Do not launch until the banner shows online. Load conservative presets after any patch.'),
+    a: a('Check gethalloweencheats.net status and Discord #status. Do not launch until the banner shows online. Load conservative presets after any patch.'),
   },
   {
     id: 'discord-help',
@@ -267,7 +267,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'safety',
     icon: 'faqPrivateCheats',
     q: 'What are private Halloween cheats?',
-    a: a('Private means per-user keys and maintained builds—not public zip packs. gethalloweencheats.com delivers the loader and configs through your portal after checkout.'),
+    a: a('Private means per-user keys and maintained builds—not public zip packs. gethalloweencheats.net delivers the loader and configs through your portal after checkout.'),
   },
   {
     id: 'faq-more',
@@ -353,7 +353,7 @@ const blogTopicFaqs: Record<string, SiteFaqItem[]> = {
       topic: 'blog',
       icon: 'faqBlogGuideStart',
       q: 'Should I use dev-console codes in live PvP?',
-      a: a('No. Developer-console commands only work in practice instances with cheats enabled. Live overlays require the private suite from gethalloweencheats.com.'),
+      a: a('No. Developer-console commands only work in practice instances with cheats enabled. Live overlays require the private suite from gethalloweencheats.net.'),
     },
     {
       id: 'blog-guide-tier',

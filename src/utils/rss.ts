@@ -35,7 +35,7 @@ export function buildRssFeed(): string {
   <channel>
     <title>Halloween Cheats Blog</title>
     <link>${SITE_ORIGIN}/blog/</link>
-    <description>Halloween: The Game cheat guides, patch notes, and setup walkthroughs from gethalloweencheats.com.</description>
+    <description>Halloween: The Game cheat guides, patch notes, and setup walkthroughs from gethalloweencheats.net.</description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${feedUrl}" rel="self" type="application/rss+xml" />

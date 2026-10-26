@@ -1,4 +1,4 @@
-# gethalloweencheats.com — Launch QA Report
+# gethalloweencheats.net — Launch QA Report
 
 Generated after Halloween rebrand from Aion template. Git remote `origin` was renamed to **`template-upstream`** (novaxumair/get-aion2-cheats-.net) — add your new repo with `git remote add origin <url>` when ready.
 
@@ -81,7 +81,7 @@ Legacy **301** stubs: `/products/aion-2-cheats/*`, fortnite/dota/cheats paths �
 ## 7. Technical SEO
 
 - Unique titles/descriptions via `pageSeo.ts` per route
-- Canonical apex: `https://gethalloweencheats.com`
+- Canonical apex: `https://gethalloweencheats.net`
 - Trailing slash enforced
 - `npm run build` → **SEO audit passed** (64 sitemap URLs)
 
@@ -109,7 +109,7 @@ Legacy **301** stubs: `/products/aion-2-cheats/*`, fortnite/dota/cheats paths �
 
 ## 10. Canonical / www
 
-- **Apex primary:** `https://gethalloweencheats.com` (no www in config)
+- **Apex primary:** `https://gethalloweencheats.net` (no www in config)
 
 ---
 
@@ -172,7 +172,7 @@ Navbar **Try Now** → `/go/halloween-cheats/`.
 ## 18. GSC / IndexNow handoff
 
 1. Verify domain in Google Search Console (apex)
-2. Submit `https://gethalloweencheats.com/sitemap.xml`
+2. Submit `https://gethalloweencheats.net/sitemap.xml`
 3. Set `INDEXNOW_KEY` and re-run build to ping IndexNow
 4. Confirm Cloudflare `_headers` + `_redirects` deploy with `npm run deploy`
 

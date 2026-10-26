@@ -28,7 +28,7 @@ export function websiteSchema() {
     url: `${SITE_ORIGIN}/`,
     inLanguage: 'en-US',
     description:
-      'Halloween private cheats with player ESP, stalk markers, radar, and utilities for Windows PC on gethalloweencheats.com.',
+      'Halloween private cheats with player ESP, stalk markers, radar, and utilities for Windows PC on gethalloweencheats.net.',
   };
 }
 

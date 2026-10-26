@@ -1,4 +1,4 @@
-# Keyword gap — gethalloweencheats.com
+# Keyword gap — gethalloweencheats.net
 
 | Keyword / intent | Competitor coverage | Our target URL | Status |
 |------------------|---------------------|----------------|--------|

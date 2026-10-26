@@ -1,4 +1,4 @@
-export const SITE_DOMAIN = 'gethalloweencheats.com';
+export const SITE_DOMAIN = 'gethalloweencheats.net';
 export const SITE_URL = `https://${SITE_DOMAIN}`;
 export const PRODUCT_BASE = '/products/halloween-cheats/';
 export const PRODUCTS_HUB = '/products/';

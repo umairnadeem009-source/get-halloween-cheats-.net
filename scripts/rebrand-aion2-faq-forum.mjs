@@ -16,7 +16,7 @@ const faqReplacements = [
   ['Fortnite cheats', 'Halloween cheats'],
   ['fortnite cheats', 'Halloween cheats'],
   ['Fortnite', 'Halloween: The Game'],
-  ['fortnite-cheats.com', 'gethalloweencheats.com'],
+  ['fortnite-cheats.com', 'gethalloweencheats.net'],
   ['Epic Games', 'Steam or PURPLE'],
   ['Easy Anti-Cheat', 'anti-cheat'],
   ['EAC', 'anti-cheat'],
@@ -45,7 +45,7 @@ let forum = fs.readFileSync('src/data/forum.ts', 'utf8');
 const forumReplacements = [
   ['Fortnite', 'Halloween: The Game'],
   ['fortnite', 'aion-2'],
-  ['fortnite-cheats.com', 'gethalloweencheats.com'],
+  ['fortnite-cheats.com', 'gethalloweencheats.net'],
   ['/blog/fortnite-', '/blog/halloween-'],
   ['/blog/eac-bypass-fortnite-guide/', '/blog/halloween-anti-cheat-bypass-explained/'],
   ['/blog/how-to-buy-fortnite-cheats-2026/', '/blog/halloween-cheat-setup-guide/'],

@@ -53,7 +53,7 @@ function bodyFor(t) {
   const skin = '[Skin Changer](/products/halloween-cheats/skin-changer/)';
   const faq = '[FAQ](/faq/)';
   const ctaHref = '/go/halloween-cheats/';
-  const intro = `${t.title} for Halloween: The Game on Windows PC — survivor and Myers ESP, item markers, radar, and optional aim assist. Read compatibility notes on gethalloweencheats.com before checkout; Easy Anti-Cheat and patch days can change overlay behavior.`;
+  const intro = `${t.title} for Halloween: The Game on Windows PC — survivor and Myers ESP, item markers, radar, and optional aim assist. Read compatibility notes on gethalloweencheats.net before checkout; Easy Anti-Cheat and patch days can change overlay behavior.`;
   const settings = [
     'Cap max ESP distance until Haddonfield nameplates stay readable in fog.',
     'Enable Myers threat state and terror radius cues before chasing in 1v4.',
@@ -105,7 +105,7 @@ const posts = topics.map((t, i) => ({
   title: t.title,
   slug: t.slug,
   image: `/images/blog/${t.slug}.png`,
-  desc: `${t.title} — settings, risks, and links to private Halloween: The Game cheats on gethalloweencheats.com.`,
+  desc: `${t.title} — settings, risks, and links to private Halloween: The Game cheats on gethalloweencheats.net.`,
   date: dates[i],
   readTime: `${8 + (i % 5)} min read`,
   featured: i < 3,

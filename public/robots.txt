@@ -3,10 +3,10 @@ Allow: /
 
 Disallow: /go/
 
-Sitemap: https://gethalloweencheats.com/sitemap.xml
-Sitemap: https://gethalloweencheats.com/sitemap-pages.xml
-Sitemap: https://gethalloweencheats.com/sitemap-products.xml
-Sitemap: https://gethalloweencheats.com/sitemap-blog.xml
-Sitemap: https://gethalloweencheats.com/sitemap-forum.xml
+Sitemap: https://gethalloweencheats.net/sitemap.xml
+Sitemap: https://gethalloweencheats.net/sitemap-pages.xml
+Sitemap: https://gethalloweencheats.net/sitemap-products.xml
+Sitemap: https://gethalloweencheats.net/sitemap-blog.xml
+Sitemap: https://gethalloweencheats.net/sitemap-forum.xml
 
-# RSS: https://gethalloweencheats.com/rss.xml
+# RSS: https://gethalloweencheats.net/rss.xml

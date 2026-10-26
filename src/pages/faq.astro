@@ -23,7 +23,7 @@ const faqs = getAllFaqs();
     webPageSchema({
       name: 'FAQ — Halloween Cheats & Products',
       description:
-        'Answers about Halloween: The Game cheat plans, ESP, aim assist, HWID tools, blog guides and checkout at gethalloweencheats.com.',
+        'Answers about Halloween: The Game cheat plans, ESP, aim assist, HWID tools, blog guides and checkout at gethalloweencheats.net.',
       url: '/faq/',
     }),
     faqPageSchema(faqs.map((f, i) => ({ num: String(i + 1).padStart(2, '0'), q: f.q, a: f.a.replace(/<[^>]+>/g, '') }))),
@@ -37,7 +37,7 @@ const faqs = getAllFaqs();
         <SectionHeader
           eyebrow="Help center"
           title="Halloween cheats FAQ"
-          desc="Plans, ESP, utilities, safety, setup, and blog topics for gethalloweencheats.com—in one place."
+          desc="Plans, ESP, utilities, safety, setup, and blog topics for gethalloweencheats.net—in one place."
           titleId="faq-page-title"
         />
       </div>
